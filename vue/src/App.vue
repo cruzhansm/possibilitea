@@ -6,7 +6,6 @@
       h-screen
       justify-center
       items-center
-      align
       font-bold
       text-white
       bg-black

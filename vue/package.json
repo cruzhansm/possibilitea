@@ -5,7 +5,9 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "tailbuild": "npx tailwindcss -i ./src/index.css -o ./src/assets/css/main.css",
+        "tailwatch": "npx tailwindcss -i ./src/index.css -o ./src/assets/css/main.css --watch"
     },
     "dependencies": {
         "vue": "^3.2.25",

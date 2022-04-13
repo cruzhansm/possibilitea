@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "Inter-Regular";
+    src: url("../fonts/Inter-Regular.eot") format("embedded-opentype"),
+        url("../fonts/Inter-Regular.svg") format("svg"),
+        url("../fonts/Inter-Regular.ttf") format("truetype"),
+        url("../fonts/Inter-Regular.woff") format("woff"),
+        url("../fonts/Inter-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}

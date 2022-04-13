@@ -476,6 +476,36 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 100vh;
 }
 
+.h-max {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.h-\[274px\] {
+  height: 274px;
+}
+
+.h-\[47px\] {
+  height: 47px;
+}
+
+.w-screen {
+  width: 100vw;
+}
+
+.w-\[423px\] {
+  width: 423px;
+}
+
+.w-\[374px\] {
+  width: 374px;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
 .items-center {
   align-items: center;
 }
@@ -484,21 +514,126 @@ Ensure the default browser behavior of the `hidden` attribute.
   justify-content: center;
 }
 
-.bg-black {
+.gap-\[38px\] {
+  gap: 38px;
+}
+
+.gap-\[50px\] {
+  gap: 50px;
+}
+
+.gap-5 {
+  gap: 1.25rem;
+}
+
+.rounded-\[9px\] {
+  border-radius: 9px;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.border-2 {
+  border-width: 2px;
+}
+
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
+.bg-primary {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  background-color: rgb(46 119 1 / var(--tw-bg-opacity));
 }
 
-.text-7xl {
-  font-size: 4.5rem;
-  line-height: 1;
+.bg-inputField {
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 244 244 / var(--tw-bg-opacity));
 }
 
-.font-bold {
-  font-weight: 700;
+.px-\[45px\] {
+  padding-left: 45px;
+  padding-right: 45px;
 }
 
-.text-white {
+.py-14 {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.py-\[14px\] {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.pt-\[93px\] {
+  padding-top: 93px;
+}
+
+.pl-5 {
+  padding-left: 1.25rem;
+}
+
+.font-inter {
+  font-family: "Inter-Regular";
+}
+
+.text-textButtons {
+  font-size: 1.5rem;
+}
+
+.text-textInput {
+  font-size: 1.25rem;
+}
+
+.text-\[32px\] {
+  font-size: 32px;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.text-buttonText {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-primary {
+  --tw-text-opacity: 1;
+  color: rgb(46 119 1 / var(--tw-text-opacity));
+}
+
+.text-inputText {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+@font-face {
+  font-family: "Inter-Regular";
+
+  src: url("../fonts/Inter-Regular.eot") format("embedded-opentype"),
+        url("../fonts/Inter-Regular.svg") format("svg"),
+        url("../fonts/Inter-Regular.ttf") format("truetype"),
+        url("../fonts/Inter-Regular.woff") format("woff"),
+        url("../fonts/Inter-Regular.woff2") format("woff2");
+
+  font-weight: normal;
+
+  font-style: normal;
+}
+
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
+}
+
+.hover\:bg-primaryHovered:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(109 186 62 / var(--tw-bg-opacity));
 }

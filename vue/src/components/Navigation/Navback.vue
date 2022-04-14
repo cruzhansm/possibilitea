@@ -9,6 +9,7 @@
       rounded-[9px]
       hover:cursor-pointer hover:bg-[#ECECEC] hover:text-primaryHovered
     "
+    @click="redirectBack"
   >
     <font-awesome-icon icon="angle-left" size="2x" class="fai text-primary" />
     <span class="text-2xl text-primary font-bold">Tea Paradise</span>
@@ -18,6 +19,11 @@
 <script>
 export default {
   name: "Navback",
+  methods: {
+    redirectBack() {
+      this.$router.go(-1);
+    },
+  },
 };
 </script>
 

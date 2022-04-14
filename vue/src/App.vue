@@ -1,29 +1,14 @@
 <template>
-  <div
-    class="
-      text-7xl
-      flex
-      h-screen
-      justify-center
-      items-center
-      font-bold
-      text-white
-      bg-black
-    "
-  >
-    {{ user }}
+  <div class="h-screen w-screen font-inter">
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import store from "./store/index";
-
 export default {
   name: "App",
-  computed: {
-    user() {
-      return store.state.user.data.name;
-    },
+  mounted() {
+    this.$router.push({ name: "login" });
   },
 };
 </script>

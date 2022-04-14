@@ -1,5 +1,5 @@
 {
-    "name": "vue",
+    "name": "possibilitea",
     "private": true,
     "version": "0.0.0",
     "scripts": {
@@ -10,6 +10,9 @@
         "tailwatch": "npx tailwindcss -i ./src/index.css -o ./src/assets/css/main.css --watch"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^6.1.1",
+        "@fortawesome/free-solid-svg-icons": "^6.1.1",
+        "@fortawesome/vue-fontawesome": "^3.0.0-5",
         "vue": "^3.2.25",
         "vue-router": "^4.0.14",
         "vuex": "^4.0.2"

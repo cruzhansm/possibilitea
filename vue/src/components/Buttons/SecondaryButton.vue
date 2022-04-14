@@ -8,9 +8,18 @@
       rounded-[9px]
       text-textButtons text-buttonText
       font-bold
-      hover:cursor-pointer hover:bg-secondaryHovered
+      hover:cursor-pointer
+      text-center
     "
-    :style="{ height: height + 'px', width: width + 'px' }"
+    :class="
+      hover != undefined ? `hover:bg-${hover}` : 'hover:bg-secondaryHovered'
+    "
+    :style="{
+      height: height + 'px',
+      width: width + 'px',
+      color: color,
+      fontSize: fontSize + 'px',
+    }"
   >
     {{ finalText }}
   </div>
@@ -23,6 +32,9 @@ export default {
     text: String,
     height: Number,
     width: Number,
+    fontSize: Number,
+    color: String,
+    hover: String,
   },
   computed: {
     finalText() {

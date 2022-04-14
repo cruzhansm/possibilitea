@@ -1,0 +1,20 @@
+<template>
+  <div class="flex flex-col h-full w-full">
+    <div class="h-full w-full"></div>
+    <Selects />
+  </div>
+</template>
+
+<script>
+import Selects from "./Selection/Selects.vue";
+
+export default {
+  name: "ItemSelection",
+  components: {
+    Selects,
+  },
+};
+</script>
+
+<style scoped>
+</style>

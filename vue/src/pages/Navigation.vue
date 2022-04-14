@@ -24,7 +24,9 @@
         :width="680"
         v-if="userType == 'ADMIN'"
       />
-      <SecondaryButton text="Log Out" :height="97" :width="680" />
+      <router-link :to="{ name: 'login' }"
+        ><SecondaryButton text="Log Out" :height="97" :width="680"
+      /></router-link>
     </div>
   </div>
 </template>

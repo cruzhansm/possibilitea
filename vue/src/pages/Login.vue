@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col gap-[38px] justify-center items-center h-max pt-[93px]"
+    class="flex flex-col gap-[38px] justify-center items-center h-max pt-[80px]"
   >
     <div
       class="
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import AuthForm from "../components/Input/AuthForm.vue";
+import AuthForm from "../components/Containers/AuthForm.vue";
 
 export default {
   name: "Login",

@@ -468,6 +468,34 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia:  ;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.bottom-\[-2\] {
+  bottom: -2;
+}
+
+.left-3 {
+  left: 0.75rem;
+}
+
+.right-5 {
+  right: 1.25rem;
+}
+
+.top-2 {
+  top: 0.5rem;
+}
+
+.mb-\[75px\] {
+  margin-bottom: 75px;
+}
+
 .flex {
   display: flex;
 }
@@ -490,6 +518,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 47px;
 }
 
+.h-\[77px\] {
+  height: 77px;
+}
+
 .w-screen {
   width: 100vw;
 }
@@ -500,6 +532,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-\[374px\] {
   width: 374px;
+}
+
+.w-11\/12 {
+  width: 91.666667%;
 }
 
 .flex-col {
@@ -514,8 +550,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   justify-content: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
 .gap-\[38px\] {
   gap: 38px;
+}
+
+.gap-8 {
+  gap: 2rem;
 }
 
 .gap-\[50px\] {
@@ -524,6 +568,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .gap-5 {
   gap: 1.25rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
 }
 
 .rounded-\[9px\] {
@@ -542,9 +590,23 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-width: 2px;
 }
 
+.border-none {
+  border-style: none;
+}
+
 .border-black {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
+.border-error {
+  --tw-border-opacity: 1;
+  border-color: rgb(222 52 69 / var(--tw-border-opacity));
+}
+
+.border-divider {
+  --tw-border-opacity: 1;
+  border-color: rgb(234 234 234 / var(--tw-border-opacity));
 }
 
 .bg-primary {
@@ -552,9 +614,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(46 119 1 / var(--tw-bg-opacity));
 }
 
+.bg-secondary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(196 196 196 / var(--tw-bg-opacity));
+}
+
 .bg-inputField {
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 244 / var(--tw-bg-opacity));
+}
+
+.stroke-2 {
+  stroke-width: 2;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
 }
 
 .px-\[45px\] {
@@ -572,6 +651,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 14px;
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
 .pt-\[93px\] {
   padding-top: 93px;
 }
@@ -580,29 +669,37 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 1.25rem;
 }
 
+.pt-\[80px\] {
+  padding-top: 80px;
+}
+
 .font-inter {
   font-family: "Inter-Regular";
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .text-textButtons {
   font-size: 1.5rem;
 }
 
+.text-\[10px\] {
+  font-size: 10px;
+}
+
 .text-textInput {
   font-size: 1.25rem;
 }
 
-.text-\[32px\] {
-  font-size: 32px;
+.font-bold {
+  font-weight: 700;
 }
 
 .font-semibold {
   font-weight: 600;
-}
-
-.text-buttonText {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .text-primary {
@@ -610,9 +707,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(46 119 1 / var(--tw-text-opacity));
 }
 
+.text-buttonText {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-error {
+  --tw-text-opacity: 1;
+  color: rgb(222 52 69 / var(--tw-text-opacity));
+}
+
 .text-inputText {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.outline-none {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 @font-face {
@@ -629,6 +741,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-style: normal;
 }
 
+#app {
+  margin: 0;
+}
+
 .hover\:cursor-pointer:hover {
   cursor: pointer;
 }
@@ -636,4 +752,19 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:bg-primaryHovered:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(109 186 62 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-secondaryHovered:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(224 224 224 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-\[\#ECECEC\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 236 236 / var(--tw-bg-opacity));
+}
+
+.hover\:text-primaryHovered:hover {
+  --tw-text-opacity: 1;
+  color: rgb(109 186 62 / var(--tw-text-opacity));
 }

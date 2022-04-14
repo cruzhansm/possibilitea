@@ -11,19 +11,25 @@
       gap-[50px]
     "
   >
-    <div class="text-primary text-textButtons font-semibold text-[32px]">
+    <div class="text-primary text-textButtons font-semibold">
       {{ title }}
     </div>
     <div class="flex flex-col gap-5">
-      <TextInput title="Username" :focus="true"></TextInput>
-      <TextInput title="Password"></TextInput>
+      <TextInput
+        title="Username"
+        :focus="true"
+        :errorText="'Empty field'"
+      ></TextInput>
+      <TextInput title="Password" :errorText="'Empty field'"></TextInput>
     </div>
-    <PrimaryButton text="Enter" :height="47" :width="374"></PrimaryButton>
+    <router-link :to="{ name: 'navigation' }">
+      <PrimaryButton text="Enter" :height="47" :width="374"></PrimaryButton>
+    </router-link>
   </div>
 </template>
 
 <script>
-import TextInput from "./TextInput.vue";
+import TextInput from "../Input/TextInput.vue";
 import PrimaryButton from "../Buttons/PrimaryButton.vue";
 
 export default {

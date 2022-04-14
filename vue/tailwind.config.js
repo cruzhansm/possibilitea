@@ -6,7 +6,7 @@ module.exports = {
                 primary: "#2E7701",
                 primaryHovered: "#6DBA3E",
                 secondary: "#C4C4C4",
-                secondaryHovered: "E0E0E0",
+                secondaryHovered: "#E0E0E0",
                 divider: "#EAEAEA",
                 error: "#DE3445",
                 inputField: "#F4F4F4",

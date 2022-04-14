@@ -12,3 +12,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
+#app {
+    margin: 0;
+}

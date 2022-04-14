@@ -7,6 +7,7 @@
       bg-primary
       rounded-[9px]
       text-textButtons text-buttonText
+      font-bold
       hover:cursor-pointer hover:bg-primaryHovered
     "
     :style="{ height: height + 'px', width: width + 'px' }"

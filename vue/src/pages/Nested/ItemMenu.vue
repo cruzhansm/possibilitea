@@ -24,15 +24,6 @@ export default {
         (c) => c.name.toUpperCase() == this.$route.params.category.toUpperCase()
       )[0].items;
 
-      /* separate the items based on their subcategories */
-      // let subcategories = [...new Set(menu.map((i) => i.subcategory))];
-      // subcategories.forEach((s, i) => {
-      //   subcategories[i] = JSON.parse(
-      //     `{"${s}": ${JSON.stringify(menu.filter((i) => i.subcategory == s))}}`
-      //   );
-      // });
-
-      // return subcategories;
       return menu;
     },
   },

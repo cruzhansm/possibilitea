@@ -10,7 +10,6 @@
       font-bold
       hover:cursor-pointer
       text-center
-      bg-primary
     "
     :class="[
       hover != undefined ? `hover:bg-${hover}` : 'hover:bg-secondaryHovered',

@@ -21,13 +21,13 @@ export default {
   name: "Navback",
   methods: {
     redirectBack() {
-      this.$router.go(-1);
+      this.$router.push({ name: "navigation" });
     },
   },
 };
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .p:hover > span,
 .p:hover > .fai {
   @apply text-primaryHovered;

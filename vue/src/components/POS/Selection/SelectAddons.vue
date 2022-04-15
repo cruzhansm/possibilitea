@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col w-fit h-fit">
-    <span class="text-2xl text-primary font-bold">Size</span>
+    <span class="text-2xl text-primary font-bold">Add Ons</span>
     <div
       class="
         flex flex-row flex-wrap

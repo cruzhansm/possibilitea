@@ -1,6 +1,8 @@
 <template>
   <div class="flex flex-col h-full w-full">
-    <div class="h-full w-full"></div>
+    <div class="h-full w-full">
+      <router-view></router-view>
+    </div>
     <Selects />
   </div>
 </template>

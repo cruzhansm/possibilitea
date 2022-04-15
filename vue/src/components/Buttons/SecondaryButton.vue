@@ -10,10 +10,12 @@
       font-bold
       hover:cursor-pointer
       text-center
+      bg-primary
     "
-    :class="
-      hover != undefined ? `hover:bg-${hover}` : 'hover:bg-secondaryHovered'
-    "
+    :class="[
+      hover != undefined ? `hover:bg-${hover}` : 'hover:bg-secondaryHovered',
+      active === true ? 'active' : '',
+    ]"
     :style="{
       height: height + 'px',
       width: width + 'px',
@@ -35,6 +37,7 @@ export default {
     fontSize: Number,
     color: String,
     hover: String,
+    active: Boolean,
   },
   computed: {
     finalText() {
@@ -44,5 +47,8 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
+.active {
+  @apply bg-primary !important;
+}
 </style>

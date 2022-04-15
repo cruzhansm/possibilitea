@@ -4,31 +4,64 @@
   >
     <div class="flex flex-col gap-2 mb-4">
       <span class="text-2xl text-primary font-bold">Food</span>
-      <SecondaryButton
-        v-for="(category, index) in food"
+      <router-link
         :key="index"
-        :text="category"
-        :height="78"
-        :width="286"
-        :hover="'primary'"
-      />
+        v-for="(fd, index) in food"
+        :to="{
+          name: 'menu',
+          params: { category: `${fd.name}`.toLowerCase() },
+        }"
+        @click="
+          food.map((f) => {
+            if (f.active == true) f.active = false;
+          });
+          fd.active = !fd.active;
+        "
+      >
+        <SecondaryButton
+          :text="fd.name"
+          :height="78"
+          :width="286"
+          :hover="'primary'"
+          :active="fd.active"
+        />
+      </router-link>
     </div>
 
     <div class="flex flex-col gap-2">
       <span class="text-2xl text-primary font-bold">Drinks</span>
-      <SecondaryButton
-        v-for="(category, index) in drinks"
+      <router-link
         :key="index"
-        :text="category"
-        :height="78"
-        :width="286"
-        :hover="'primary'"
-      />
+        v-for="(drink, index) in drinks"
+        :to="{
+          name: 'menu',
+          params: { category: `${drink.name}`.toLowerCase() },
+        }"
+        @click="
+          drinks.map((d) => {
+            if (d.active == true) d.active = false;
+          });
+          drink.active = !drink.active;
+        "
+      >
+        <SecondaryButton
+          :text="drink.name"
+          :height="78"
+          :width="286"
+          :hover="'primary'"
+          :active="drink.active"
+        />
+      </router-link>
     </div>
   </div>
 </template>
 
 <script>
+/* PLAN FOR ACTIVE MENU SELECTION STATE MGMT
+ * ADD MUTATION AND ACTION METHODS TO STORE
+ * FOR @CLICK, CALL A METHOD
+ * IN THAT METHOD, CALL THE ACTION THAT WILL CALL THE MUTATION
+ */
 import SecondaryButton from "../Buttons/SecondaryButton.vue";
 
 export default {
@@ -37,14 +70,19 @@ export default {
     return {
       food: Array,
       drinks: Array,
+      active: String,
     };
   },
   components: {
     SecondaryButton,
   },
   mounted() {
-    this.food = this.$store.state.categories.food;
-    this.drinks = this.$store.state.categories.drinks;
+    this.food = this.$store.state.categories.filter(
+      (c) => c.category == "Food"
+    );
+    this.drinks = this.$store.state.categories.filter(
+      (c) => c.category == "Drinks"
+    );
   },
 };
 </script>

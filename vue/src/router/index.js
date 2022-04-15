@@ -3,6 +3,7 @@ import App from "../App.vue";
 import Login from "../pages/Login.vue";
 import Navigation from "../pages/Navigation.vue";
 import POS from "../pages/POS.vue";
+import ItemMenu from "../pages/Nested/ItemMenu.vue";
 
 const routes = [
     {
@@ -24,6 +25,13 @@ const routes = [
         path: "/pos",
         name: "pos",
         component: POS,
+        children: [
+            {
+                path: "/:category",
+                name: "menu",
+                component: ItemMenu,
+            },
+        ],
     },
 ];
 

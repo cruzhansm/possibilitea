@@ -23,27 +23,36 @@
       @click="toggleDiscount"
     />
     <BillingAmount />
-    <PrimaryButton text="Confirm" :height="60" :width="332" />
+    <PrimaryButton
+      text="Confirm"
+      :height="60"
+      :width="332"
+      @click="toggleConfirm"
+    />
 
     <!-- Modal area -->
+
+    <!-- Discount Modal -->
     <Modal v-show="isApplyingDiscount" @close="toggleDiscount">
       <template v-slot:body>
         <div
           class="flex flex-col gap-4 justify-center items-center w-full h-full"
         >
-          <span class="text-2xl text-primary font-bold uppercase"
-            >Discount Authorization</span
-          >
+          <span class="text-2xl text-primary font-bold uppercase">
+            Discount Authorization
+          </span>
           <SecondaryButton
             text="PWD/Senior"
             :height="63"
             :width="368"
+            :active="isManualDiscount == false ? true : false"
             @click="isManualDiscount = false"
           />
-          <PrimaryButton
+          <SecondaryButton
             text="Manual percentage"
             :height="63"
             :width="368"
+            :active="isManualDiscount"
             @click="isManualDiscount = true"
           />
           <div
@@ -72,11 +81,47 @@
       <template v-slot:button-area>
         <SecondaryButton
           text="Cancel"
-          :height="47"
+          :height="60"
           :width="172"
           @click="toggleDiscount"
         />
-        <PrimaryButton text="Enter" :height="47" :width="172" />
+        <PrimaryButton text="Enter" :height="60" :width="172" />
+      </template>
+    </Modal>
+
+    <!-- Confirmation Modal -->
+    <Modal v-show="isConfirmingTransaction" @close="toggleConfirm">
+      <template v-slot:body>
+        <div class="h-[520px]">
+          <div class="font-bold text-[16px]">Date: {{ timestamp }}</div>
+          <div class="font-bold text-[16px]">Transaction #: 04162022000001</div>
+          <div class="font-bold text-[16px]">Cashier: staffFullName</div>
+          <div class="flex flex-row w-100 mt-4">
+            <span class="w-[15%] text-[16px] text-center font-bold">Qty</span>
+            <span class="w-[50%] text-[16px] font-bold">Item</span>
+            <span class="w-[17.5%] text-[16px] text-center font-bold">
+              Price
+            </span>
+            <span class="w-[17.5%] text-[16px] text-center font-bold">
+              Total
+            </span>
+          </div>
+          <TransactionItem
+            :key="'z' + index"
+            v-for="(z, index) in test"
+            :first="z == test[0] ? true : false"
+          />
+          <TransactionSummary />
+        </div>
+      </template>
+      <template v-slot:button-area>
+        <SecondaryButton
+          text="Cancel"
+          :height="60"
+          :width="220"
+          @click="toggleConfirm"
+        />
+        <PrimaryButton text="Confirm" :height="60" :width="220" />
       </template>
     </Modal>
   </div>
@@ -90,6 +135,8 @@ import BillingItems from "./Billing/BillingItems.vue";
 import BillingTotal from "./Billing/BillingTotal.vue";
 import BillingAmount from "./Billing/BillingAmount.vue";
 import Modal from "../Modal/Modal.vue";
+import TransactionItem from "../Modal/TransactionItem.vue";
+import TransactionSummary from "../Modal/TransactionSummary.vue";
 import NumberInput from "../Input/NumberInput.vue";
 import TextInput from "../Input/TextInput.vue";
 
@@ -103,6 +150,8 @@ export default {
     BillingTotal,
     BillingAmount,
     Modal,
+    TransactionItem,
+    TransactionSummary,
     NumberInput,
     TextInput,
   },
@@ -111,11 +160,21 @@ export default {
       isApplyingDiscount: false,
       isManualDiscount: false,
       isConfirmingTransaction: false,
+      timestamp: String,
+      /* for demo only */
+      test: [0, 1, 2],
     };
   },
   methods: {
     toggleDiscount() {
       this.isApplyingDiscount = !this.isApplyingDiscount;
+    },
+    toggleConfirm() {
+      this.isConfirmingTransaction = !this.isConfirmingTransaction;
+      this.isConfirmingTransaction == true ? this.updateTime() : "";
+    },
+    updateTime() {
+      this.timestamp = new Date(Date.now()).toLocaleString();
     },
   },
   computed: {

@@ -5,7 +5,7 @@
       class="text-primary text-[16px] hover:cursor-pointer"
     ></font-awesome-icon>
     <div class="flex flex-col h-fit w-full ml-5 mr-3">
-      <span class="text-[16px] leading-none mb-1 text-inputText font-bold">
+      <span class="text-[16px] leading-tight mb-1 text-inputText font-bold">
         {{ `${item.quantity}x ${item.category.toUpperCase()} ${item.name}` }}
       </span>
       <span class="text-[14px] leading-tight text-[#696969] font-bold">{{
@@ -15,7 +15,7 @@
         {{ `${item.adds.join(", ")}` }}
       </span>
     </div>
-    <span class="text-primary text-[16px] font-bold">149.00</span>
+    <span class="text-primary text-[16px] font-bold leading-tight">149.00</span>
   </div>
 </template>
 

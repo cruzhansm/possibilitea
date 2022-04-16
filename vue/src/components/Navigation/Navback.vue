@@ -1,7 +1,7 @@
 <template>
   <div
     class="
-      p
+      group
       flex
       gap-6
       px-2
@@ -11,8 +11,15 @@
     "
     @click="redirectBack"
   >
-    <font-awesome-icon icon="angle-left" size="2x" class="fai text-primary" />
-    <span class="text-2xl text-primary font-bold">Tea Paradise</span>
+    <font-awesome-icon
+      icon="angle-left"
+      size="2x"
+      class="group-hover:text-primaryHovered text-primary"
+    />
+    <span
+      class="group-hover:text-primaryHovered text-2xl text-primary font-bold"
+      >Tea Paradise</span
+    >
   </div>
 </template>
 
@@ -27,9 +34,5 @@ export default {
 };
 </script>
 
-<style lang="postcss" scoped>
-.p:hover > span,
-.p:hover > .fai {
-  @apply text-primaryHovered;
-}
+<style scoped>
 </style>

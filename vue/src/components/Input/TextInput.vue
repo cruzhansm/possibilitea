@@ -2,7 +2,7 @@
   <label class="text-primary text-textInput font-semibold">
     {{ title }}
     <br />
-    <div class="relative">
+    <div class="relative flex flex-col">
       <input
         v-model="input"
         type="text"
@@ -16,6 +16,7 @@
           rounded-[9px]
           text-inputText
           outline-none
+          pr-12
         "
         :class="errorFlag == true ? 'border-2 border-error' : 'border-none'"
         :autofocus="focus"
@@ -28,7 +29,7 @@
           :class="errorFlag === true ? 'text-error' : 'text-primary'"
         />
       </div>
-      <ErrorText :text="errorText" v-if="errorFlag" />
+      <ErrorText :text="errorText" v-if="errorFlag" :align="errorAlign" />
     </div>
   </label>
 </template>
@@ -45,6 +46,7 @@ export default {
     title: String,
     limit: Number,
     focus: Boolean,
+    errorAlign: String,
     errorText: String,
   },
   data() {

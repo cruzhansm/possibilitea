@@ -18,9 +18,14 @@
       <TextInput
         title="Username"
         :focus="true"
+        errorAlign="left"
         :errorText="'Empty field'"
       ></TextInput>
-      <TextInput title="Password" :errorText="'Empty field'"></TextInput>
+      <TextInput
+        title="Password"
+        :errorText="'Empty field'"
+        errorAlign="left"
+      ></TextInput>
     </div>
     <router-link :to="{ name: 'navigation' }">
       <PrimaryButton text="Enter" :height="47" :width="374"></PrimaryButton>

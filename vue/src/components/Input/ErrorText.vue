@@ -1,6 +1,6 @@
 <template>
-  <div class="w-100 text-[10px] text-error" :class="alignError">
-    {{ text }}
+  <div class="absolute w-full -bottom-4 text-error text-xs">
+    <div class="w-fit" :class="alignError">{{ text }}</div>
   </div>
 </template>
 
@@ -9,7 +9,7 @@ export default {
   name: "ErrorText",
   computed: {
     alignError() {
-      return this.align == "left" ? "ml-6" : "mx-auto";
+      return this.align == "left" ? "ml-4" : "mx-auto";
     },
   },
   props: {
@@ -19,5 +19,5 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 </style>

@@ -14,19 +14,22 @@
     </div>
     <div class="text-primary text-2xl font-bold mb-[75px]">{{ userType }}</div>
     <div class="flex flex-col gap-8">
-      <router-link :to="{ name: 'pos' }"
-        ><PrimaryButton text="POS System" :height="97" :width="680"
-      /></router-link>
+      <router-link :to="{ name: 'pos' }">
+        <PrimaryButton text="POS System" :height="97" :width="680" />
+      </router-link>
       <PrimaryButton text="Dashboard" :height="97" :width="680" />
-      <PrimaryButton
-        text="Account Creation"
-        :height="97"
-        :width="680"
-        v-if="userType == 'ADMIN'"
-      />
-      <router-link :to="{ name: 'login' }"
-        ><SecondaryButton text="Log Out" :height="97" :width="680"
-      /></router-link>
+      <router-link :to="{ name: 'account-creation' }">
+        <PrimaryButton
+          text="Account Creation"
+          :height="97"
+          :width="680"
+          v-if="userType == 'ADMIN'"
+          router-link
+        />
+      </router-link>
+      <router-link :to="{ name: 'login' }">
+        <SecondaryButton text="Log Out" :height="97" :width="680" />
+      </router-link>
     </div>
   </div>
 </template>

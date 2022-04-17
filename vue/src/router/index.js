@@ -4,6 +4,7 @@ import Login from "../pages/Login.vue";
 import Navigation from "../pages/Navigation.vue";
 import POS from "../pages/POS.vue";
 import ItemMenu from "../pages/Nested/ItemMenu.vue";
+import AccountCreation from "../pages/AccountCreation.vue";
 
 const routes = [
     {
@@ -32,6 +33,11 @@ const routes = [
                 component: ItemMenu,
             },
         ],
+    },
+    {
+        path: "/create-account",
+        name: "account-creation",
+        component: AccountCreation,
     },
 ];
 

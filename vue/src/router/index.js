@@ -54,6 +54,7 @@ const routes = [
             },
         ],
     },
+    {
         path: "/create-account",
         name: "account-creation",
         component: AccountCreation,

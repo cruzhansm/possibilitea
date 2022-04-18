@@ -9,9 +9,10 @@ import { faX } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { faMinus } from "@fortawesome/free-solid-svg-icons";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
-library.add([faX, faXmark, faCheck, faAngleLeft, faMinus, faPlus]);
+library.add([faX, faXmark, faCheck, faAngleLeft, faAngleDown, faMinus, faPlus]);
 
 export default FontAwesomeIcon;

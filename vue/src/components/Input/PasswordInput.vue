@@ -3,10 +3,9 @@
     {{ title }}
     <br />
     <div class="relative">
-      <!-- TODO: When verification is set up, bind padding-right to state to accomodate Password eye icon. -->
       <input
         v-model="input"
-        type="text"
+        type="password"
         :maxlength="limit"
         class="
           pl-5
@@ -39,7 +38,7 @@
 import ErrorText from "./ErrorText.vue";
 
 export default {
-  name: "TextInput",
+  name: "PasswordInput",
   components: {
     ErrorText,
   },
@@ -66,7 +65,6 @@ export default {
     this.emptyFlag = true;
     this.errorFlag = false;
   },
-  emits: ["update"],
 };
 </script>
 

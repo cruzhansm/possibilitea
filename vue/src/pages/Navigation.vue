@@ -17,7 +17,9 @@
       <router-link :to="{ name: 'pos' }">
         <PrimaryButton text="POS System" :height="97" :width="680" />
       </router-link>
-      <PrimaryButton text="Dashboard" :height="97" :width="680" />
+      <router-link :to="{ name: 'dashboard' }"
+        ><PrimaryButton text="Dashboard" :height="97" :width="680"
+      /></router-link>
       <router-link :to="{ name: 'account-creation' }">
         <PrimaryButton
           text="Account Creation"

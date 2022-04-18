@@ -4,6 +4,9 @@ import Login from "../pages/Login.vue";
 import Navigation from "../pages/Navigation.vue";
 import POS from "../pages/POS.vue";
 import ItemMenu from "../pages/Nested/ItemMenu.vue";
+import Dashboard from "../pages/Dashboard.vue";
+import DashboardSummary from "../pages/Nested/DashboardSummary.vue";
+import ListingManagement from "../pages/Nested/ListingManagement.vue";
 import AccountCreation from "../pages/AccountCreation.vue";
 
 const routes = [
@@ -35,6 +38,22 @@ const routes = [
         ],
     },
     {
+        path: "/dashboard",
+        name: "dashboard",
+        component: Dashboard,
+        children: [
+            {
+                path: "/summary",
+                name: "dashboard-summary",
+                component: DashboardSummary,
+            },
+            {
+                path: "/listing-management",
+                name: "listing-management",
+                component: ListingManagement,
+            },
+        ],
+    },
         path: "/create-account",
         name: "account-creation",
         component: AccountCreation,

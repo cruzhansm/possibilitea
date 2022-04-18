@@ -658,6 +658,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 194px;
 }
 
+.h-\[165px\] {
+  height: 165px;
+}
+
 .max-h-\[520px\] {
   max-height: 520px;
 }
@@ -734,6 +738,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-\[376px\] {
   width: 376px;
+}
+
+.w-\[324px\] {
+  width: 324px;
 }
 
 .max-w-\[458px\] {
@@ -897,6 +905,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(222 52 69 / var(--tw-border-opacity));
 }
 
+.border-\[\#f5f5f5\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(245 245 245 / var(--tw-border-opacity));
+}
+
 .bg-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(46 119 1 / var(--tw-bg-opacity));
@@ -935,6 +948,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#f5f5f5\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 245 245 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-50 {
@@ -1083,6 +1101,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 2.5rem;
 }
 
+.pt-\[30px\] {
+  padding-top: 30px;
+}
+
+.pt-\[50px\] {
+  padding-top: 50px;
+}
+
+.pb-\[40px\] {
+  padding-bottom: 40px;
+}
+
+.pl-\[76px\] {
+  padding-left: 76px;
+}
+
+.pt-\[36px\] {
+  padding-top: 36px;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1137,6 +1175,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .text-\[32px\] {
   font-size: 32px;
+}
+
+.text-\[10px\] {
+  font-size: 10px;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 
 .font-bold {

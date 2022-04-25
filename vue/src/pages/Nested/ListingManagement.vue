@@ -1,10 +1,18 @@
 <template>
-  <div>test3</div>
+  <div>
+
+    <FoodCategory/>
+    <br>
+    <DrinkCategory/>
+  </div>
 </template>
 
 <script>
+import FoodCategory from "../../components/Dashboard/Listing/FoodCategory.vue";
+import DrinkCategory from "../../components/Dashboard/Listing/DrinkCategory.vue";
 export default {
   name: "ListingManagement",
+  components: {FoodCategory,DrinkCategory}
 };
 </script>
 

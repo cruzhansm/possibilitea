@@ -1162,6 +1162,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 20px;
 }
 
+.pl-\[25px\] {
+  padding-left: 25px;
+}
+
 .text-center {
   text-align: center;
 }

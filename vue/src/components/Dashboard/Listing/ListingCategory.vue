@@ -14,8 +14,7 @@
         border-[5px]
         border-secondary
         cursor-pointer 
-        hover:border-primary 
-        
+        hover:border-primary
       "
       >
       <span class="text-[24px] font-bold text-center">{{ product.toUpperCase() }}</span>

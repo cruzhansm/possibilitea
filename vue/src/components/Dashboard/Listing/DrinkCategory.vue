@@ -6,8 +6,8 @@
       :key="index"
       v-for="(dr, index) in drinks"
       :to="{
-        name: 'menu',
-        params: {category: `${dr.drinks}`.toLowerCase() },
+        name: 'list',
+        params: {category: `${dr.name}`.toLowerCase(), width: `212.91`,height: `148` },
       }"
        @click="
           drinks.map((f) => {

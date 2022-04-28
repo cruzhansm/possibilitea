@@ -18,7 +18,7 @@
         
       "
       >
-      <span class="text-[24px] font-bold text-center">{{ product }}</span>
+      <span class="text-[24px] font-bold text-center">{{ product.toUpperCase() }}</span>
     </div>
   </div>
 </template>

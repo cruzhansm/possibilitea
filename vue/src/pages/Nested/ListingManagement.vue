@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <FoodCategory/>
     <br>
     <DrinkCategory/>

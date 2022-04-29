@@ -1,4 +1,13 @@
 <template>
+  <div>
+
+  <router-link 
+  :to="{
+    name: 'info',
+    params: {category: category, subcategory: subcategory, name:item.name, price:item.price}
+  }"
+  >
+  
   <div
     class="
       flex
@@ -16,12 +25,17 @@
   >
     <span class="text-[16px] uppercase font-bold">{{ item.name }}</span>
   </div>
+  </router-link>
+
+  </div>
 </template>
 
 <script>
 export default {
   name: "Item",
   props: {
+    category:String,
+    subcategory:String,
     item: Object,
     height: Number,
     width: Number

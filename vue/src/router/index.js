@@ -60,7 +60,8 @@ const routes = [
                 component: ItemList,
             },
             {
-                path: "/listing-management/:category/:id",
+                path: "/listing-management/:subcategory/:name",
+                props: true,
                 name: "info",
                 component: ItemInfo,
             }

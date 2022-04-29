@@ -1206,6 +1206,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 1.25rem;
 }
 
+.text-\[40px\] {
+  font-size: 40px;
+}
+
 .text-\[24px\] {
   font-size: 24px;
 }
@@ -1263,6 +1267,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-inputText {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.text-lightgray {
+  --tw-text-opacity: 1;
+  color: rgb(105 105 105 / var(--tw-text-opacity));
+}
+
+.text-secondaryHovered {
+  --tw-text-opacity: 1;
+  color: rgb(224 224 224 / var(--tw-text-opacity));
 }
 
 .text-black {

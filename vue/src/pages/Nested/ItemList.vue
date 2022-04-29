@@ -28,6 +28,7 @@
       :key="name"
       v-for="(row, name) in category"
       :items="row"
+      :category="cat"
       :subcategory="name"
       :width="width"
       :height="height"
@@ -44,6 +45,7 @@ export default {
   name: "ItemList",
   data(){
     return{
+      cat:"",
       width: 130,
       height: 138
     }
@@ -61,6 +63,8 @@ export default {
       this.width = this.$route.params.width;
       this.height = this.$route.params.height;
     };
+    this.cat = this.$route.params.category;
+
   },
   computed: {
     category() {

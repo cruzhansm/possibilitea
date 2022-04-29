@@ -5,6 +5,7 @@ import Navigation from "../pages/Navigation.vue";
 import POS from "../pages/POS.vue";
 import ItemMenu from "../pages/Nested/ItemMenu.vue";
 import ItemList from "../pages/Nested/ItemList.vue";
+import ItemInfo from "../pages/Nested/ItemInfo.vue";
 import Dashboard from "../pages/Dashboard.vue";
 import DashboardSummary from "../pages/Nested/DashboardSummary.vue";
 import ListingManagement from "../pages/Nested/ListingManagement.vue";
@@ -57,6 +58,11 @@ const routes = [
                 path: "/listing-management/:category",
                 name: "list",
                 component: ItemList,
+            },
+            {
+                path: "/listing-management/:category/:id",
+                name: "info",
+                component: ItemInfo,
             }
         ],
     },

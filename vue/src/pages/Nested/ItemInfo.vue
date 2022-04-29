@@ -1,12 +1,10 @@
 <template>
   <div>
-    
+
   </div>
 </template>
-  
-<script>
 
-  import ItemMenu from  vue\src\pages\Nested\ItemMenu.vue
+<script>
   export default {
     
   }

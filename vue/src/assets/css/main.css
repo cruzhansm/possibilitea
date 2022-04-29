@@ -638,10 +638,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 500px;
 }
 
-.h-\[138px\] {
-  height: 138px;
-}
-
 .h-\[194px\] {
   height: 194px;
 }
@@ -742,10 +738,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 25%;
 }
 
-.w-\[130px\] {
-  width: 130px;
-}
-
 .w-\[376px\] {
   width: 376px;
 }
@@ -803,10 +795,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .justify-around {
   justify-content: space-around;
-}
-
-.justify-evenly {
-  justify-content: space-evenly;
 }
 
 .gap-\[50px\] {
@@ -1150,6 +1138,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 20px;
 }
 
+.pl-\[25px\] {
+  padding-left: 25px;
+}
+
 .pl-\[30px\] {
   padding-left: 30px;
 }
@@ -1160,10 +1152,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pr-\[20px\] {
   padding-right: 20px;
-}
-
-.pl-\[25px\] {
-  padding-left: 25px;
 }
 
 .text-center {
@@ -1241,10 +1229,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .uppercase {
   text-transform: uppercase;
-}
-
-.capitalize {
-  text-transform: capitalize;
 }
 
 .leading-tight {

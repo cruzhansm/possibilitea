@@ -642,6 +642,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 194px;
 }
 
+.h-\[148px\] {
+  height: 148px;
+}
+
+.h-\[130px\] {
+  height: 130px;
+}
+
+.h-\[\] {
+  height: ;
+}
+
+.h-\[78\] {
+  height: 78;
+}
+
+.h-\[78px\] {
+  height: 78px;
+}
+
 .max-h-\[520px\] {
   max-height: 520px;
 }
@@ -740,6 +760,22 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-\[376px\] {
   width: 376px;
+}
+
+.w-\[212px\] {
+  width: 212px;
+}
+
+.w-\[138\.3px\] {
+  width: 138.3px;
+}
+
+.w-\[2\] {
+  width: 2;
+}
+
+.w-\[270px\] {
+  width: 270px;
 }
 
 .max-w-\[458px\] {
@@ -859,6 +895,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .rounded-full {
   border-radius: 9999px;
+}
+
+.rounded-\[100px\] {
+  border-radius: 100px;
 }
 
 .rounded-t-\[9px\] {

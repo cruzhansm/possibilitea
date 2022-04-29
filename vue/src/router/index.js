@@ -77,6 +77,8 @@ const routes = [
 const router = createRouter({
     history: createWebHistory(),
     routes: routes,
+    linkActiveClass: "bg-primary rounded-[9px]"
+    
 });
 
 export default router;

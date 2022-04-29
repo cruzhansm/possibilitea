@@ -24,14 +24,12 @@
   </div>
 
   <div class="flex flex-col gap-5 pl-[30px] pr-5 pt-5">
-    <ItemRow
+    <ListRow
       :key="name"
       v-for="(row, name) in category"
       :items="row"
       :category="cat"
       :subcategory="name"
-      :width="width"
-      :height="height"
     />
   </div>
 
@@ -39,19 +37,17 @@
 </template>
 
 <script>
-import ItemRow from "../../components/POS/Selection/ItemRow.vue";
+import ListRow from "../../components/Dashboard/Listing/ListRow.vue";
 
 export default {
   name: "ItemList",
   data(){
     return{
       cat:"",
-      width: 130,
-      height: 138
     }
   },
   components: {
-    ItemRow,
+    ListRow,
   },
  methods: {
     redirectBack() {
@@ -59,12 +55,7 @@ export default {
     },
   },
   mounted () {
-    if(this.$route.params.width && this.$route.params.height != null){
-      this.width = this.$route.params.width;
-      this.height = this.$route.params.height;
-    };
     this.cat = this.$route.params.category;
-
   },
   computed: {
     category() {

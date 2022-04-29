@@ -25,12 +25,6 @@ export default {
   components: {
     ItemRow,
   },
-  mounted () {
-    if(this.$route.params.width && this.$route.params.height != null){
-      this.width = this.$route.params.width;
-      this.height = this.$route.params.height;
-    };
-  },
   computed: {
     category() {
       /* get all items that are in this category */

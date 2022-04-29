@@ -7,7 +7,7 @@
       v-for="(dr, index) in drinks"
       :to="{
         name: 'list',
-        params: {category: `${dr.name}`.toLowerCase(), width: `212.91`,height: `148`},
+        params: {category: `${dr.name}`.toLowerCase()},
       }"
        @click="
           drinks.map((f) => {

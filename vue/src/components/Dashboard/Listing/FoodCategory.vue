@@ -7,7 +7,7 @@
       v-for="(fd, index) in food"
       :to="{
         name: 'list',
-        params: {category: `${fd.name}`.toLowerCase(), width: `212.91`,height: `148` },
+        params: {category: `${fd.name}`.toLowerCase()},
       }"
        @click="
           food.map((f) => {

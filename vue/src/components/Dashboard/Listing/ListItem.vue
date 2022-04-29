@@ -1,5 +1,12 @@
 <template>
   <div>
+
+  <router-link 
+  :to="{
+    name: 'info',
+    params: {category: category, subcategory: subcategory, name:item.name, price:item.price}
+  }"
+  >
   
   <div
     class="
@@ -9,20 +16,21 @@
       items-end
       bg-secondary
       rounded-[9px]
-      w-[138.3px]
-      h-[130px]
+      w-[212px]
+      h-[148px]
       hover:outline hover:outline-4 hover:outline-primary hover:cursor-pointer
     "
   >
     <span class="text-[16px] uppercase font-bold">{{ item.name }}</span>
   </div>
+  </router-link>
 
   </div>
 </template>
 
 <script>
 export default {
-  name: "Item",
+  name: "ListItem",
   props: {
     category:String,
     subcategory:String,

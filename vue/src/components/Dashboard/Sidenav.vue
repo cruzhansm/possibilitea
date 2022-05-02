@@ -1,5 +1,5 @@
 <template>
-  <div class="h-ful w-fit pt-[36px] pb-[30px] pr-8">
+  <div class="h-full w-fit pt-[36px] pb-[30px] pr-8 border-r-[14px] border-[#F5F5F5]">
     <div class="flex flex-col gap-4">
       <router-link 
         class="flex

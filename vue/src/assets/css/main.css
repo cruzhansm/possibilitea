@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.0.23 | MIT License | https://tailwindcss.com
+! tailwindcss v3.0.24 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -578,6 +578,30 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.25rem;
 }
 
+.ml-\[40px\] {
+  margin-left: 40px;
+}
+
+.ml-\[100px\] {
+  margin-left: 100px;
+}
+
+.ml-\[150px\] {
+  margin-left: 150px;
+}
+
+.mr-4 {
+  margin-right: 1rem;
+}
+
+.mr-8 {
+  margin-right: 2rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .flex {
   display: flex;
 }
@@ -610,6 +634,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 2.75rem;
 }
 
+.h-\[78px\] {
+  height: 78px;
+}
+
 .h-\[47px\] {
   height: 47px;
 }
@@ -630,6 +658,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 290px;
 }
 
+.h-\[148px\] {
+  height: 148px;
+}
+
 .h-\[165px\] {
   height: 165px;
 }
@@ -638,28 +670,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 500px;
 }
 
-.h-\[194px\] {
-  height: 194px;
-}
-
-.h-\[148px\] {
-  height: 148px;
-}
-
 .h-\[130px\] {
   height: 130px;
+}
+
+.h-\[194px\] {
+  height: 194px;
 }
 
 .h-\[\] {
   height: ;
 }
 
-.h-\[78\] {
-  height: 78;
+.h-\[381\] {
+  height: 381;
 }
 
-.h-\[78px\] {
-  height: 78px;
+.h-\[381px\] {
+  height: 381px;
 }
 
 .max-h-\[520px\] {
@@ -704,6 +732,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 2.75rem;
 }
 
+.w-\[270px\] {
+  width: 270px;
+}
+
 .w-max {
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -746,6 +778,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 282.75px;
 }
 
+.w-\[212px\] {
+  width: 212px;
+}
+
 .w-\[324px\] {
   width: 324px;
 }
@@ -758,24 +794,28 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 25%;
 }
 
-.w-\[376px\] {
-  width: 376px;
-}
-
-.w-\[212px\] {
-  width: 212px;
-}
-
 .w-\[138\.3px\] {
   width: 138.3px;
 }
 
-.w-\[2\] {
-  width: 2;
+.w-\[376px\] {
+  width: 376px;
 }
 
-.w-\[270px\] {
-  width: 270px;
+.w-\[411\] {
+  width: 411;
+}
+
+.w-\[411px\] {
+  width: 411px;
+}
+
+.w-\[\] {
+  width: ;
+}
+
+.w-\[140px\] {
+  width: 140px;
 }
 
 .max-w-\[458px\] {
@@ -897,8 +937,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 9999px;
 }
 
-.rounded-\[100px\] {
-  border-radius: 100px;
+.rounded-\[\] {
+  border-radius: ;
 }
 
 .rounded-t-\[9px\] {
@@ -947,6 +987,30 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-top-width: 1px;
 }
 
+.border-r-8 {
+  border-right-width: 8px;
+}
+
+.border-r-\[12px\] {
+  border-right-width: 12px;
+}
+
+.border-r-\[14px\] {
+  border-right-width: 14px;
+}
+
+.border-r-\[20px\] {
+  border-right-width: 20px;
+}
+
+.border-r-\[16px\] {
+  border-right-width: 16px;
+}
+
+.border-r-\[1px\] {
+  border-right-width: 1px;
+}
+
 .border-none {
   border-style: none;
 }
@@ -974,6 +1038,31 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-secondary {
   --tw-border-opacity: 1;
   border-color: rgb(196 196 196 / var(--tw-border-opacity));
+}
+
+.border-amber-50 {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 251 235 / var(--tw-border-opacity));
+}
+
+.border-\[\#F5F5F5\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(245 245 245 / var(--tw-border-opacity));
+}
+
+.border-t-\[\#f5f5f5\] {
+  --tw-border-opacity: 1;
+  border-top-color: rgb(245 245 245 / var(--tw-border-opacity));
+}
+
+.border-r-\[\#f5f5f5\] {
+  --tw-border-opacity: 1;
+  border-right-color: rgb(245 245 245 / var(--tw-border-opacity));
+}
+
+.border-r-\[\#803a3a\] {
+  --tw-border-opacity: 1;
+  border-right-color: rgb(128 58 58 / var(--tw-border-opacity));
 }
 
 .bg-\[\#f5f5f5\] {
@@ -1014,6 +1103,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-\[\#6B6B6B\] {
   --tw-bg-opacity: 1;
   background-color: rgb(107 107 107 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#af4c4c\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(175 76 76 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#ffffff\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-50 {
@@ -1194,6 +1293,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 20px;
 }
 
+.pl-\[\] {
+  padding-left: ;
+}
+
+.pl-\[40px\] {
+  padding-left: 40px;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1275,6 +1382,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-transform: uppercase;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 .leading-tight {
   line-height: 1.25;
 }
@@ -1312,11 +1423,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-lightgray {
   --tw-text-opacity: 1;
   color: rgb(105 105 105 / var(--tw-text-opacity));
-}
-
-.text-secondaryHovered {
-  --tw-text-opacity: 1;
-  color: rgb(224 224 224 / var(--tw-text-opacity));
 }
 
 .text-black {

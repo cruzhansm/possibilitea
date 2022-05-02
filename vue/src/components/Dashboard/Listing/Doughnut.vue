@@ -2,7 +2,7 @@
   <div class="relative">
       <canvas id="myChart2" width="242" height="260"></canvas>
       <div class="absolute-center text-center">
-          <p class="pt-2 font-bold text-primary">58 Total Orders</p>
+          <p class="pt-2 font-bold text-primary">{{ totalOrders }} Total Orders</p>
       </div>
   </div>
 
@@ -14,11 +14,21 @@
 
   export default {
     name: "Doughnut",
+    data() {
+      return {
+        totalOrders: null,
+        random: null,
+        diff: null
+      }
+    },
     mounted () {
 
-      //setup block
-        // change the datapoints array with available data from
-        const datapoints = [35, 65];
+        this.random = Math.floor(Math.random()*(100 - 10+1)+10);
+        this.totalOrders = Math.floor(Math.random()*(200 - this.random+1)+this.random);
+        this.diff = 100 - this.random;
+
+        //setup block
+        const datapoints = [this.random, this.diff];
         const data = {
         datasets: [{
         data: datapoints,

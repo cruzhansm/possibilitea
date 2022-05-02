@@ -47,7 +47,7 @@
         </div>
 
         <div>
-          <Doughnut class="pr-[20px]"></Doughnut>
+          <Doughnut></Doughnut>
         </div>
 
     </div>

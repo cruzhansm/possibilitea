@@ -1,6 +1,6 @@
 <template>
   <div class="w-[1380px] flex flex-col gap-2">
-    <div class="flex justify-between items-center">
+    <div class="flex justify-between items-center ">
       <span class="text-2xl text-primary font-bold">Transaction History</span>
       <div class="flex items-center gap-5">
         <CustomDropdown

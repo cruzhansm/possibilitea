@@ -5,6 +5,8 @@
       v-for="(row, name) in category"
       :items="row"
       :subcategory="name"
+      :width="width"
+      :height="height"
     />
   </div>
 </template>
@@ -14,6 +16,12 @@ import ItemRow from "../../components/POS/Selection/ItemRow.vue";
 
 export default {
   name: "ItemMenu",
+  data(){
+    return{
+      width: 130,
+      height: 138
+    }
+  },
   components: {
     ItemRow,
   },

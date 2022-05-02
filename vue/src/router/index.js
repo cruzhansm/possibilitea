@@ -4,6 +4,8 @@ import Login from "../pages/Login.vue";
 import Navigation from "../pages/Navigation.vue";
 import POS from "../pages/POS.vue";
 import ItemMenu from "../pages/Nested/ItemMenu.vue";
+import ItemList from "../pages/Nested/ItemList.vue";
+import ItemInfo from "../pages/Nested/ItemInfo.vue";
 import Dashboard from "../pages/Dashboard.vue";
 import DashboardSummary from "../pages/Nested/DashboardSummary.vue";
 import ListingManagement from "../pages/Nested/ListingManagement.vue";
@@ -52,8 +54,20 @@ const routes = [
                 name: "listing-management",
                 component: ListingManagement,
             },
+            {
+                path: "/listing-management/:category",
+                name: "list",
+                component: ItemList,
+            },
+            {
+                path: "/listing-management/:subcategory/:name",
+                props: true,
+                name: "info",
+                component: ItemInfo,
+            }
         ],
     },
+    {
         path: "/create-account",
         name: "account-creation",
         component: AccountCreation,
@@ -63,6 +77,8 @@ const routes = [
 const router = createRouter({
     history: createWebHistory(),
     routes: routes,
+    linkActiveClass: "bg-primary rounded-[9px]"
+    
 });
 
 export default router;

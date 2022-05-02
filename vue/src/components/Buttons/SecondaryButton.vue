@@ -28,7 +28,7 @@
 
 <script>
 export default {
-  name: "PrimaryButton",
+  name: "SecondaryButton",
   props: {
     text: String,
     height: Number,

@@ -27,6 +27,7 @@
 
 
     <!-- Product Info -->
+  <div class="flex flex-col space-y-4">
     <div class="flex flex-row justify-even items-start ml-[150px] mt-8">
       <div src="" alt="" class="w-[411px] h-[381px] bg-secondary rounded-[9px] m-2 mr-8"></div>
 
@@ -39,26 +40,26 @@
     </div>
       
       <!-- Product Statistics -->
-    <div class="flex flex-row justify-around"> 
-       <!-- w-[242.47px] h-[260.08px] -->
-        <!-- insert line graph here -->
+    <div class="flex flex-row justify-around mt-8"> 
         
         <div>
-
+          <Linechart></Linechart>
         </div>
 
-        <!-- insert doughnut graph here -->
         <div>
-          <Doughnut></Doughnut>
+          <Doughnut class="pr-[20px]"></Doughnut>
         </div>
 
     </div>
+  </div>
+
 
   </div>
 
 </template>
 
 <script>
+  import Linechart from "../../components/Dashboard/Listing/Linechart.vue";
   import Doughnut from "../../components/Dashboard/Listing/Doughnut.vue";
   export default {
     name:"ItemInfo",
@@ -68,7 +69,7 @@
       }
     },
     components: {
-      Doughnut,
+      Doughnut, Linechart
     },
     props: {
       category: String, 

@@ -1,12 +1,10 @@
 <template>
   <div class="relative">
-      <canvas id="myChart" width="242" height="260"></canvas>
+      <canvas id="myChart2" width="242" height="260"></canvas>
       <div class="absolute-center text-center">
-          <p class="pt-2 font-bold">58 Total Orders</p>
+          <p class="pt-2 font-bold text-primary">58 Total Orders</p>
       </div>
   </div>
-
-
 
 
 </template>
@@ -19,6 +17,7 @@
     mounted () {
 
       //setup block
+        // change the datapoints array with available data from
         const datapoints = [35, 65];
         const data = {
         datasets: [{
@@ -74,8 +73,8 @@
 
 
          // render init block
-        const myChart = new Chart (
-        document.getElementById('myChart'),
+        const myChart2 = new Chart (
+        document.getElementById('myChart2'),
         config
         );
     },

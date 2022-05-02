@@ -36,18 +36,25 @@
         <p class="text-lightgray">Category: {{ category }}</p>
         <p class="text-lightgray">Subcategory: {{ subcategory }}</p>
         <p class="text-primary text-[24px] font-semibold pt-2">P{{ price }}.00</p>
+
+        <!-- display edit/delete button if user is admin otherwise hidden -->
+        <div v-if="user === 'admin'" class="flex flex-row space-x-4 mt-6 ">
+            <button class="w-[172px] h-[47px] text-[24px] bg-primary text-buttonText rounded-[9px] hover:bg-primaryHovered transition ease-in-out delay-[65]">EDIT</button>
+            <button class="w-[172px] h-[47px] text-[24px] bg-primary text-buttonText rounded-[9px] hover:bg-primaryHovered transition ease-in-out delay-[65]">DELETE</button>
+        </div>
+
       </div>
     </div>
       
       <!-- Product Statistics -->
-    <div class="flex flex-row justify-around mt-8"> 
+    <div class="flex flex-row"> 
         
-        <div>
+        <div class="mt-16 ml-[140px] mr-[60px]">
           <Linechart></Linechart>
         </div>
 
         <div>
-          <Doughnut></Doughnut>
+          <Doughnut class="mt-[100px] mr-[250px]"></Doughnut>
         </div>
 
     </div>
@@ -65,7 +72,7 @@
     name:"ItemInfo",
     data() {
       return {
-        user: 'staff'
+        user: 'admin'
       }
     },
     components: {

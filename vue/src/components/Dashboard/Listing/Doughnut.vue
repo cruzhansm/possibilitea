@@ -2,7 +2,7 @@
   <div class="relative">
       <canvas id="myChart2" width="242" height="260"></canvas>
       <div class="absolute-center text-center">
-          <p class="pt-2 font-bold text-primary">{{ totalOrders }} Total Orders</p>
+          <p class="pt-4 font-bold text-black">{{ totalOrders }} Total Orders</p>
       </div>
   </div>
 

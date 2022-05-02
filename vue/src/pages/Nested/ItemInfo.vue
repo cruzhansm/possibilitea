@@ -1,5 +1,6 @@
 <template>
   <div>
+    
     <div 
     class="
       group
@@ -12,17 +13,19 @@
     "
     @click="redirectBack"
   >
-    <font-awesome-icon
-      icon="angle-left"
-      size="2x"
-      class="group-hover:text-primaryHovered text-primary pl-[25px] "
-    />
-    <span
-      class="group-hover:text-primaryHovered text-2xl text-primary font-bold"
-      >BACK</span
-    >
+      <font-awesome-icon
+        icon="angle-left"
+        size="2x"
+        class="group-hover:text-primaryHovered text-primary pl-[25px] "
+      />
+      <span
+        class="group-hover:text-primaryHovered text-2xl text-primary font-bold"
+        >BACK</span
+      >
     
   </div>
+
+
     <!-- Product Info -->
     <div class="flex flex-row justify-even items-start ml-[150px] mt-8">
       <div src="" alt="" class="w-[411px] h-[381px] bg-secondary rounded-[9px] m-2 mr-8"></div>
@@ -36,14 +39,18 @@
     </div>
       
       <!-- Product Statistics -->
-    <div class="">
+    <div class="flex flex-row justify-around"> 
+       <!-- w-[242.47px] h-[260.08px] -->
         <!-- insert line graph here -->
-
         
+        <div>
+
+        </div>
 
         <!-- insert doughnut graph here -->
-
-
+        <div>
+          <Doughnut></Doughnut>
+        </div>
 
     </div>
 
@@ -52,6 +59,7 @@
 </template>
 
 <script>
+  import Doughnut from "../../components/Dashboard/Listing/Doughnut.vue";
   export default {
     name:"ItemInfo",
     data() {
@@ -59,11 +67,14 @@
         user: 'staff'
       }
     },
+    components: {
+      Doughnut,
+    },
     props: {
       category: String, 
       subcategory: String,
       name: String,
-      price: Number
+      price: String
     },
     methods: {
     redirectBack() {

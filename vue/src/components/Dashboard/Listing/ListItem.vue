@@ -18,7 +18,12 @@
       rounded-[9px]
       w-[212px]
       h-[148px]
-      hover:outline hover:outline-4 hover:outline-primary hover:cursor-pointer
+      hover:outline 
+      hover:outline-4 
+      hover:outline-primary 
+      hover:cursor-pointer
+      transform hover:-translate-y-1
+      transition delay-75 ease-out hover:ease-in
     "
   >
     <span class="text-[16px] uppercase font-bold">{{ item.name }}</span>

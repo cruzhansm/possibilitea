@@ -8,6 +8,7 @@ module.exports = {
                 secondary: "#C4C4C4",
                 secondaryHovered: "#E0E0E0",
                 lightgray: "#696969",
+                verylightgray: "#F5F5F5",
                 divider: "#EAEAEA",
                 error: "#DE3445",
                 inputField: "#F4F4F4",

@@ -5,9 +5,11 @@
       class="flex h-full w-screen pl-8 bg-red border-t-[6px] border-[#f5f5f5]"
     >
       <Sidenav />
-      <div class="w-full h-full bg-[#f5f5f5] pt-[50px] pb-[40px] pl-[76px]">
+
+      <div class="w-full h-full bg-[#ffffff] pt-[50px] pb-[40px] pl-[76px]">
         <router-view></router-view>
       </div>
+      
     </div>
   </div>
 </template>

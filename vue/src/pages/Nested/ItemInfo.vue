@@ -5,6 +5,7 @@
     class="
       group
       flex
+      w-[20px]
       gap-6
       px-2
       py-1
@@ -12,7 +13,7 @@
       hover:cursor-pointer hover:text-primaryHovered
     "
     @click="redirectBack"
-  >
+    >
       <font-awesome-icon
         icon="angle-left"
         size="2x"

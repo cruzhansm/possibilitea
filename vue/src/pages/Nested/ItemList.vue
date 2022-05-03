@@ -22,21 +22,7 @@
 
 
       <div  v-if="user === 'admin'" class="flex flex-row justify-end pr-[40px]">
-            <button 
-            class="
-                w-[212px] 
-                h-[47px] 
-                text-[24px] 
-                bg-primary 
-                text-buttonText 
-                rounded-[9px] 
-                hover:bg-primaryHovered 
-                transition 
-                ease-in-out 
-                delay-[65]
-            ">
-              + ADD LISTING
-            </button>
+           <AddListButton></AddListButton>
       </div>
 
   </div>
@@ -55,6 +41,8 @@
 </template>
 
 <script>
+
+import AddListButton from "../../components/Buttons/AddListingButton.vue" 
 import ListRow from "../../components/Dashboard/Listing/ListRow.vue";
 
 export default {
@@ -66,7 +54,7 @@ export default {
     }
   },
   components: {
-    ListRow,
+    ListRow, AddListButton
   },
  methods: {
     redirectBack() {

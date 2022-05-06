@@ -1,19 +1,31 @@
 <template>
+  <div>
+  <label class="text-primary text-textInput font-semibold">
+    {{ title }}
+  </label>
   <div class="relative">
     <div
       class="
+        h-[47px]
+        w-[374px]
         flex
         gap-4
         items-center
         text-[#696969] text-[20px]
         hover:cursor-pointer
+        bg-inputField
+        rounded-[9px]
+        pr-[19px]
+        pl-[19px]
+        flex
+        justify-between
       "
       @click="dropdown"
     >
       <span>{{ selected }}</span>
       <font-awesome-icon
         icon="angle-down"
-        class="transition-transform"
+        class="transition-transform text-primary"
         :class="{ flip: isSelecting }"
       ></font-awesome-icon>
     </div>
@@ -29,6 +41,7 @@
       />
     </div>
   </div>
+  </div>
 </template>
 
 <script>
@@ -36,6 +49,7 @@ import DropdownItem from "./CustomDropdown/DropdownItem.vue";
 export default {
   name: "CustomDropdown",
   props: {
+    title: String,
     default: String,
     options: Array,
   },

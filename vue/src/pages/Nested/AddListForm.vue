@@ -61,6 +61,32 @@
             :errorText="'Empty field'"
           ></TextInput>
 
+          <CustomDropdown
+            title="Category"
+            :default="'SELECT CATEGORY'" 
+            :options="options"
+          ></CustomDropdown>
+
+          <CustomDropdown
+            title="Subcategory"
+            :default="'SELECT SUBCATEGORY'" 
+            :options="options"
+          ></CustomDropdown>
+
+          <TextInput
+            title="SubCategory"
+            :focus="true"
+            errorAlign="left"
+            :errorText="'Empty field'"
+          ></TextInput>
+
+          <TextInput
+            title="Price"
+            :focus="true"
+            errorAlign="left"
+            :errorText="'Empty field'"
+          ></TextInput>
+
           <label for="category"></label>
         </form>
 
@@ -77,21 +103,40 @@
 
 <script>
   import TextInput from "../../components/Input/TextInput.vue";
+  import CustomDropdown from "../../components/Input/CustomDropdown.vue";
+
   export default {
     name:"ItemInfo",
     data() {
       return {
-        user: 'admin'
+        user: 'admin',
+        options: null
       }
     },
     components: {
-      TextInput
+      TextInput,
+      CustomDropdown
     },
     props: {
       category: String, 
       subcategory: String,
       name: String,
       price: String
+    },
+    mounted () {
+      let foodCategory = this.$store.state.categories.filter(
+        (f) => f.category == "Food"
+      );
+
+      let drinkCategory = this.$store.state.categories.filter(
+        (f) => f.category == "Drinks"
+      );
+
+      let category = foodCategory.concat(drinkCategory);
+
+      this.options = category.map( function getCat(item){
+        return item.name;
+      });
     },
     methods: {
     redirectBack() {

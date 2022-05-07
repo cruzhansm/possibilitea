@@ -8,28 +8,30 @@
       class="
         h-[47px]
         w-[374px]
-        flex
         gap-4
         items-center
         text-[#696969] text-[20px]
         hover:cursor-pointer
-        bg-inputField
         rounded-[9px]
         pr-[19px]
         pl-[19px]
         flex
         justify-between
       "
+
+      :class="['bg-' + background]"
+      :style="{ width: width + 'px'}"
+      :disabled="disable"
       @click="dropdown"
     >
       <span>{{ selected }}</span>
       <font-awesome-icon
         icon="angle-down"
-        class="transition-transform text-primary"
+        class="transition-transform"
         :class="{ flip: isSelecting }"
       ></font-awesome-icon>
     </div>
-    <div class="absolute right-0 w-max h-fit z-50" v-show="isSelecting">
+    <div class="absolute left-0 w-max h-fit z-50" v-show="isSelecting">
       <DropdownItem
         :key="option"
         v-for="option in options"
@@ -52,12 +54,24 @@ export default {
     title: String,
     default: String,
     options: Array,
+    background: String,
+    width: Number,
+    disabled: Boolean,
   },
   data() {
     return {
       selected: String,
       isSelecting: false,
     };
+  },
+  computed: {
+    disable() {
+      if (this.disabled == true) {
+        this.num = "";
+      }
+
+      return this.disabled;
+    },
   },
   methods: {
     dropdown() {

@@ -63,7 +63,7 @@
             :options="subcategories"
             background="inputField"
             width=374
-            :disabled="false"
+            :disabled="true"
           ></CustomDropdown>
 
           

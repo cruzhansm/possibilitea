@@ -703,6 +703,7 @@ class ItemSeeder extends Seeder
                 'img_path' => NULL
             )
         );
+
         
         DB::table('items')->insert($data);
     }

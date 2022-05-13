@@ -11,6 +11,7 @@ import Dashboard from "../pages/Dashboard.vue";
 import DashboardSummary from "../pages/Nested/DashboardSummary.vue";
 import ListingManagement from "../pages/Nested/ListingManagement.vue";
 import AccountCreation from "../pages/AccountCreation.vue";
+import store from "../store";
 
 const routes = [
     {
@@ -87,5 +88,6 @@ const router = createRouter({
     linkActiveClass: "bg-primary rounded-[9px]"
     
 });
+
 
 export default router;

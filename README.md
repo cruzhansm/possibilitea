@@ -47,10 +47,39 @@ npm run tailwatch
 
 ### BACKEND
 
+First, make sure u have the database running in the server by setting up the database in phpmyadmin:
+1. Turn on Apache and MySQL in XAMPP
+2. go to http://localhost/phpmyadmin
+3. create new database and name it 'possibilitea'
+
+Second, inside the VScode terminal:
+
+ 1. rename .env.example to .env
+
+```
+composer install
+
+php artisan key:generate 
+
+```
+
+```
+php artisan migrate
+
+php artisan config:clear
+```
+
+If you want to refresh the migration/seeder:
+
+```
+php artisan migrate:refresh --seed
+
+```
+
+To run the laravel localhost server:
+
 ```
 php artisan serve
-
-php artisan migrate
 
 ```
 

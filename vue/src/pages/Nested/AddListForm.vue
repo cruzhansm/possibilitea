@@ -28,11 +28,11 @@
 
 
   <!-- Product Info -->
-  <div class="flex flex-col space-y-4">
+  <div class="flex flex-col space-y-6">
     <div class="flex flex-row justify-even items-start ml-[150px] mt-8">
 
       <div class="flex flex-col space-y-2 ">
-          <div src="" alt="" class="w-[411px] h-[381px] bg-secondary rounded-[9px] m-2 mr-8"></div>
+          <div src="" alt="" class="w-[411px] h-[381px] bg-secondary rounded-[9px] m-2 mr-12"></div>
           <button class="bg-primary w-[174px] h-[47px] text-buttonText text-textButtons rounded-[9px] ml-2 hover:bg-primaryHovered">UPLOAD</button>
       </div>
 
@@ -40,20 +40,7 @@
       
       <div>
         <!-- Input Product Detail -->
-        <form action="">
-          <!-- <label for="itemName" class="text-primary text-[20px] font-semibold">Item Name</label>
-          <input  id="itemName" 
-                  type="text" 
-                  class="  
-                  pl-5
-                  py-[14px]
-                  h-[47px]
-                  w-[374px]
-                  bg-inputField
-                  rounded-[9px]
-                  text-inputText
-                  outline-none
-                  pr-12"> -->
+        <form action="" class="flex flex-col space-y-4">
           <TextInput
             title="Item Name"
             :focus="true"
@@ -61,7 +48,61 @@
             :errorText="'Empty field'"
           ></TextInput>
 
-          <label for="category"></label>
+          <CustomDropdown
+            title="Category"
+            :default="'Select Category'" 
+            :options="categories"
+            background="inputField"
+            width=374
+            :disabled="false"
+          ></CustomDropdown>
+
+          <CustomDropdown
+            title="Subcategory"
+            :default="'Select Subcategory'" 
+            :options="subcategories"
+            background="inputField"
+            width=374
+            :disabled="true"
+          ></CustomDropdown>
+
+          
+          <NumberInput
+            title="Price"
+            color="'inputText'"
+            height=47
+            width=199
+            align="'left"
+            :disabled="false"
+          ></NumberInput>
+          <!-- <span class="text-inputText w-[40px] h-[47px] bg-inputField rounded-[9px] text-">P</span> -->
+
+          <div class="flex flex-row space-x-8 pt-2">
+
+          <SecondaryButton
+            text="CANCEL"
+            height=47
+            width=173.93
+            fontSize=24
+            color="text-buttonText"
+            hover="secondaryHovered"
+            :active="'true'"
+            class="font-normal"
+          ></SecondaryButton>
+
+          <PrimaryButton
+            text="SAVE"
+            height=47
+            width=173.93
+            fontSize=24
+            color="text-buttonText"
+            hover="primaryHovered"
+            class="font-normal"
+          ></PrimaryButton>
+          
+
+          </div>
+
         </form>
 
       </div>
@@ -77,21 +118,49 @@
 
 <script>
   import TextInput from "../../components/Input/TextInput.vue";
+  import CustomDropdown from "../../components/Input/CustomDropdown.vue";
+  import NumberInput from "../../components/Input/NumberInput.vue";
+  import PrimaryButton from "../../components/Buttons/PrimaryButton.vue";
+  import SecondaryButton from "../../components/Buttons/SecondaryButton.vue";
+
   export default {
     name:"ItemInfo",
     data() {
       return {
-        user: 'admin'
+        user: 'admin',
+        categories: null,
+        subcategories: null
       }
     },
     components: {
-      TextInput
+      TextInput,
+      CustomDropdown,
+      NumberInput,
+      PrimaryButton,
+      SecondaryButton
     },
     props: {
       category: String, 
       subcategory: String,
       name: String,
       price: String
+    },
+    mounted () {
+      let foodCategory = this.$store.state.categories.filter(
+        (f) => f.category == "Food"
+      );
+
+      let drinkCategory = this.$store.state.categories.filter(
+        (f) => f.category == "Drinks"
+      );
+
+      let category = foodCategory.concat(drinkCategory);
+
+      this.categories = category.map( function getCat(item){
+        return item.name;
+      });
+
+
     },
     methods: {
     redirectBack() {

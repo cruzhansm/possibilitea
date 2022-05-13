@@ -10,6 +10,7 @@
       pr-6
       py-2
       hover:cursor-pointer hover:bg-divider
+      shadow-lg
     "
     :class="[
       selected ? 'bg-divider' : 'bg-white',

@@ -3,11 +3,8 @@ import { createStore } from "vuex";
 const store = createStore({
     state: {
         user:{
-            data:{
-                name:"Marc Nathan",
-                role:"Admin"    
-            },
-            token: 123
+            data:{},
+            token: 123,
         },
         categories: [
             {
@@ -356,8 +353,31 @@ const store = createStore({
         ],
     },
     getters: {},
-    actions: {},
+    actions: {
+        register({commit}, user) {
+            return fetch("http://localhost:3000/api/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify(user),
+            })
+                .then((res) => res.json())
+                .then((res) => {
+                    commit("setUser", res);
+                    return res;
+                }
+            );
+        },
+    },
     mutations: {
+        setUser(state, userData) {
+            state.user.token = userData.token;
+            state.user.data = userData.data;
+            sessionStorage.setItem("TOKEN", userData.token);
+        },
+
         logout : (state) => {
             state.user.data = {};
             state.user.token = null;

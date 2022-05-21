@@ -26,7 +26,7 @@
         "
       >
         <span class="text-[32px] text-primary font-bold">Account Creation</span>
-        <form action="" @submit.prevent class="flex flex-col gap-7">
+        <form action="" @submit="register" id="registerUser" class="flex flex-col gap-7">
           <TextInput
             title="Username"
             errorAlign="left"
@@ -70,7 +70,7 @@
       </div>
     </div>
     <!-- Modal area -->
-    <Modal v-show="isConfirmingCreation" @close="toggleCreation">
+    <Modal v-show="toggle.isConfirmingCreation" @close="toggleCreation">
       <template v-slot:body>
         <div class="flex flex-col items-center w-full gap-2">
           <span
@@ -84,27 +84,28 @@
               <span class="text-sm text-[#696969] font-bold">Last Name</span>
             </div>
             <div class="flex flex-col gap-2">
-              <span class="text-sm font-bold text-right">{{ username }}</span>
-              <span class="text-sm font-bold text-right">{{ fname }}</span>
-              <span class="text-sm font-bold text-right">{{ lname }}</span>
+              <span class="text-sm font-bold text-right">{{ user.username }}</span>
+              <span class="text-sm font-bold text-right">{{ user.firstname }}</span>
+              <span class="text-sm font-bold text-right">{{ user.lastname }}</span>
             </div>
           </div>
         </div>
       </template>
       <template v-slot:button-area>
+
         <PrimaryButton
           text="Create Account"
           :height="47"
           :width="295"
-          @click="toggleConfirm"
+          @click="register"
         />
       </template>
     </Modal>
 
     <MessageModal
-      v-show="isConfirmed"
+      v-show="toggle.isConfirmed"
       message="Account Created"
-      @close="toggleConfirm"
+      @close="toggleCreation"
     />
   </div>
 </template>
@@ -116,20 +117,12 @@ import PasswordInput from "../components/Input/PasswordInput.vue";
 import PrimaryButton from "../components/Buttons/PrimaryButton.vue";
 import TextInput from "../components/Input/TextInput.vue";
 import Navbar from "../components/Navigation/Navbar.vue";
+import { computed, reactive, toRefs } from "vue";
+import { useStore } from "vuex";
+import { useRouter } from "vue-router";
 
 export default {
   name: "AccountCreation",
-  data() {
-    return {
-      username: String,
-      firstname: String,
-      lastname: String,
-      password: String,
-      cpassword: String,
-      isConfirmingCreation: false,
-      isConfirmed: false,
-    };
-  },
   components: {
     Navbar,
     TextInput,
@@ -138,34 +131,78 @@ export default {
     Modal,
     MessageModal,
   },
-  methods: {
-    updateUsername(newValue) {
-      this.username = newValue;
-    },
-    updateFname(newValue) {
-      this.fname = newValue;
-    },
-    updateLname(newValue) {
-      this.lname = newValue;
-    },
-    updatePassword(newValue) {
-      this.password = newValue;
-    },
-    updateCpassword(newValue) {
-      this.cpassword = newValue;
-    },
-    toggleCreation() {
-      this.isConfirmingCreation = !this.isConfirmingCreation;
-    },
-    toggleConfirm() {
-      this.isConfirmingCreation = !this.isConfirmingCreation;
+  setup(){
+    const store = useStore();
+    const router = useRouter();
+    const toggle = reactive({
+      isConfirmed: false,
+      isConfirmingCreation: false,
+    });
+    
+    const user = reactive({
+      username: String,
+      firstname: String,
+      lastname: String,
+      password: String,
+      cpassword: String,
+    });
+
+
+    function register(ev) {
+
+      toggle.isConfirmingCreation = !toggle.isConfirmingCreation;
       setTimeout(() => {
-        this.isConfirmed = !this.isConfirmed;
+        toggle.isConfirmed = !toggle.isConfirmed;
       }, 300);
       setTimeout(() => {
-        this.isConfirmed = !this.isConfirmed;
+        toggle.isConfirmed = !toggle.isConfirmed;
       }, 1600);
-    },
+
+      ev.preventDefault();
+      store.dispatch("register", user )
+           .then((res) => {
+             router.push({
+                name: "navigation",
+              })
+             })
+    }
+
+        const updateUsername = (val) => {
+          user.username = val;
+        };
+    
+        const updateFname = (val) => {
+          user.firstname = val;
+        };
+    
+        const updateLname = (val) => {
+          user.lastname = val;
+        };
+    
+        const updatePassword = (val) => {
+          user.password = val;
+        };
+    
+        const updateCpassword = (val) => {
+          user.cpassword = val;
+        };
+
+        const toggleCreation = () => {
+          toggle.isConfirmingCreation = !toggle.isConfirmingCreation;
+        };
+
+    return {
+      user,
+      updateUsername,
+      updateFname,
+      updateLname,
+      updatePassword,
+      updateCpassword,
+      register,
+      toggleCreation,
+      toggle,
+
+    }
   },
 };
 </script>

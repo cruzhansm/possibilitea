@@ -27,6 +27,7 @@ const routes = [
     {
         path: "/navigation",
         name: "navigation",
+        meta: { requiresAuth: true },
         component: Navigation,
     },
     {
@@ -86,8 +87,16 @@ const router = createRouter({
     history: createWebHistory(),
     routes: routes,
     linkActiveClass: "bg-primary rounded-[9px]"
-    
 });
 
+router.beforeEach((to, from, next) => {
+    if(to.meta.requiresAuth && !store.state.user.token) {
+        next({ name: "login" });
+    }else if(store.state.user.token && to.name === "login") {
+        next({ name: "navigation" });
+    }else {
+        next();
+    }   
+});
 
 export default router;

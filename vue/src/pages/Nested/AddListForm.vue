@@ -62,7 +62,7 @@
           <CustomDropdown
             @changeSelect="getSubcategory"
             title="Subcategory"
-            :default="'Select Subcategory'" 
+            :default="form.selectedSubcategory" 
             :options="subcategories"
             background="inputField"
             :width= 374
@@ -135,7 +135,7 @@
         form: {
           name: '',
           selectedCategory: '',
-          selectedSubcategory: '',
+          selectedSubcategory: 'Select Subcategory',
           price: '',
           image: '',
         },        
@@ -166,28 +166,22 @@
         (f) => f.category == "Drinks"
       );
 
-      this.categoryArr = foodCategory.concat(drinkCategory);
+      let categoryArr = foodCategory.concat(drinkCategory);
 
-      this.categories = this.categoryArr.map( function getCat(item){
+      this.categories = categoryArr.map( function getCat(item){
         return item.name;
       });
 
     },  
     methods: {
-    refreshSubcategory(){
-      this.form.selectedSubcategory = '';
-    },
     getCategory(value){
+      this.form.selectedSubcategory = 'Select Subcategory';
       this.form.selectedCategory = value;
-
-      let menu = this.categoryArr.filter(
-       (c) => c.name == this.form.selectedCategory);
-
-      let submenu = menu.map( function getSubcat(items){
-        return Object.keys(items.items);
-      });
-
-      this.subcategories = submenu[0];
+          this.$store.state.categories.map((item) => {
+              if (item.name == value) {
+                  this.subcategories = Object.getOwnPropertyNames(item.items);
+              }
+          });
     },
 
     getSubcategory(value){

@@ -29,9 +29,9 @@
           router-link
         />
       </router-link>
-      <router-link :to="{ name: 'login' }">
-        <SecondaryButton text="Log Out" :height="97" :width="680" />
-      </router-link>
+
+        <SecondaryButton @click="logout" text="Log Out" :height="97" :width="680" />
+        
     </div>
   </div>
 </template>
@@ -39,12 +39,29 @@
 <script>
 import PrimaryButton from "../components/Buttons/PrimaryButton.vue";
 import SecondaryButton from "../components/Buttons/SecondaryButton.vue";
+import { useStore } from "vuex";
+import { computed, reactive, toRefs } from "vue";
+import { useRouter } from "vue-router";
 
 export default {
   name: "Navigation",
   components: {
     PrimaryButton,
     SecondaryButton,
+  },
+  setup(){
+    const store = useStore();
+    const router = useRouter(); 
+
+    function logout () {
+      store.commit("logout");
+      router.push({ name: "login" });
+    }
+
+    return{
+      user: computed(() => store.state.user.data),
+      logout
+    }
   },
   computed: {
     userType() {

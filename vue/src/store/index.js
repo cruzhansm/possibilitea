@@ -2,6 +2,13 @@ import { createStore } from "vuex";
 
 const store = createStore({
     state: {
+        user:{
+            data:{
+                name:"Marc Nathan",
+                role:"Admin"    
+            },
+            token: 123
+        },
         categories: [
             {
                 name: "99 Meals & Single Orders",
@@ -350,7 +357,12 @@ const store = createStore({
     },
     getters: {},
     actions: {},
-    mutations: {},
+    mutations: {
+        logout : (state) => {
+            state.user.data = {};
+            state.user.token = null;
+        }
+    },
     modules: {},
 });
 

@@ -53,6 +53,7 @@ export default {
   props: {
     title: String,
     default: String,
+    refresh: String,
     options: Array,
     background: String,
     width: Number,

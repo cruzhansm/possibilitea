@@ -74,11 +74,13 @@ export default {
     },
   },
   methods: {
+
     dropdown() {
       this.isSelecting = !this.isSelecting;
     },
     updateSelection(newSelect) {
       this.selected = newSelect;
+      this.$emit("changeSelect", newSelect);
       this.dropdown();
     },
   },

@@ -6,7 +6,7 @@
         <CustomDropdown
           :default="'Date & Time'"
           :options="['Date & Time', 'Total']"
-          width=200
+          :width= 200
           :disabled="false"
         />
         <Search :height="47" :width="270" />

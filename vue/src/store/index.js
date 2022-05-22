@@ -1,10 +1,12 @@
 import { createStore } from "vuex";
+import axiosClient from "../axios";
 
 const store = createStore({
     state: {
         user:{
             data:{},
-            token: 123,
+            // token: sessionStorage.getItem("TOKEN")
+            token: 123
         },
         categories: [
             {
@@ -355,26 +357,17 @@ const store = createStore({
     getters: {},
     actions: {
         register({commit}, user) {
-            return fetch("http://localhost:3000/api/register", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json",
-                },
-                body: JSON.stringify(user),
-            })
-                .then((res) => res.json())
-                .then((res) => {
-                    commit("setUser", res);
-                    return res;
-                }
-            );
-        },
+            return axiosClient.post("/register", user)
+                .then(({data})=> {
+                    commit("setUser", data)
+                    return data;
+                })
+            }
     },
     mutations: {
         setUser(state, userData) {
+            state.user.data = userData.user;
             state.user.token = userData.token;
-            state.user.data = userData.data;
             sessionStorage.setItem("TOKEN", userData.token);
         },
 

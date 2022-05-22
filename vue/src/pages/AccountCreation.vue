@@ -46,12 +46,14 @@
             @update="updateLname"
           />
           <PasswordInput
+            name="Password"
             title="Password"
             errorAlign="left"
             errorText="Empty field."
             @update="updatePassword"
           />
           <PasswordInput
+            name="passwordConfirm"
             title="Confirm Password"
             errorAlign="left"
             errorText="Empty field."
@@ -120,6 +122,7 @@ import Navbar from "../components/Navigation/Navbar.vue";
 import { computed, reactive, toRefs } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
+import axios from "axios";
 
 export default {
   name: "AccountCreation",
@@ -144,7 +147,7 @@ export default {
       firstname: String,
       lastname: String,
       password: String,
-      cpassword: String,
+      password_confirmation: String,
     });
 
 
@@ -159,6 +162,8 @@ export default {
       }, 1600);
 
       ev.preventDefault();
+
+      
       store.dispatch("register", user )
            .then((res) => {
              router.push({
@@ -184,7 +189,7 @@ export default {
         };
     
         const updateCpassword = (val) => {
-          user.cpassword = val;
+          user.password_confirmation = val;
         };
 
         const toggleCreation = () => {
@@ -201,7 +206,6 @@ export default {
       register,
       toggleCreation,
       toggle,
-
     }
   },
 };

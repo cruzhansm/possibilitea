@@ -11,22 +11,25 @@ class AuthController extends Controller
     public function register(Request $request )
     {
         $data = $this->validate( $request, [
-            'fname' => 'required|string',
-            'lname' => 'required|string',
+            'firstname' => 'required|string',
+            'lastname' => 'required|string',
             'username' => 'required|unique:users',
+            'password_confirmation' => 'required|same:password',
             'password' => [
                 'required',
                 'confirmed',
-                 Password::min(8)->mixedCase()->numbers()->symbols(),
+                 Password::min(8)->numbers()->symbols(),
             ],
-            'role' => 'required|in:ADMIN,STAFF',
+            // 'role' => 'required|in:ADMIN,STAFF',
         ]);
 
         $user = User::create([
-            'name' => $data['fname'] . ' ' . $data['lname'],
+            // 'name' => $data['firstname'] . ' ' . $data['lastname'],
+            'fname' => $data['firstname'],
+            'lname' => $data['lastname'],
             'username' => $data['username'],
             'password' => bcrypt($data['password']),
-            'role' => $data['role'],
+            // 'role' => $data['role'],
         ]);
 
         $token = $user->createToken('authToken')->plainTextToken;

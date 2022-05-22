@@ -14,45 +14,96 @@
     <div class="text-primary text-textButtons font-semibold">
       {{ title }}
     </div>
-    <div class="flex flex-col gap-5">
+    <form @submit="login" class="flex flex-col gap-5">
+      
+      <div v-if="errorMsg" class="animate-bounce flex flex-row justify-between border-2 border-error rounded-[9px] p-2 m-2">
+      <div class=" text-error">{{ errorMsg }}</div>
+      
+      <div @click="errorMsg = ''">
+      <font-awesome-icon
+        size="xs"
+        class="hover:cursor-pointer stroke-2 pr-4 w-[14px] h-[14px] align-middle"
+        :icon="'xmark'"
+        :class="'text-error'"
+      />
+      </div>
+      
+      </div>
+      
+
       <TextInput
+        @update="updateUsername"
         title="Username"
         :focus="true"
         errorAlign="left"
-        :errorText="'Empty field'"
+        :errorText="errorMsg"
       ></TextInput>
+
       <TextInput
+        @update="updatePassword"
         title="Password"
-        :errorText="'Empty field'"
+        :errorText="errorMsg"
         errorAlign="left"
       ></TextInput>
-    </div>
-    <router-link :to="{ name: 'navigation' }">
-      <PrimaryButton text="Enter" :height="47" :width="374"></PrimaryButton>
-    </router-link>
+    </form>
+      <PrimaryButton @click="login" text="Enter" :height="47" :width="374"></PrimaryButton>
   </div>
 </template>
 
-<script>
+
+<script setup>
 import TextInput from "../Input/TextInput.vue";
 import PrimaryButton from "../Buttons/PrimaryButton.vue";
+import store from '../../store';
+import router from '../../router';
+import { reactive, computed } from 'vue';
+import { ref } from "@vue/reactivity";
 
-export default {
-  name: "AuthForm",
-  components: {
-    TextInput,
-    PrimaryButton,
-  },
-  props: {
-    formTitle: String,
-  },
-  computed: {
-    title() {
-      return this.formTitle.toUpperCase();
-    },
-  },
-};
+const user = reactive({
+  username: '',
+  password: '',
+});
+
+let errorMsg = ref('');
+let errorState = ref(false);
+
+const props = defineProps({
+  formTitle: String
+})
+
+const title = computed(() => {
+  return props.formTitle.toUpperCase();
+})
+
+function updateUsername(value){
+  user.username = value;
+}
+
+function updatePassword(value){
+  user.password = value;
+}
+
+function login(ev) {
+  ev.preventDefault();
+  if(user.username === '' || user.password === ''){
+    errorMsg.value = 'Empty Field. Please fill in all fields';
+    return;
+  }else{
+    store.dispatch('login', user)
+      .then(() => {
+        router.push({ name: 'navigation' });
+      })
+      .catch(err => {
+          if(err.response.status === 422){
+            errorMsg.value = 'Invalid username or password.';
+          }
+      });
+  }
+}
+
+
 </script>
+
 
 <style scoped>
 </style>

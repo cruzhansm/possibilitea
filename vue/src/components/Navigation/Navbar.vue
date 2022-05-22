@@ -2,7 +2,7 @@
   <div class="flex justify-between items-center h-[77px] min-h-[77px] w-full">
     <Navback />
     <DateTime />
-    <span class="text-2xl text-primary font-bold">staffUsername</span>
+    <span class="text-2xl text-primary font-bold">{{user.username}}</span>
   </div>
 </template>
 

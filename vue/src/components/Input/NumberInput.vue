@@ -5,6 +5,7 @@
   </label>
   <br>
   <input
+    @change="$emit('changeNumber', $event.target.value)"
     v-model="num"
     type="number"
     class="

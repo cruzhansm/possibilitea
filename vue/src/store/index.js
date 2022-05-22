@@ -1,7 +1,13 @@
 import { createStore } from "vuex";
+import axiosClient from "../axios";
 
 const store = createStore({
     state: {
+        user:{
+            data:{},
+            // token: sessionStorage.getItem("TOKEN")
+            token: 123
+        },
         categories: [
             {
                 name: "99 Meals & Single Orders",
@@ -349,8 +355,27 @@ const store = createStore({
         ],
     },
     getters: {},
-    actions: {},
-    mutations: {},
+    actions: {
+        register({commit}, user) {
+            return axiosClient.post("/register", user)
+                .then(({data})=> {
+                    commit("setUser", data)
+                    return data;
+                })
+            }
+    },
+    mutations: {
+        setUser(state, userData) {
+            state.user.data = userData.user;
+            state.user.token = userData.token;
+            sessionStorage.setItem("TOKEN", userData.token);
+        },
+
+        logout : (state) => {
+            state.user.data = {};
+            state.user.token = null;
+        }
+    },
     modules: {},
 });
 

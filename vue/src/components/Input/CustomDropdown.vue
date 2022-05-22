@@ -53,6 +53,7 @@ export default {
   props: {
     title: String,
     default: String,
+    refresh: String,
     options: Array,
     background: String,
     width: Number,
@@ -74,11 +75,13 @@ export default {
     },
   },
   methods: {
+
     dropdown() {
       this.isSelecting = !this.isSelecting;
     },
     updateSelection(newSelect) {
       this.selected = newSelect;
+      this.$emit("changeSelect", newSelect);
       this.dropdown();
     },
   },

@@ -42,6 +42,7 @@
         <!-- Input Product Detail -->
         <form action="" class="flex flex-col space-y-4">
           <TextInput
+            @update="getName"
             title="Item Name"
             :focus="true"
             errorAlign="left"
@@ -49,29 +50,32 @@
           ></TextInput>
 
           <CustomDropdown
+            @changeSelect="getCategory"
             title="Category"
             :default="'Select Category'" 
             :options="categories"
             background="inputField"
-            width=374
+            :width= 374
             :disabled="false"
           ></CustomDropdown>
 
           <CustomDropdown
+            @changeSelect="getSubcategory"
             title="Subcategory"
-            :default="'Select Subcategory'" 
+            :default="form.selectedSubcategory" 
             :options="subcategories"
             background="inputField"
-            width=374
+            :width= 374
             :disabled="true"
           ></CustomDropdown>
 
           
           <NumberInput
+           @changeNumber="getPrice"
             title="Price"
             color="'inputText'"
-            height=47
-            width=199
+            :height= 47
+            :width= 199
             align="'left"
             :disabled="false"
           ></NumberInput>
@@ -81,20 +85,20 @@
 
           <SecondaryButton
             text="CANCEL"
-            height=47
-            width=173.93
-            fontSize=24
+            :height= 47
+            :width= 173.93
+            :fontSize= 24
             color="text-buttonText"
             hover="secondaryHovered"
-            :active="'true'"
+            :active= "'true'"
             class="font-normal"
           ></SecondaryButton>
 
           <PrimaryButton
             text="SAVE"
-            height=47
-            width=173.93
-            fontSize=24
+            :height= 47
+            :width= 173.93
+            :fontSize= 24
             color="text-buttonText"
             hover="primaryHovered"
             class="font-normal"
@@ -128,8 +132,16 @@
     data() {
       return {
         user: 'admin',
+        form: {
+          name: '',
+          selectedCategory: '',
+          selectedSubcategory: 'Select Subcategory',
+          price: '',
+          image: '',
+        },        
+        categoryArr:null,
         categories: null,
-        subcategories: null
+        subcategories: null,
       }
     },
     components: {
@@ -154,15 +166,36 @@
         (f) => f.category == "Drinks"
       );
 
-      let category = foodCategory.concat(drinkCategory);
+      let categoryArr = foodCategory.concat(drinkCategory);
 
-      this.categories = category.map( function getCat(item){
+      this.categories = categoryArr.map( function getCat(item){
         return item.name;
       });
 
-
-    },
+    },  
     methods: {
+    getCategory(value){
+      this.form.selectedSubcategory = 'Select Subcategory';
+      this.form.selectedCategory = value;
+          this.$store.state.categories.map((item) => {
+              if (item.name == value) {
+                  this.subcategories = Object.getOwnPropertyNames(item.items);
+              }
+          });
+    },
+
+    getSubcategory(value){
+      this.form.selectedSubcategory = value;
+    },
+
+    getName(value){
+      this.form.name = value;
+    },
+
+    getPrice(value){
+      this.form.price = value;
+    },
+    
     redirectBack() {
       this.$router.go(-1)
     },

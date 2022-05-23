@@ -2,7 +2,7 @@
   <div class="flex flex-col space-y-4">
 
     <!-- display add listing button if user is admin otherwise hidden -->
-    <div  v-if="user === 'admin'" class="flex flex-row justify-end pr-[40px]">
+    <div  v-if="user === 'ADMIN'" class="flex flex-row justify-end pr-[40px]">
       <AddListButton></AddListButton>
     </div>
 
@@ -20,10 +20,13 @@ export default {
   name: "ListingManagement",
   data() {
     return {
-      user: 'admin'
+      user: ''
     }
   },
-  components: {FoodCategory,DrinkCategory,AddListButton}
+  components: {FoodCategory,DrinkCategory,AddListButton},
+  mounted () {
+    this.user = this.$store.state.user.data.role;
+  },
 };
 </script>
 

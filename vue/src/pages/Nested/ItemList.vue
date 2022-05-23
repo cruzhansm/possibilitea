@@ -21,8 +21,8 @@
       </div>
 
 
-      <div  v-if="user === 'admin'" class="flex flex-row justify-end pr-[40px]">
-           <AddListButton></AddListButton>
+      <div class="flex flex-row justify-end pr-[40px]">
+           <AddListButton  v-if="user === 'ADMIN'"></AddListButton>
       </div>
 
   </div>
@@ -31,7 +31,6 @@
     <ListRow
       :key="name"
       v-for="(row, name) in category"
-      
       :items="row"
       :category="cat"
       :subcategory="name"
@@ -51,7 +50,7 @@ export default {
   data(){
     return{
       cat:"",
-      user: "admin"
+      user:""
     }
   },
   components: {
@@ -64,6 +63,7 @@ export default {
   },
   mounted () {
     this.cat = this.$route.params.category;
+    this.user = this.$store.state.user.data.role;
   },
   computed: {
     category() {

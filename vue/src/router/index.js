@@ -74,6 +74,12 @@ const routes = [
                 name: "add",
                 component: AddListForm,
             },
+            {
+                path: "/listing-management/:id",
+                props: true,
+                name: "edit",
+                component: AddListForm,
+            },
         ],
     },
     {

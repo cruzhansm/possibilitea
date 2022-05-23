@@ -31,6 +31,7 @@
     <ListRow
       :key="name"
       v-for="(row, name) in category"
+      
       :items="row"
       :category="cat"
       :subcategory="name"
@@ -70,10 +71,9 @@ export default {
       const menu = this.$store.state.categories.filter(
         (c) => c.name.toUpperCase() == this.$route.params.category.toUpperCase()
       )[0].items;
-      
-
       return menu;
     },
+
   },
 };
 </script>

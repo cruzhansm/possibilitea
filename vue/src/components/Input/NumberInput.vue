@@ -43,12 +43,16 @@ export default {
     },
   },
   props: {
+    default:Number,
     title: String,
     color: String,
     height: Number,
     width: Number,
     align: String,
     disabled: Boolean,
+  },
+  mounted() {
+    this.num = this.default;
   },
 };
 </script>

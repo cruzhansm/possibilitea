@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rules\Password;
 
 class AuthController extends Controller
@@ -18,7 +19,7 @@ class AuthController extends Controller
             'password' => [
                 'required',
                 'confirmed',
-                 Password::min(8)->numbers()->symbols(),
+                 Password::min(6)->numbers(),
             ],
             // 'role' => 'required|in:ADMIN,STAFF',
         ]);
@@ -38,6 +39,34 @@ class AuthController extends Controller
             'user' => $user,
             'token' => $token,
         ]);
+    }
+
+    public function login(Request $request)
+    {
+        $credentials = $this->validate($request, [
+            'username' => 'required|string|exists:users',
+            'password' => 'required|string',
+        ]);
+
+        if(!Auth::attempt( $credentials)){
+            return response(['error' => 'The provided credentials are incorrect.'], 422);
+        }
+
+        $user = Auth::user();
+        $token = $user->createToken('authToken')->plainTextToken;
+        
+        return response([
+            'user' => $user,
+            'token' => $token,
+        ]);
+    }
+
+    public function logout(Request $request)
+    {
+        $user = Auth::user();
+        $user->currentAccessToken()->delete();
+            return response(
+                ['success' => true]);
     }
 
 }

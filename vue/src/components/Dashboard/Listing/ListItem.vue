@@ -4,7 +4,7 @@
   <router-link 
   :to="{
     name: 'info',
-    params: {category: category, subcategory: subcategory, name:item.name, price:item.price}
+    params: {category: category, subcategory: subcategory, name:item.name, price:item.price, id:item.id}
   }"
   >
   

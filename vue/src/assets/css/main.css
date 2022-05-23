@@ -658,6 +658,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 2.75rem;
 }
 
+.h-\[14px\] {
+  height: 14px;
+}
+
 .h-\[78px\] {
   height: 78px;
 }
@@ -748,6 +752,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 2.75rem;
 }
 
+.w-\[14px\] {
+  width: 14px;
+}
+
 .w-\[270px\] {
   width: 270px;
 }
@@ -802,10 +810,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 174px;
 }
 
-.w-\[40px\] {
-  width: 40px;
-}
-
 .w-\[172px\] {
   width: 172px;
 }
@@ -851,6 +855,39 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+@-webkit-keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
+            animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50% {
+    transform: none;
+    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
+            animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
+            animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50% {
+    transform: none;
+    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
+            animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+.animate-bounce {
+  -webkit-animation: bounce 1s infinite;
+          animation: bounce 1s infinite;
 }
 
 .cursor-pointer {
@@ -1060,14 +1097,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
-.border-\[\#F5F5F5\] {
-  --tw-border-opacity: 1;
-  border-color: rgb(245 245 245 / var(--tw-border-opacity));
-}
-
 .border-error {
   --tw-border-opacity: 1;
   border-color: rgb(222 52 69 / var(--tw-border-opacity));
+}
+
+.border-\[\#F5F5F5\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(245 245 245 / var(--tw-border-opacity));
 }
 
 .border-secondary {
@@ -1126,6 +1163,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .stroke-2 {
   stroke-width: 2;
+}
+
+.p-2 {
+  padding: 0.5rem;
 }
 
 .p-\[30px\] {
@@ -1234,6 +1275,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 80px;
 }
 
+.pr-4 {
+  padding-right: 1rem;
+}
+
 .pt-\[36px\] {
   padding-top: 36px;
 }
@@ -1320,6 +1365,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .text-right {
   text-align: right;
+}
+
+.align-middle {
+  vertical-align: middle;
 }
 
 .font-inter {

@@ -39,12 +39,14 @@
         :errorText="errorMsg"
       ></TextInput>
 
-      <TextInput
-        @update="updatePassword"
-        title="Password"
-        :errorText="errorMsg"
-        errorAlign="left"
-      ></TextInput>
+       <PasswordInput
+            name="Password"
+            title="Password"
+            errorAlign="left"
+            errorText="Empty field."
+            @update="updatePassword"
+        />
+
     </form>
       <PrimaryButton @click="login" text="Enter" :height="47" :width="374"></PrimaryButton>
   </div>
@@ -53,6 +55,7 @@
 
 <script setup>
 import TextInput from "../Input/TextInput.vue";
+import PasswordInput from "../Input/PasswordInput.vue";
 import PrimaryButton from "../Buttons/PrimaryButton.vue";
 import store from '../../store';
 import router from '../../router';

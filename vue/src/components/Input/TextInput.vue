@@ -49,6 +49,7 @@ export default {
     },
   },
   props: {
+    default:String,
     title: String,
     limit: Number,
     focus: Boolean,
@@ -63,6 +64,7 @@ export default {
     };
   },
   mounted() {
+    this.input = this.default;
     this.emptyFlag = true;
     this.errorFlag = false;
   },

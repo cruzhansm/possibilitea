@@ -40,8 +40,12 @@
 
         <!-- display edit/delete button if user is admin otherwise hidden -->
         <div v-if="user === 'admin'" class="flex flex-row space-x-4 mt-6 ">
-            <button class="w-[172px] h-[47px] text-[24px] bg-primary text-buttonText rounded-[9px] hover:bg-primaryHovered transition ease-in-out delay-[65]">EDIT</button>
-            <button class="w-[172px] h-[47px] text-[24px] bg-primary text-buttonText rounded-[9px] hover:bg-primaryHovered transition ease-in-out delay-[65]">DELETE</button>
+            <button 
+            @click="$router.push({name: 'edit', params: { id:id, category:category, name:name, price:price, subcategory:subcategory },})"
+            class="w-[172px] h-[47px] text-[24px] bg-primary text-buttonText rounded-[9px] hover:bg-primaryHovered transition ease-in-out delay-[65]">EDIT</button>
+            <button 
+            @click="deleteItem"
+            class="w-[172px] h-[47px] text-[24px] bg-primary text-buttonText rounded-[9px] hover:bg-primaryHovered transition ease-in-out delay-[65]">DELETE</button>
         </div>
 
       </div>
@@ -80,6 +84,7 @@
       Doughnut, Linechart
     },
     props: {
+      id:Number,
       category: String, 
       subcategory: String,
       name: String,
@@ -87,8 +92,11 @@
     },
     methods: {
     redirectBack() {
-      this.$router.go(-1)
+        this.$router.push({name: 'listing-management'});
     },
+    deleteItem(){
+      //delete item from the database
+    }
   },
   }
 </script>

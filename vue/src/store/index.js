@@ -1,5 +1,266 @@
 import { createStore } from "vuex";
 import axiosClient from "../axios";
+import createPersistedState from "vuex-persistedstate";
+
+const tmpcategories =  [
+    {   
+        id: 1,
+        name: "99 Meals & Single Orders",
+        category: "Food",
+        active: false,
+        items: {
+            "99 Meals": [
+                {
+                    id: 1,
+                    name: "Porkchop with Rice",
+                    price: 99.0,
+                    img_path: "https://i.imgur.com/qZQZQZQ.jpg",
+                },
+                {
+                    id: 2,
+                    name: "Pork Kawali with Rice",
+                    price: 99.0,
+                    img_path: "https://i.imgur.com/qZQZQZQ.jpg"
+                },
+                {
+                    id: 3,
+                    name: "Pork Sinigang with Rice",
+                    price: 99.0,
+                    img_path: "https://i.imgur.com/qZQZQZQ.jpg"
+                },
+                {
+                    id: 4,
+                    name: "Bangus Daing with Rice",
+                    price: 99.0,
+                    img_path: "https://i.imgur.com/qZQZQZQ.jpg"
+                },
+                {
+                    id: 5,
+                    name: "Butter Chicken with Rice",
+                    price: 99.0,
+                    img_path: "https://i.imgur.com/qZQZQZQ.jpg"
+                },
+                {
+                    id: 6,
+                    name: "Sweet & Sour Chicken with Rice",
+                    price: 99.0,
+                    img_path: "https://i.imgur.com/qZQZQZQ.jpg"
+                },
+            ],
+            "Single Orders": [
+                {
+                    id: 7, 
+                    name: "Shrimp Gambas",
+                    price: 200.0,
+                    img_path: "https://i.imgur.com/qZQZQZQ.jpg"
+                },
+                {
+                    id: 8,
+                    name: "Buttered Chicken Half",
+                    price: 279.0,
+                    img_path: "https://i.imgur.com/qZQZQZQ.jpg"
+                },
+                {
+                    id: 9,
+                    name: "Chicken Kawali",
+                    price: 280.0,
+                    img_path: "https://i.imgur.com/qZQZQZQ.jpg"
+                },
+                {
+                    id: 10,
+                    name: "Crispy Pata Family",
+                    price: 525.0,
+                    img_path: "https://i.imgur.com/qZQZQZQ.jpg"
+                },
+                {
+                    id: 11,
+                    name: "Bam.E",
+                    price: 180.0,
+                    img_path: "https://i.imgur.com/qZQZQZQ.jpg"
+                },
+                {
+                    id: 12,
+                    name: "Chicken and Fries",
+                    price: 150.0,
+                    img_path: "https://i.imgur.com/qZQZQZQ.jpg"
+                },
+            ],
+        },
+    },
+    {
+        id: 2,
+        name: "Soup",
+        category: "Food",
+        active: false,
+        items: {
+            Soup: [
+                { id:13, name: "Pork Sinigang", price: 249.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id:14, name: "Shrimp Sinigang", price: 229.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id:15, name: "Bulalo Family", price: 389.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+            ],
+        },
+    },
+    {
+        id: 3,
+        name: "Pizza & Pasta",
+        category: "Food",
+        active: false,
+        items: {
+            "Paradise Pizza": [
+                { id: 16, name: "Pepperoni", price: 280.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 17, name: "Hawaiian", price: 280.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 18, name: "3 Cheese Pizza", price: 300.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 19, name: "Beef and Mushroom", price: 320.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 20, name: "Margaritta", price: 280.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+            ],
+            "Paradise Pasta": [
+                { id: 21, name: "Carbonara", price: 170.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 22, name: "Spaghetti", price: 150.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 23, name: "Lasagna", price: 180.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+            ],
+        },
+    },
+    {
+        id: 4,
+        name: "Sandwiches",
+        category: "Food",
+        active: false,
+        items: {
+            "Paradise Sandwich": [
+                { id: 24, name: "Chicken Burger w/ Fries", price: 150.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 25, name: "Beef Burger w/ Fries", price: 160.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 26, name: "Clubhouse", price: 150.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+            ],
+        },
+    },
+    {
+        id: 5,
+        name: "Sides & Add Ons",
+        category: "Food",
+        active: false,
+        items: {
+            Sides: [
+                { id: 27, name: "Nachos", price: 120.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 28, name: "Fries", price: 100.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+            ],
+            "Add Ons": [
+                { id: 29, name: "Rice", price: 20.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 30, name: "Rice Platter", price: 120.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 31, name: "Garlic Fried Rice", price: 160.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+            ],
+        },
+    },
+    {
+        id: 6,
+        name: "Milktea & Frappe",
+        category: "Drinks",
+        active: false,
+        items: {
+            Milktea: [
+                { id: 32, name: "Classic", price: 80.0 , img_path: "https://i.imgur.com/qZQZQZQ.jpg"},
+                { id: 33, name: "Taro", price: 89.0 , img_path: "https://i.imgur.com/qZQZQZQ.jpg"},
+                { id: 34, name: "Thai", price: 89.0 , img_path: "https://i.imgur.com/qZQZQZQ.jpg"},
+                { id: 35, name: "Matcha", price: 89.0 , img_path: "https://i.imgur.com/qZQZQZQ.jpg"},
+                { id: 36, name: "Wintermelon", price: 89.0 , img_path: "https://i.imgur.com/qZQZQZQ.jpg"},
+                { id: 37, name: "Okinawa", price: 89.0 , img_path: "https://i.imgur.com/qZQZQZQ.jpg"},
+                { id: 38, name: "Dark Chocolate", price: 89.0 , img_path: "https://i.imgur.com/qZQZQZQ.jpg"},
+            ],
+            Cheesecake: [
+                { id: 39, name: "Pearl Milktea", price: 110.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg"},
+                { id: 40, name: "Nutella", price: 115.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg"},
+                { id: 41, name: "Oreo", price: 115.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg"},
+            ],
+            "Cream Cheese": [
+                { id: 42, name: "Taro", price: 100.0 , img_path: "https://i.imgur.com/qZQZQZQ.jpg"},
+                { id: 43, name: "Dark Chocolate", price: 100.0 , img_path: "https://i.imgur.com/qZQZQZQ.jpg"},
+                { id: 44, name: "Thai", price: 100.0 , img_path: "https://i.imgur.com/qZQZQZQ.jpg"},
+                { id: 45, name: "Matcha", price: 100.0 , img_path: "https://i.imgur.com/qZQZQZQ.jpg"},
+            ],
+            Frappe: [
+                { id: 46, name: "Red Velvet", price: 120.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg"},
+                { id: 47, name: "Cookies & Cream", price: 120.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg"},
+                { id: 48, name: "Dark Chocolate", price: 120.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg"},
+                { id: 49, name: "Creamy Taro", price: 120.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg"},
+                { id: 50, name: "Mint Chocolate", price: 120.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg"},
+            ],
+        },
+    },
+    {
+        id: 7,
+        name: "Smoothies & Milkshake",
+        category: "Drinks",
+        active: false,
+        items: {
+            Smoothies: [
+                { id: 51, name: "Mixed Berries", price: 140.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 52, name: "Avocado Mango", price: 150.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+            ],
+            "Paradise Milkshake": [
+                { id: 53, name: "Strawberry", price: 120.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 54, name: "Blueberry", price: 120.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 55, name: "Chocolate", price: 120.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+            ],
+        },
+    },
+    {
+        id: 8,
+        name: "Yogurt & Coffee",
+        category: "Drinks",
+        active: false,
+        items: {
+            "Paradise Yogurt": [
+                { id: 56, name: "Blueberry", price: 100.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 57, name: "Strawberry", price: 100.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 58, name: "Mango", price: 100.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+            ],
+            "Paradise Coffee": [
+                { id: 59, name: "Cafe Latte", price: 100.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 60, name: "Americano", price: 100.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 61, name: "Cafe Matcha", price: 100.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 62, name: "Caramel Machiatto", price: 100.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+            ],
+        },
+    },
+    {
+        id: 9,
+        name: "Lemonade & Fruitea",
+        category: "Drinks",
+        active: false,
+        items: {
+            "Paradise Lemonade": [
+                { id: 63, name: "Melon Pop", price: 150.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 64, name: "Ocean", price: 120.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 65, name: "Cucumber", price: 130.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 66, name: "Green Grape Ade", price: 120.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 67, name: "Lychee", price: 120.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 68, name: "Grapefruit", price: 120.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 69, name: "Honey Peach", price: 120.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+            ],
+            Fruitea: [
+                { id: 70, name: "Passion Fruit", price: 100.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 71, name: "Peach Mango", price: 100.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+            ],
+        },
+    },
+    {  
+        id: 10,
+        name: "Others",
+        category: "Drinks",
+        active: false,
+        items: {
+            "Other Drinks": [
+                { id: 72, name: "Lemonade", price: 100.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 73, name: "Four Seasons", price: 60.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 74, name: "Iced Tea", price: 60.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 75, name: "Coke", price: 20.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 76, name: "Sprite", price: 20.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 77, name: "San Mig Light", price: 55.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 78, name: "San Mig Flavored", price: 55.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+                { id: 79, name: "San Mig Pilsen Small", price: 60.0, img_path: "https://i.imgur.com/qZQZQZQ.jpg" },
+            ],
+        },
+    },
+];
 
 const store = createStore({
     state: {
@@ -7,231 +268,8 @@ const store = createStore({
             data:{},
             token: sessionStorage.getItem("TOKEN")
         },
-        categories: [
-            {
-                name: "99 Meals & Single Orders",
-                category: "Food",
-                active: false,
-                items: {
-                    "99 Meals": [
-                        {
-                            name: "Porkchop with Rice",
-                            price: 99.0,
-                        },
-                        {
-                            name: "Pork Kawali with Rice",
-                            price: 99.0,
-                        },
-                        {
-                            name: "Pork Sinigang with Rice",
-                            price: 99.0,
-                        },
-                        {
-                            name: "Bangus Daing with Rice",
-                            price: 99.0,
-                        },
-                        {
-                            name: "Butter Chicken with Rice",
-                            price: 99.0,
-                        },
-                        {
-                            name: "Sweet & Sour Chicken with Rice",
-                            price: 99.0,
-                        },
-                    ],
-                    "Single Orders": [
-                        {
-                            name: "Shrimp Gambas",
-                            price: 200.0,
-                        },
-                        {
-                            name: "Buttered Chicken Half",
-                            price: 279.0,
-                        },
-                        {
-                            name: "Chicken Kawali",
-                            price: 280.0,
-                        },
-                        {
-                            name: "Crispy Pata Family",
-                            price: 525.0,
-                        },
-                        {
-                            name: "Bam.E",
-                            price: 180.0,
-                        },
-                        {
-                            name: "Chicken and Fries",
-                            price: 150.0,
-                        },
-                    ],
-                },
-            },
-            {
-                name: "Soup",
-                category: "Food",
-                active: false,
-                items: {
-                    Soup: [
-                        { name: "Pork Sinigang", price: 249.0 },
-                        { name: "Shrimp Sinigang", price: 229.0 },
-                        { name: "Bulalo Family", price: 389.0 },
-                    ],
-                },
-            },
-            {
-                name: "Pizza & Pasta",
-                category: "Food",
-                active: false,
-                items: {
-                    "Paradise Pizza": [
-                        { name: "Pepperoni", price: 280.0 },
-                        { name: "Hawaiian", price: 280.0 },
-                        { name: "3 Cheese Pizza", price: 300.0 },
-                        { name: "Beef and Mushroom", price: 320.0 },
-                        { name: "Margaritta", price: 280.0 },
-                    ],
-                    "Paradise Pasta": [
-                        { name: "Carbonara", price: 170.0 },
-                        { name: "Spaghetti", price: 150.0 },
-                        { name: "Lasagna", price: 180.0 },
-                    ],
-                },
-            },
-            {
-                name: "Sandwiches",
-                category: "Food",
-                active: false,
-                items: {
-                    "Paradise Sandwich": [
-                        { name: "Chicken Burger w/ Fries", price: 150.0 },
-                        { name: "Beef Burger w/ Fries", price: 160.0 },
-                        { name: "Clubhouse", price: 150.0 },
-                    ],
-                },
-            },
-            {
-                name: "Sides & Add Ons",
-                category: "Food",
-                active: false,
-                items: {
-                    Sides: [
-                        { name: "Nachos", price: 120.0 },
-                        { name: "Fries", price: 100.0 },
-                    ],
-                    "Add Ons": [
-                        { name: "Rice", price: 20.0 },
-                        { name: "Rice Platter", price: 120.0 },
-                        { name: "Garlic Fried Rice", price: 160.0 },
-                    ],
-                },
-            },
-            {
-                name: "Milktea & Frappe",
-                category: "Drinks",
-                active: false,
-                items: {
-                    Milktea: [
-                        { name: "Classic", price: 80.0 },
-                        { name: "Taro", price: 89.0 },
-                        { name: "Thai", price: 89.0 },
-                        { name: "Matcha", price: 89.0 },
-                        { name: "Wintermelon", price: 89.0 },
-                        { name: "Okinawa", price: 89.0 },
-                        { name: "Dark Chocolate", price: 89.0 },
-                    ],
-                    Cheesecake: [
-                        { name: "Pearl Milktea", price: 110.0 },
-                        { name: "Nutella", price: 115.0 },
-                        { name: "Oreo", price: 115.0 },
-                    ],
-                    "Cream Cheese": [
-                        { name: "Taro", price: 100.0 },
-                        { name: "Dark Chocolate", price: 100.0 },
-                        { name: "Thai", price: 100.0 },
-                        { name: "Matcha", price: 100.0 },
-                    ],
-                    Frappe: [
-                        { name: "Red Velvet", price: 120.0 },
-                        { name: "Cookies & Cream", price: 120.0 },
-                        { name: "Dark Chocolate", price: 120.0 },
-                        { name: "Creamy Taro", price: 120.0 },
-                        { name: "Mint Chocolate", price: 120.0 },
-                    ],
-                },
-            },
-            {
-                name: "Smoothies & Milkshake",
-                category: "Drinks",
-                active: false,
-                items: {
-                    Smoothies: [
-                        { name: "Mixed Berries", price: 140.0 },
-                        { name: "Avocado Mango", price: 150.0 },
-                    ],
-                    "Paradise Milkshake": [
-                        { name: "Strawberry", price: 120.0 },
-                        { name: "Blueberry", price: 120.0 },
-                        { name: "Chocolate", price: 120.0 },
-                    ],
-                },
-            },
-            {
-                name: "Yogurt & Coffee",
-                category: "Drinks",
-                active: false,
-                items: {
-                    "Paradise Yogurt": [
-                        { name: "Blueberry", price: 100.0 },
-                        { name: "Strawberry", price: 100.0 },
-                        { name: "Mango", price: 100.0 },
-                    ],
-                    "Paradise Coffee": [
-                        { name: "Cafe Latte", price: 100.0 },
-                        { name: "Americano", price: 100.0 },
-                        { name: "Cafe Matcha", price: 100.0 },
-                        { name: "Caramel Machiatto", price: 100.0 },
-                    ],
-                },
-            },
-            {
-                name: "Lemonade & Fruitea",
-                category: "Drinks",
-                active: false,
-                items: {
-                    "Paradise Lemonade": [
-                        { name: "Melon Pop", price: 150.0 },
-                        { name: "Ocean", price: 120.0 },
-                        { name: "Cucumber", price: 130.0 },
-                        { name: "Green Grape Ade", price: 120.0 },
-                        { name: "Lychee", price: 120.0 },
-                        { name: "Grapefruit", price: 120.0 },
-                        { name: "Honey Peach", price: 120.0 },
-                    ],
-                    Fruitea: [
-                        { name: "Passion Fruit", price: 100.0 },
-                        { name: "Peach Mango", price: 100.0 },
-                    ],
-                },
-            },
-            {
-                name: "Others",
-                category: "Drinks",
-                active: false,
-                items: {
-                    "Other Drinks": [
-                        { name: "Lemonade", price: 100.0 },
-                        { name: "Four Seasons", price: 60.0 },
-                        { name: "Iced Tea", price: 60.0 },
-                        { name: "Coke", price: 20.0 },
-                        { name: "Sprite", price: 20.0 },
-                        { name: "San Mig Light", price: 55.0 },
-                        { name: "San Mig Flavored", price: 55.0 },
-                        { name: "San Mig Pilsen Small", price: 60.0 },
-                    ],
-                },
-            },
-        ],
+        categories: [...tmpcategories],
+       
         addons: [
             "Tapioca",
             "Nata",
@@ -392,6 +430,7 @@ const store = createStore({
         }
     },
     modules: {},
+    plugins: [createPersistedState()],
 });
 
 export default store;

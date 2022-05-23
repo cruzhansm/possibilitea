@@ -12,7 +12,7 @@
       rounded-[9px]
       hover:cursor-pointer hover:text-primaryHovered
     "
-    @click="redirectBack"
+    @click="redirectBack(id)"
   >
       <font-awesome-icon
         icon="angle-left"
@@ -44,6 +44,7 @@
           <TextInput
             @update="getName"
             title="Item Name"
+            :default="name"
             :focus="true"
             errorAlign="left"
             :errorText="'Empty field'"
@@ -52,7 +53,7 @@
           <CustomDropdown
             @changeSelect="getCategory"
             title="Category"
-            :default="'Select Category'" 
+            :default="category" 
             :options="categories"
             background="inputField"
             :width= 374
@@ -62,7 +63,7 @@
           <CustomDropdown
             @changeSelect="getSubcategory"
             title="Subcategory"
-            :default="form.selectedSubcategory" 
+            :default="subcategory" 
             :options="subcategories"
             background="inputField"
             :width= 374
@@ -72,6 +73,7 @@
           
           <NumberInput
            @changeNumber="getPrice"
+            :default="price"
             title="Price"
             color="'inputText'"
             :height= 47
@@ -79,7 +81,6 @@
             align="'left"
             :disabled="false"
           ></NumberInput>
-          <!-- <span class="text-inputText w-[40px] h-[47px] bg-inputField rounded-[9px] text-">P</span> -->
 
           <div class="flex flex-row space-x-8 pt-2">
 
@@ -135,7 +136,7 @@
         form: {
           name: '',
           selectedCategory: '',
-          selectedSubcategory: 'Select Subcategory',
+          selectedSubcategory: '',
           price: '',
           image: '',
         },        
@@ -152,6 +153,7 @@
       SecondaryButton
     },
     props: {
+      id:Number,
       category: String, 
       subcategory: String,
       name: String,
@@ -175,7 +177,7 @@
     },  
     methods: {
     getCategory(value){
-      this.form.selectedSubcategory = 'Select Subcategory';
+      // this.form.selectedSubcategory = 'Select Subcategory';
       this.form.selectedCategory = value;
           this.$store.state.categories.map((item) => {
               if (item.name == value) {
@@ -196,8 +198,12 @@
       this.form.price = value;
     },
     
-    redirectBack() {
-      this.$router.go(-1)
+    redirectBack(id) {
+      if(id === undefined){
+        this.$router.go(-1)
+      }else{
+        this.$router.push({ name: 'info', params: {  id:this.id, category: this.category, subcategory:this.subcategory, name:this.name , price:this.price } })
+      }
     },
   },
   }

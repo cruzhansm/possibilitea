@@ -19,7 +19,7 @@ class AuthController extends Controller
             'password' => [
                 'required',
                 'confirmed',
-                 Password::min(8)->numbers()->symbols(),
+                 Password::min(6)->numbers(),
             ],
             // 'role' => 'required|in:ADMIN,STAFF',
         ]);

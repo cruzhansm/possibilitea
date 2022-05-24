@@ -54,6 +54,7 @@ export default {
     const router = useRouter(); 
 
     function logout () {
+      // store.dispatch("resetCartState")
       store.dispatch("logout")
       .then(() => {
         router.push({ name: "login" });

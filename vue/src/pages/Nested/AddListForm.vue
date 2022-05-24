@@ -197,7 +197,6 @@
         user: 'admin',
         item: Array,
         form: {
-          id: '',
           item_name: '',
           subcat_id: '',
           itemCat_id: '',
@@ -262,9 +261,7 @@
       this.$router.push({ name: 'listing-management' })
     },
     saveItem(){
-
-      // this.$store.dispatch('saveItem', this.form)
-      // this.$router.push({ name: 'ItemList' });
+      this.$store.dispatch('saveItem', this.form)
       this.isSuccessfulListing = !this.isSuccessfulListing;
 
     },

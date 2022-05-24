@@ -1,6 +1,172 @@
 import { createStore } from "vuex";
 import axiosClient from "../axios";
 import createPersistedState from "vuex-persistedstate";
+import { data } from "autoprefixer";
+
+const getDefaultState = () => {
+    return {
+        user:{
+            data:{},
+            token: sessionStorage.getItem("TOKEN")
+        },
+        categories: [...tmpcategories],
+        subcategoryList: [
+            { id: 1,  name: "99 Meals & Single Orders",},
+            { id: 2,  name: "Soup",},
+            { id: 3,  name: "Pizza & Pasta",},
+            { id: 4,  name: "Sandwiches",},
+            { id: 5,  name: "Sides & Add Ons",},
+            { id: 6,  name: "Milktea & Frappe",},
+            { id: 7,  name: "Smoothies & Milkshake",},
+            { id: 8,  name: "Yogurt & Coffee",},
+            { id: 9,  name: "Lemonade & Fruitea",},
+            { id: 10, name: "Others",},
+
+        ],
+        itemCategoryList: [
+            {id: 1,  name: "99 Meals" },
+            {id: 2,  name: "Single Orders" },
+            {id: 3,  name: "Soup" },
+            {id: 4,  name: "Paradise Pizza" },
+            {id: 5,  name: "Paradise Pasta" },
+            {id: 6,  name: "Paradise Sandwich" },
+            {id: 7,  name: "Sides" },
+            {id: 8,  name: "Add Ons" },
+            {id: 9,  name: "Milktea" },
+            {id: 10, name: "Cheesecake" },
+            {id: 11, name: "Cream Cheese" },
+            {id: 12, name: "Frappe" },
+            {id: 13, name: "Smoothies" },
+            {id: 14, name: "Paradise Milkshake" },
+            {id: 15, name: "Paradise Yogurt" },
+            {id: 16, name: "Paradise Coffee" },
+            {id: 17, name: "Paradise Lemonade" },
+            {id: 18, name: "Fruitea" },
+            {id: 19, name: "Other Drinks" }
+        ],
+        addons: [
+            "Tapioca",
+            "Nata",
+            "Oreo",
+            "Coffee Jelly",
+            "Pudding",
+            "Red Bean",
+            "Cream Cheese",
+            "Cheese Cake",
+        ],
+        cart: [
+            {
+                name: "Dark Chocolate",
+                category: "Milktea",
+                quantity: 1,
+                size: "22oz",
+                sugar: "50%",
+                price: 149.0,
+                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
+            },
+            {
+                name: "Dark Chocolate",
+                category: "Milktea",
+                quantity: 1,
+                size: "22oz",
+                sugar: "50%",
+                price: 149.0,
+                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
+            },
+            {
+                name: "Dark Chocolate",
+                category: "Milktea",
+                quantity: 1,
+                size: "22oz",
+                sugar: "50%",
+                price: 149.0,
+                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
+            },
+            {
+                name: "Dark Chocolate",
+                category: "Milktea",
+                quantity: 1,
+                size: "22oz",
+                sugar: "50%",
+                price: 149.0,
+                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
+            },
+            {
+                name: "Dark Chocolate",
+                category: "Milktea",
+                quantity: 1,
+                size: "22oz",
+                sugar: "50%",
+                price: 149.0,
+                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
+            },
+            {
+                name: "Dark Chocolate",
+                category: "Milktea",
+                quantity: 1,
+                size: "22oz",
+                sugar: "50%",
+                price: 149.0,
+                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
+            },
+            {
+                name: "Dark Chocolate",
+                category: "Milktea",
+                quantity: 1,
+                size: "22oz",
+                sugar: "50%",
+                price: 149.0,
+                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
+            },
+            {
+                name: "Dark Chocolate",
+                category: "Milktea",
+                quantity: 1,
+                size: "22oz",
+                sugar: "50%",
+                price: 149.0,
+                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
+            },
+            {
+                name: "Dark Chocolate",
+                category: "Milktea",
+                quantity: 1,
+                size: "22oz",
+                sugar: "50%",
+                price: 149.0,
+                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
+            },
+            {
+                name: "Dark Chocolate",
+                category: "Milktea",
+                quantity: 1,
+                size: "22oz",
+                sugar: "50%",
+                price: 149.0,
+                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
+            },
+            {
+                name: "Dark Chocolate",
+                category: "Milktea",
+                quantity: 1,
+                size: "22oz",
+                sugar: "50%",
+                price: 149.0,
+                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
+            },
+            {
+                name: "Dark Chocolate",
+                category: "Milktea",
+                quantity: 1,
+                size: "22oz",
+                sugar: "50%",
+                price: 149.0,
+                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
+            },
+        ]
+    }
+  }
+
 
 const tmpcategories =  [
     {   
@@ -262,236 +428,103 @@ const tmpcategories =  [
     },
 ];
 
+
+// initial state
+const state = getDefaultState()
+
+const actions = {
+  resetCartState ({ commit }) {
+    commit('resetState')
+  },
+  
+  saveItem: ({commit}, data) => {
+    let response;
+    if (data.id) {
+        response = axiosClient.put(`/items/${data.id}`, data).then((res) => {
+            commit("updateItem", res.data)
+            return res;
+        });
+    }else{
+        response = axiosClient.post("/items", data).then((res) => {
+                    commit("addItem", res.data)
+                    return res;
+        });
+    }
+
+    return response;
+    },
+
+    register({commit}, user) {
+        return axiosClient.post("/register", user)
+            .then(({data}) => {
+                commit("setUser", data)
+                return data;
+            })
+        },
+    login({commit}, user) {
+        return axiosClient.post("/login", user)
+            .then(({data}) => {
+                commit("setUser", data)
+                return data;
+            })
+        },
+    logout({commit}) {
+        return axiosClient.post("/logout")
+            .then(response => {
+                commit("logout")
+                return response;
+                })
+        } 
+}
+
+const mutations = {
+  resetState (state) {
+    Object.assign(state, getDefaultState())
+  },
+  addItem(state, data) {
+        // convert object to array
+        let items = Object.values(data);
+
+        let itemCat_name = state.itemCategoryList.filter(function(item){
+            return item.id == items[0].itemCat_id          
+            })[0].name;
+
+        let ndx = items[0].subcat_id - 1;
+        
+        state.categories[ndx].items[itemCat_name].push(items[0]);
+        
+        console.log(items[0]);
+        console.log(items[0].subcat_id);
+        console.log(itemCat_name);
+        console.log(state.categories[ndx].items[itemCat_name].name);
+  },
+        
+    // updateItem(state, data) {
+        // console.log(data);
+    // },
+
+    setUser(state, userData) {
+        state.user.data = userData.user;
+        state.user.token = userData.token;
+        sessionStorage.setItem("TOKEN", userData.token);
+    },
+
+    logout : (state) => {
+        state.user.data = {};
+        state.user.token = null;
+        sessionStorage.removeItem("TOKEN");
+    }
+}
+
+ const plugins = [createPersistedState()];
+
 const store = createStore({
-    state: {
-        user:{
-            data:{},
-            token: sessionStorage.getItem("TOKEN")
-        },
-        categories: [...tmpcategories],
-        subcategoryList: [
-            { id: 1,  name: "99 Meals & Single Orders",},
-            { id: 2,  name: "Soup",},
-            { id: 3,  name: "Pizza & Pasta",},
-            { id: 4,  name: "Sandwiches",},
-            { id: 5,  name: "Sides & Add Ons",},
-            { id: 6,  name: "Milktea & Frappe",},
-            { id: 7,  name: "Smoothies & Milkshake",},
-            { id: 8,  name: "Yogurt & Coffee",},
-            { id: 9,  name: "Lemonade & Fruitea",},
-            { id: 10, name: "Others",},
-
-        ],
-        itemCategoryList: [
-            {id: 1,  name: "99 Meals" },
-            {id: 2,  name: "Single Orders" },
-            {id: 3,  name: "Soup" },
-            {id: 4,  name: "Paradise Pizza" },
-            {id: 5,  name: "Paradise Pasta" },
-            {id: 6,  name: "Paradise Sandwich" },
-            {id: 7,  name: "Sides" },
-            {id: 8,  name: "Add Ons" },
-            {id: 9,  name: "Milktea" },
-            {id: 10, name: "Cheesecake" },
-            {id: 11, name: "Cream Cheese" },
-            {id: 12, name: "Frappe" },
-            {id: 13, name: "Smoothies" },
-            {id: 14, name: "Paradise Milkshake" },
-            {id: 15, name: "Paradise Yogurt" },
-            {id: 16, name: "Paradise Coffee" },
-            {id: 17, name: "Paradise Lemonade" },
-            {id: 18, name: "Fruitea" },
-            {id: 19, name: "Other Drinks" }
-        ],
-        addons: [
-            "Tapioca",
-            "Nata",
-            "Oreo",
-            "Coffee Jelly",
-            "Pudding",
-            "Red Bean",
-            "Cream Cheese",
-            "Cheese Cake",
-        ],
-        cart: [
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-        ],
-    },
+    state,
     getters: {},
-    actions: {
-        saveItem: (state, data) => {
-            let response;
-            if (data.id !== undefined) {
-                response = axiosClient
-                        .put(`/items/${data.id}`, data)
-                        .then((res) => {
-                            // commit("updateItem", res.data)
-                            return res;
-                        }) 
-            }else{
-                response = axiosClient
-                        .post("/items", data)
-                        .then((res) => {
-                            // commit("addItem", res.data)
-                            return res;
-                        }) 
-            }
-        },
-
-        register({commit}, user) {
-            return axiosClient.post("/register", user)
-                .then(({data}) => {
-                    commit("setUser", data)
-                    return data;
-                })
-            },
-        login({commit}, user) {
-            return axiosClient.post("/login", user)
-                .then(({data}) => {
-                    commit("setUser", data)
-                    return data;
-                })
-            },
-        logout({commit}) {
-            return axiosClient.post("/logout")
-                .then(response => {
-                    commit("logout")
-                    return response;
-                    })
-            } 
-        
-    },
-    mutations: {
-        addItem(state, data) {
-            //add new data to items belonging to the same items under the same category
-            console.log(data);
-        },
-            
-        updateItem(state, data) {
-            console.log(data);
-        },
-
-        setUser(state, userData) {
-            state.user.data = userData.user;
-            state.user.token = userData.token;
-            sessionStorage.setItem("TOKEN", userData.token);
-        },
-        
-        logout : (state) => {
-            state.user.data = {};
-            state.user.token = null;
-            sessionStorage.removeItem("TOKEN");
-        }
-    },
+    actions,
+    mutations,
     modules: {},
-    plugins: [createPersistedState()],
+    plugins,
 });
 
 export default store;

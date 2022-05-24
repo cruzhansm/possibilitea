@@ -91,6 +91,7 @@
           <div class="flex flex-row space-x-8 pt-2">
 
           <SecondaryButton
+            @click="toggleCancel"
             text="CANCEL"
             :height= 47
             :width= 173.93
@@ -112,6 +113,59 @@
             class="font-normal"
           ></PrimaryButton>
 
+          <!-- CANCEL Modal -->
+          <Modal v-show="isCancellingForm" @close="toggleCancel">
+            <template v-slot:body>
+              <div class="flex flex-col items-center w-full gap-2">
+                <span
+                  class="text-xl text-primary font-bold w-full text-center uppercase"
+                  >Do you want to leave this page? Changes will not be saved.</span
+                >
+              </div>
+            </template>
+            
+            <template v-slot:button-area>
+              <div class="flex flex-col items-center w-full gap-2">
+                <div>
+                  <PrimaryButton
+                    text="Stay"
+                    :height="63"
+                    :width="368"
+                    @click="toggleCancel"
+                    />
+                </div>
+                <div>
+                  <SecondaryButton
+                    text="Leave"
+                    :height="63"
+                    :width="368"
+                    @click="returnToListing"
+                  />
+                </div>
+              </div>
+            </template>
+          </Modal>
+          
+          <!-- SAVE Modal -->
+          <Modal v-show="isSuccessfulListing" @close="toggleSuccess">
+            <template v-slot:body>
+              <div class="flex flex-col items-center w-full gap-2">
+                <span
+                  class="text-xl text-primary font-bold w-full text-center uppercase"
+                  >Listing Added</span
+                >
+              </div>
+            </template>
+            <template v-slot:button-area>
+                <PrimaryButton
+                  text="Done"
+                  :height="63"
+                  :width="368"
+                  @click="returnToListing"
+                />
+            </template>
+          </Modal>
+              
           </div>
 
         </form>
@@ -133,6 +187,8 @@
   import NumberInput from "../../components/Input/NumberInput.vue";
   import PrimaryButton from "../../components/Buttons/PrimaryButton.vue";
   import SecondaryButton from "../../components/Buttons/SecondaryButton.vue";
+  import Modal from "../../components/Modal/Modal.vue";
+  import { useRouter } from "vue-router";
 
   export default {
     name:"ItemInfo",
@@ -151,6 +207,8 @@
         categoryArr:null,
         categories: null,
         subcategories: null,
+        isCancellingForm: false,
+        isSuccessfulListing: false,
       }
     },
     components: {
@@ -158,7 +216,8 @@
       CustomDropdown,
       NumberInput,
       PrimaryButton,
-      SecondaryButton
+      SecondaryButton,
+      Modal
     },
     props: {
       id:Number,
@@ -189,9 +248,25 @@
       });
 
     },  
+    setup(){
+    const router = useRouter();
+    },
     methods: {
+    toggleCancel() {
+      this.isCancellingForm = !this.isCancellingForm;
+    },
+    toggleSuccess() {
+      this.isSuccessfulListing = !this.isSuccessfulListing;
+    },
+    returnToListing() {
+      this.$router.push({ name: 'listing-management' })
+    },
     saveItem(){
-      this.$store.dispatch('saveItem', this.form);
+
+      // this.$store.dispatch('saveItem', this.form)
+      // this.$router.push({ name: 'ItemList' });
+      this.isSuccessfulListing = !this.isSuccessfulListing;
+
     },
 
     getCategory(value){

@@ -94,8 +94,11 @@
     redirectBack() {
         this.$router.push({name: 'listing-management'});
     },
-    deleteItem(){
+    deleteItem(item){
       //delete item from the database
+      if(confirm("Are you sure you want to delete this item?")){
+        
+      }
     }
   },
     mounted () {

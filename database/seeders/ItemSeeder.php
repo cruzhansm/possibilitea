@@ -56,7 +56,7 @@ class ItemSeeder extends Seeder
                 'item_name' => 'Sweet & Sour Chicken with Rice',
                 'price' => 99.00,
                 'itemCat_id' => 1,
-                'img_path' => "/possibilitea/storage/app/public/items/99-Meeals-And-Single-Orders/99-meals-sweet-and-sour-chicken-with-rice.png"
+                'img_path' => "/possibilitea/storage/app/public/items/99-Meeals-And-Single-Orders/99-meals-sweet-sour-chicken-with-rice.png"
             ),
             array(
                 'id'=> 7,

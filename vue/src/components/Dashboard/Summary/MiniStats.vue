@@ -7,7 +7,7 @@
       gap-4
       w-[324px]
       h-[165px]
-      bg-white
+      bg-verylightgray
       rounded-[9px]
     "
   >

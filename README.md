@@ -1,3 +1,89 @@
+
+# 2205 Design Project for Tea Paradise Cafe
+
+## About
+
+Possibilitea is a web-based, single page application Point of Sale (POS) System built using Vue.js, Laravel, and Tailwindcss.
+
+## Setup
+
+After cloning and local repository initialization, open terminal or integrated terminal of project and do the following:
+
+First, fetch dependencies in the root folder (Possibilitea Folder):
+
+```
+npm install
+
+php artisan migrate
+
+```
+
+Second, in the Vue folder:
+
+```
+npm install
+
+npm run tailbuild
+
+```
+
+## Basic Commands 
+
+During each and every development session, execute these commands:
+
+### FRONTEND:
+
+Terminal 1 - Launch a local dev server
+```
+npm run dev
+
+```
+
+Terminal 2 -watch for css changes; install compilation and build
+```
+npm run tailwatch 
+
+```
+
+### BACKEND
+
+First, make sure u have the database running in the server by setting up the database in phpmyadmin:
+1. Turn on Apache and MySQL in XAMPP
+2. go to http://localhost/phpmyadmin
+3. create new database and name it 'possibilitea'
+
+Second, inside the VScode terminal:
+
+ 1. rename .env.example to .env
+
+```
+composer install
+
+php artisan key:generate 
+
+```
+
+```
+php artisan migrate
+
+php artisan config:clear
+```
+
+If you want to refresh the migration/seeder:
+
+```
+php artisan migrate:refresh --seed
+
+```
+
+To run the laravel localhost server:
+
+```
+php artisan serve
+
+```
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
@@ -62,3 +148,7 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Setup
+
+

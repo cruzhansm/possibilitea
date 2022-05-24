@@ -123,19 +123,26 @@
                 >
               </div>
             </template>
+            
             <template v-slot:button-area>
-                <PrimaryButton
-                  text="Stay"
-                  :height="63"
-                  :width="368"
-                  @click="toggleCancel"
-                />
-                <SecondaryButton
-                  text="Leave"
-                  :height="63"
-                  :width="368"
-                  @click="returnToListing"
-                />
+              <div class="flex flex-col items-center w-full gap-2">
+                <div>
+                  <PrimaryButton
+                    text="Stay"
+                    :height="63"
+                    :width="368"
+                    @click="toggleCancel"
+                    />
+                </div>
+                <div>
+                  <SecondaryButton
+                    text="Leave"
+                    :height="63"
+                    :width="368"
+                    @click="returnToListing"
+                  />
+                </div>
+              </div>
             </template>
           </Modal>
           

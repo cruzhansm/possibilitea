@@ -14,6 +14,7 @@
     "
     @click="redirectBack(id)"
   >
+
       <font-awesome-icon
         icon="angle-left"
         size="2x"
@@ -32,15 +33,20 @@
     <div class="flex flex-row justify-even items-start ml-[150px] mt-8">
 
       <div class="flex flex-col space-y-2 ">
-          <div src="" alt="" class="w-[411px] h-[381px] bg-secondary rounded-[9px] m-2 mr-12"></div>
-          <button class="bg-primary w-[174px] h-[47px] text-buttonText text-textButtons rounded-[9px] ml-2 hover:bg-primaryHovered">UPLOAD</button>
+          <img v-if="item.image" :src="item.image" :alt="item.name">
+          <span v-else class="w-[411px] h-[381px] bg-secondary rounded-[9px] m-2 mr-12"></span>
+         
+          <button class="bg-primary w-[174px] h-[47px] text-buttonText text-textButtons rounded-[9px] ml-2 hover:bg-primaryHovered relative">
+            <input type="file" class="absolute left-0 right-0 top-0 bottom-0 opacity-0 cursor-pointer">
+            UPLOAD
+          </button>
       </div>
 
       
       
       <div>
         <!-- Input Product Detail -->
-        <form action="" class="flex flex-col space-y-4">
+        <form action="" @submit.prevent="saveItem" class="flex flex-col space-y-4">
           <TextInput
             @update="getName"
             title="Item Name"
@@ -96,6 +102,7 @@
           ></SecondaryButton>
 
           <PrimaryButton
+            @click="saveItem"
             text="SAVE"
             :height= 47
             :width= 173.93
@@ -104,7 +111,6 @@
             hover="primaryHovered"
             class="font-normal"
           ></PrimaryButton>
-          
 
           </div>
 
@@ -133,6 +139,7 @@
     data() {
       return {
         user: 'admin',
+        item: Array,
         form: {
           name: '',
           selectedCategory: '',
@@ -157,7 +164,7 @@
       category: String, 
       subcategory: String,
       name: String,
-      price: String
+      price: Number
     },
     mounted () {
       let foodCategory = this.$store.state.categories.filter(
@@ -176,6 +183,11 @@
 
     },  
     methods: {
+    saveItem(){
+      // this.$store.dispatch('saveItem', this.form)
+      // this.$router.push({ name: 'ItemList' });
+    },
+
     getCategory(value){
       // this.form.selectedSubcategory = 'Select Subcategory';
       this.form.selectedCategory = value;

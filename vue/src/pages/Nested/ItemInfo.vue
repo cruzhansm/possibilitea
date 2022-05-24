@@ -39,7 +39,7 @@
         <p class="text-primary text-[24px] font-semibold pt-2">P{{ price }}.00</p>
 
         <!-- display edit/delete button if user is admin otherwise hidden -->
-        <div v-if="user === 'admin'" class="flex flex-row space-x-4 mt-6 ">
+        <div v-if="user === 'ADMIN'" class="flex flex-row space-x-4 mt-6 ">
             <button 
             @click="$router.push({name: 'edit', params: { id:id, category:category, name:name, price:price, subcategory:subcategory },})"
             class="w-[172px] h-[47px] text-[24px] bg-primary text-buttonText rounded-[9px] hover:bg-primaryHovered transition ease-in-out delay-[65]">EDIT</button>
@@ -77,7 +77,7 @@
     name:"ItemInfo",
     data() {
       return {
-        user: 'admin'
+        user: '',
       }
     },
     components: {
@@ -94,10 +94,16 @@
     redirectBack() {
         this.$router.push({name: 'listing-management'});
     },
-    deleteItem(){
+    deleteItem(item){
       //delete item from the database
+      if(confirm("Are you sure you want to delete this item?")){
+        
+      }
     }
   },
+    mounted () {
+      this.user = this.$store.state.user.data.role;
+    }
   }
 </script>
 

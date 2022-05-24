@@ -68,7 +68,7 @@ export default {
   computed: {
     userType() {
       /* get the user type from the state once backend is a-ok */
-      return "ADMIN";
+      return this.$store.state.user.data.role;
     },
   },
 };

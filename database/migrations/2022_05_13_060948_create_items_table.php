@@ -15,10 +15,12 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->string('item_name');
+            $table->string('item_name');    
             $table->float('price', 8, 2);
             $table->unsignedBigInteger('itemCat_id');
             $table->foreign('itemCat_id')->references('id')->on('item_categories')->onDelete('cascade');
+            $table->unsignedBigInteger('subcat_id');
+            $table->foreign('subcat_id')->references('id')->on('subcategories')->onDelete('cascade');
             $table->string('img_path')->nullable();
         });
     }

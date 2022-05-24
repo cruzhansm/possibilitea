@@ -269,7 +269,40 @@ const store = createStore({
             token: sessionStorage.getItem("TOKEN")
         },
         categories: [...tmpcategories],
-       
+        subcategoryList: [
+            { id: 1,  name: "99 Meals & Single Orders",},
+            { id: 2,  name: "Soup",},
+            { id: 3,  name: "Pizza & Pasta",},
+            { id: 4,  name: "Sandwiches",},
+            { id: 5,  name: "Sides & Add Ons",},
+            { id: 6,  name: "Milktea & Frappe",},
+            { id: 7,  name: "Smoothies & Milkshake",},
+            { id: 8,  name: "Yogurt & Coffee",},
+            { id: 9,  name: "Lemonade & Fruitea",},
+            { id: 10, name: "Others",},
+
+        ],
+        itemCategoryList: [
+            {id: 1,  name: "99 Meals" },
+            {id: 2,  name: "Single Orders" },
+            {id: 3,  name: "Soup" },
+            {id: 4,  name: "Paradise Pizza" },
+            {id: 5,  name: "Paradise Pasta" },
+            {id: 6,  name: "Paradise Sandwich" },
+            {id: 7,  name: "Sides" },
+            {id: 8,  name: "Add Ons" },
+            {id: 9,  name: "Milktea" },
+            {id: 10, name: "Cheesecake" },
+            {id: 11, name: "Cream Cheese" },
+            {id: 12, name: "Frappe" },
+            {id: 13, name: "Smoothies" },
+            {id: 14, name: "Paradise Milkshake" },
+            {id: 15, name: "Paradise Yogurt" },
+            {id: 16, name: "Paradise Coffee" },
+            {id: 17, name: "Paradise Lemonade" },
+            {id: 18, name: "Fruitea" },
+            {id: 19, name: "Other Drinks" }
+        ],
         addons: [
             "Tapioca",
             "Nata",
@@ -393,6 +426,25 @@ const store = createStore({
     },
     getters: {},
     actions: {
+        saveItem: (state, data) => {
+            let response;
+            if (data.id !== undefined) {
+                response = axiosClient
+                        .put(`/items/${data.id}`, data)
+                        .then((res) => {
+                            // commit("updateItem", res.data)
+                            return res;
+                        }) 
+            }else{
+                response = axiosClient
+                        .post("/items", data)
+                        .then((res) => {
+                            // commit("addItem", res.data)
+                            return res;
+                        }) 
+            }
+        },
+
         register({commit}, user) {
             return axiosClient.post("/register", user)
                 .then(({data}) => {
@@ -417,6 +469,15 @@ const store = createStore({
         
     },
     mutations: {
+        addItem(state, data) {
+            //add new data to items belonging to the same items under the same category
+            console.log(data);
+        },
+            
+        updateItem(state, data) {
+            console.log(data);
+        },
+
         setUser(state, userData) {
             state.user.data = userData.user;
             state.user.token = userData.token;

@@ -141,6 +141,7 @@
         user: 'admin',
         item: Array,
         form: {
+          id: '',
           item_name: '',
           subcat_id: '',
           itemCat_id: '',
@@ -167,6 +168,12 @@
       price: Number
     },
     mounted () {
+      if(this.id){
+        this.form.id = this.id;
+        this.form.item_name = this.name;
+        this.form.price = this.price;
+      }     
+
       let foodCategory = this.$store.state.categories.filter(
         (f) => f.category == "Food"
       );

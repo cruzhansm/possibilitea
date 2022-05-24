@@ -438,8 +438,10 @@ const actions = {
   },
   
   saveItem: ({commit}, data) => {
-    let response;
-    if (data.id) {
+      
+      let response;
+      if (data.id) {
+        let items = Object.values(data);
         response = axiosClient.put(`/items/${data.id}`, data).then((res) => {
             commit("updateItem", res.data)
             return res;
@@ -493,15 +495,15 @@ const mutations = {
         
         state.categories[ndx].items[itemCat_name].push(items[0]);
         
-        console.log(items[0]);
-        console.log(items[0].subcat_id);
-        console.log(itemCat_name);
-        console.log(state.categories[ndx].items[itemCat_name].name);
+        // console.log(items[0]);
+        // console.log(items[0].subcat_id);
+        // console.log(itemCat_name);
+        // console.log(state.categories[ndx].items[itemCat_name].name);
   },
         
-    // updateItem(state, data) {
-        // console.log(data);
-    // },
+    updateItem(state, data) {
+        console.log(data);
+    },
 
     setUser(state, userData) {
         state.user.data = userData.user;

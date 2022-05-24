@@ -54,6 +54,7 @@ class ItemController extends Controller
      */
     public function update(UpdateItemsRequest $request, Items $items)
     {
+        dd($request->validated());
         $items->update($request->validated());
         return new ItemResource($items);
     }

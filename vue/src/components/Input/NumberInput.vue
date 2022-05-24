@@ -1,4 +1,9 @@
 <template>
+  <div>
+  <label class="text-primary text-textInput font-semibold">
+    {{ title }}
+  </label>
+  <br>
   <input
     v-model="num"
     type="number"
@@ -9,7 +14,6 @@
       rounded-[9px]
       outline-none
       text-textInput
-      font-bold
       pr-6
       pl-4
     "
@@ -17,6 +21,7 @@
     :style="{ height: height + 'px', width: width + 'px', textAlign: align }"
     :disabled="disable"
   />
+  </div>
 </template>
 
 <script>
@@ -37,6 +42,7 @@ export default {
     },
   },
   props: {
+    title: String,
     color: String,
     height: Number,
     width: Number,

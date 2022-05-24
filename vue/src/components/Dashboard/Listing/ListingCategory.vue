@@ -2,6 +2,8 @@
   <div>
      <div
       class="
+        transition ease-in-out
+        delay-[50]
         flex flex-col
         justify-center
         items-center

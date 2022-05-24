@@ -1,0 +1,92 @@
+PAPER
+- Transmittal Letter
+- Bibliography (done)
+- Questionnaire (to consult)
+- Survey (to consult)
+- Curriculum Vitae (Celdran, Dinopol, Valeros - photo)
+- Software Requirements Specifications (Initial Working Prototype aka MVP; to consult)	
+- May 28: Submission of Client Video
+    - Today until May 20 (1 week for bug fixing)
+    
+INTRO TO STACK TECH
+- LAMP stack (Laravel, Apache, MySQL, PHP)
+- Vue.js 3, Vue Router, Vuex (Frontend)
+- Tailwindcss (CSS Framework)
+    - font-bold
+    - font-semibold
+    - font-regular
+    - <div class="flex flex-row justify-center items-center gap-[52px] border-2 border-divider"
+- Vite (Build Tool)
+
+GITHUB AND COLLAB
+- git clone (https://github.com/cruzhansm/possibilitea)
+- accept collab request
+- Branching
+    - Name Convention (module/functionality/view-[optional](front/back))
+        - ex: pos-front, pos-back, navigation-back, etc.
+- Pull Requests
+    - for review
+- Issues
+    - bugs, errors, etc.
+    
+LOCAL REPO INIT
+- after cloning
+- open terminal or integrated terminal of project
+- npm i for root (possibilitea folder)
+- php artisan migrate (when DB structure is actually setup, for now ignore)
+- npm i for vue folder
+- npm run tailbuild (vue folder)
+
+BASIC COMMANDS
+- during each and every development session, execute these commands:
+    FRONTEND:
+    npm run dev (1 terminal) -> launch a local dev server
+    npm run tailwatch (1 terminal) -> watch css for changes; instant compilation and build
+    
+    BACKEND:
+    php artisan serve
+    php artisan migrate (when there are DB changes from other branches/incoming changes)
+
+THINGS TO NOTE
+- When using a Fontawesome Icon and its not yet registered in the library, make sure to:
+    1. Open icons.js
+    2. Import specific icon from @fortawesome/free-solid-svg-icons module
+        2.1. Refer to Fontawesome website for name of icon
+            2.1.1. Ex: class="fa-solid fa-xmark" ||| import { faXmark } from "@fortawesome/free-solid-svg-icons"
+    3. Add them to library
+        3.1. add() method of library accepts an array of strings (names of icons), just add the name of your icon
+            3.1.1 Ex: library.add(['xmark', 'minus',]);
+    4. Use it inside your Vue file.
+        4.1. <font-awesome-icon icon="xmark">
+            4.1.1 Refer to fontawesome docs for more props such as size, etc. 
+- When using our project-specific color schemes and font sizes, refer to:
+    1. Figma for what to use
+    2. tailwind.config.js for the actual name of the custom extended properties
+    3. Use it inside your Vue file
+        3.1. Ex: <p class="text-textInput bg-primary hover:bg-primaryHovered"
+- When using postcss keywords, make sure to:
+    1. set language to "postcss" in style
+        1.1. Ex: <style lang="postcss" scoped>.testClass { @apply bg-primary hover:bg-primaryHovered } </style>
+- Highly recommend sarah.drasner's Vue VSCode Snippets for easy set up of Vue file
+- Highly recommend Vetur, Tailwind CSS Intellisense, vue (jcbuisson)
+
+PROGRESS SO FAR
+- Login, Navigation, and Partial POS
+- Excel spreadsheet to track progress
+
+TASKING
+
+FUTURE PLANS
+- UX in Figma
+- Finish frontend in 1-2~weeks time
+    - As soon as db structure is finalized, parallel dev of backend of cleared front views
+- Present Figma file to client(?)
+- Images for the products
+- Assets (custom svgs, etc)
+
+USEFUL LINKS
+- FIGMA (https://www.figma.com/file/E4U1xNtx4RNATInbfZ4H09/Tea-Paradise?node-id=0%3A1)
+- TAILWIND DOCS (https://tailwindcss.com/docs/installation)
+- VUE.JS DOCS (https://vuejs.org/guide/introduction.html)
+- FONTAWESOME DOCS (https://fontawesome.com/docs/web/use-with/vue/style)
+- LARAVEL DOCS (https://laravel.com/docs/9.x)

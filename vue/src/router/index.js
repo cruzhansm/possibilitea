@@ -6,10 +6,12 @@ import POS from "../pages/POS.vue";
 import ItemMenu from "../pages/Nested/ItemMenu.vue";
 import ItemList from "../pages/Nested/ItemList.vue";
 import ItemInfo from "../pages/Nested/ItemInfo.vue";
+import AddListForm from "../pages/Nested/AddListForm.vue";
 import Dashboard from "../pages/Dashboard.vue";
 import DashboardSummary from "../pages/Nested/DashboardSummary.vue";
 import ListingManagement from "../pages/Nested/ListingManagement.vue";
 import AccountCreation from "../pages/AccountCreation.vue";
+import store from "../store";
 
 const routes = [
     {
@@ -64,7 +66,13 @@ const routes = [
                 props: true,
                 name: "info",
                 component: ItemInfo,
-            }
+            },
+            {
+                path: "/listing-management/create-listing",
+                props: true,
+                name: "add",
+                component: AddListForm,
+            },
         ],
     },
     {
@@ -80,5 +88,6 @@ const router = createRouter({
     linkActiveClass: "bg-primary rounded-[9px]"
     
 });
+
 
 export default router;

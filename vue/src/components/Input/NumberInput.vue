@@ -1,5 +1,11 @@
 <template>
+  <div>
+  <label class="text-primary text-textInput font-semibold">
+    {{ title }}
+  </label>
+  <br>
   <input
+    @change="$emit('changeNumber', $event.target.value)"
     v-model="num"
     type="number"
     class="
@@ -9,7 +15,6 @@
       rounded-[9px]
       outline-none
       text-textInput
-      font-bold
       pr-6
       pl-4
     "
@@ -17,6 +22,7 @@
     :style="{ height: height + 'px', width: width + 'px', textAlign: align }"
     :disabled="disable"
   />
+  </div>
 </template>
 
 <script>
@@ -37,11 +43,16 @@ export default {
     },
   },
   props: {
+    default:Number,
+    title: String,
     color: String,
     height: Number,
     width: Number,
     align: String,
     disabled: Boolean,
+  },
+  mounted() {
+    this.num = this.default;
   },
 };
 </script>

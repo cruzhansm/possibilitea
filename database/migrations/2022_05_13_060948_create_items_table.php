@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreign('itemCat_id')->references('id')->on('item_categories')->onDelete('cascade');
             $table->unsignedBigInteger('subcat_id');
             $table->foreign('subcat_id')->references('id')->on('subcategories')->onDelete('cascade');
-            $table->string('img_path',255);
+            $table->string('img_path',255)->nullable();
         });
     }
 

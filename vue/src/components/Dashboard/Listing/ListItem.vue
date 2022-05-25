@@ -4,7 +4,7 @@
   <router-link 
   :to="{
     name: 'info',
-    params: {category: category, subcategory: subcategory, name:item.name, price:item.price, id:item.id}
+    params: {category: category, subcategory: subcategory, name:item.name, price:item.price, id:item.id, img_path:item.img_path}
   }"
   >
   
@@ -27,7 +27,7 @@
       transition delay-75 ease-out hover:ease-in
     "
   >
-    <!-- <img :src="item.img_path" alt="" class="absolute inset-0 h-full w-full object-cover rounded-[9px]"> -->
+    <img :src="item.img_path" alt="" class="absolute inset-0 h-full w-full object-cover rounded-[9px]">
     <div class="absolute inset-0 h-full w-full object-cover rounded-[9px]"></div>
     <div class="flex h-full items-center justify-center relative">
       <span class="text-[16px] uppercase font-bold tracking-wider ">{{ item.name }}</span>

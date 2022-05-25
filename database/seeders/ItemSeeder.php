@@ -22,7 +22,7 @@ class ItemSeeder extends Seeder
                 'price' => 99.00,
                 'itemCat_id' => 1,
                 'subcat_id' => 1,
-                'img_path' => "/possibilitea/public/images/items/99-Meeals-And-Single-Orders/99-meals-porkchop-with-rice.png"
+                'img_path' => "/possibilitea/public/images/items/99-Meals-And-Single-Orders/99-meals-porkchop-with-rice.png"
             ),
             array(
                 'id'=> 2,
@@ -30,7 +30,7 @@ class ItemSeeder extends Seeder
                 'price' => 99.00,
                 'itemCat_id' => 1,
                 'subcat_id' => 1,
-                'img_path' => "/possibilitea/public/images/items/99-Meeals-And-Single-Orders/99-meals-pork-kawali-with-rice.png"
+                'img_path' => "/possibilitea/public/images/items/99-Meals-And-Single-Orders/99-meals-pork-kawali-with-rice.png"
             ),
             array(
                 'id'=> 3,
@@ -38,7 +38,7 @@ class ItemSeeder extends Seeder
                 'price' => 99.00,
                 'itemCat_id' => 1,
                 'subcat_id' => 1,
-                'img_path' => "/possibilitea/public/images/items/99-Meeals-And-Single-Orders/99-meals-pork-sinigang-with-rice.png"
+                'img_path' => "/possibilitea/public/images/items/99-Meals-And-Single-Orders/99-meals-pork-sinigang-with-rice.png"
             ),
             array(
                 'id'=> 4,
@@ -46,7 +46,7 @@ class ItemSeeder extends Seeder
                 'price' => 99.00,
                 'itemCat_id' => 1,
                 'subcat_id' => 1,
-                'img_path' => "/possibilitea/public/images/items/99-Meeals-And-Single-Orders/99-meals-bangus-daing-with-rice.png"
+                'img_path' => "/possibilitea/public/images/items/99-Meals-And-Single-Orders/99-meals-bangus-daing-with-rice.png"
             ),
             array(
                 'id'=> 5,
@@ -54,7 +54,7 @@ class ItemSeeder extends Seeder
                 'price' => 99.00,
                 'itemCat_id' => 1,
                 'subcat_id' => 1,
-                'img_path' => "/possibilitea/public/images/items/99-Meeals-And-Single-Orders/99-meals-butter-chicken-with-rice.png"
+                'img_path' => "/possibilitea/public/images/items/99-Meals-And-Single-Orders/99-meals-butter-chicken-with-rice.png"
             ),
             array(
                 'id'=> 6,
@@ -62,7 +62,7 @@ class ItemSeeder extends Seeder
                 'price' => 99.00,
                 'itemCat_id' => 1,
                 'subcat_id' => 1,
-                'img_path' => "/possibilitea/public/images/items/99-Meeals-And-Single-Orders/99-meals-sweet-and-sour-chicken-with-rice.png"
+                'img_path' => "/possibilitea/public/images/items/99-Meals-And-Single-Orders/99-meals-sweet-and-sour-chicken-with-rice.png"
             ),
             array(
                 'id'=> 7,
@@ -70,7 +70,7 @@ class ItemSeeder extends Seeder
                 'price' => 200.00,
                 'itemCat_id' => 2,
                 'subcat_id' => 1,
-                'img_path' => "/possibilitea/public/images/items/99-Meeals-And-Single-Orders/single-orders-shrimp-gambas.png"
+                'img_path' => "/possibilitea/public/images/items/99-Meals-And-Single-Orders/single-orders-shrimp-gambas.png"
             ),
             array(
                 'id'=> 8,
@@ -78,7 +78,7 @@ class ItemSeeder extends Seeder
                 'price' => 279.00,
                 'itemCat_id' => 2,
                 'subcat_id' => 1,
-                'img_path' => "/possibilitea/public/images/items/99-Meeals-And-Single-Orders/single-orders-buttered-chicken-half.png"
+                'img_path' => "/possibilitea/public/images/items/99-Meals-And-Single-Orders/single-orders-buttered-chicken-half.png"
             ),
             array(
                 'id'=> 9,
@@ -86,7 +86,7 @@ class ItemSeeder extends Seeder
                 'price' => 280.00,
                 'itemCat_id' => 2,
                 'subcat_id' => 1,
-                'img_path' => "/possibilitea/public/images/items/99-Meeals-And-Single-Orders/single-orders-chicken-kawali.png"
+                'img_path' => "/possibilitea/public/images/items/99-Meals-And-Single-Orders/single-orders-chicken-kawali.png"
             ),
             array(
                 'id'=> 10,
@@ -94,7 +94,7 @@ class ItemSeeder extends Seeder
                 'price' => 525.00,
                 'itemCat_id' => 2,
                 'subcat_id' => 1,
-                'img_path' => "/possibilitea/public/images/items/99-Meeals-And-Single-Orders/single-orders-crispy-pata-family.png"
+                'img_path' => "/possibilitea/public/images/items/99-Meals-And-Single-Orders/single-orders-crispy-pata-family.png"
             ),
             array(
                 'id'=> 11,
@@ -102,7 +102,7 @@ class ItemSeeder extends Seeder
                 'price' => 180.00,
                 'itemCat_id' => 2,
                 'subcat_id' => 1,
-                'img_path' => "/possibilitea/public/images/items/99-Meeals-And-Single-Orders/single-orders-bame.png"
+                'img_path' => "/possibilitea/public/images/items/99-Meals-And-Single-Orders/single-orders-bame.png"
             ),
             array(
                 'id'=> 12,
@@ -110,7 +110,7 @@ class ItemSeeder extends Seeder
                 'price' => 150.00,
                 'itemCat_id' => 2,
                 'subcat_id' => 1,
-                'img_path' => "/possibilitea/public/images/items/99-Meeals-And-Single-Orders/single-orders-chicken-and-fries.png"
+                'img_path' => "/possibilitea/public/images/items/99-Meals-And-Single-Orders/single-orders-chicken-and-fries.png"
             ),
             array(
                 'id'=> 13,
@@ -430,7 +430,7 @@ class ItemSeeder extends Seeder
                 'price' => 100.00,
                 'itemCat_id' => 11,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/cheesecake-taro.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/cream-cheese-taro.png"
             ),
             array(
                 'id'=> 53,
@@ -438,7 +438,7 @@ class ItemSeeder extends Seeder
                 'price' => 115.00,
                 'itemCat_id' => 11,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/cheesecake-taro.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/cream-cheese-taro.png"
             ),
             array(
                 'id'=> 54,
@@ -446,7 +446,7 @@ class ItemSeeder extends Seeder
                 'price' => 100.00,
                 'itemCat_id' => 11,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/cheesecake-dark-chocolate.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/cream-cheese-dark-chocolate.png"
             ),
             array(
                 'id'=> 55,
@@ -454,7 +454,7 @@ class ItemSeeder extends Seeder
                 'price' => 115.00,
                 'itemCat_id' => 11,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/cheesecake-dark-chocolate.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/cream-cheese-dark-chocolate.png"
             ),
             array(
                 'id'=> 56,

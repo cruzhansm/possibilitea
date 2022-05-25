@@ -4,6 +4,7 @@
       flex flex-row
       justify-around
       items-center
+      absolute-bottom
       w-full
       h-[194px]
       min-h-[194px]

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-5 pl-[30px] pr-5 pt-5">
+  <div class="h-[400px] flex flex-col gap-5 pl-[30px] pr-5 pt-5">
     <ItemRow
       :key="name"
       v-for="(row, name) in category"

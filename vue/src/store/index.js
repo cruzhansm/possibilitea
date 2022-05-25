@@ -175,42 +175,42 @@ const tmpcategories =  [
         category: "Food",
         active: false,
         items: {
-            "99 Meals": [
+            "99 Meals": [   
                 {
                     id: 1,
                     name: "Porkchop with Rice",
                     price: 99.0,
-                    img_path: "https://www.99meals.com/wp-content/uploads/2019/01/porkchop-with-rice-1.jpg",
+                    img_path: "http://localhost:8000/images/items/99-Meals-And-Single-Orders/99-meals-porkchop-with-rice.png",
                 },
                 {
                     id: 2,
                     name: "Pork Kawali with Rice",
                     price: 99.0,
-                    img_path: ""
+                    img_path: "http://localhost:8000/images/items/99-Meals-And-Single-Orders/99-meals-pork-kawali-with-rice.png"
                 },
                 {
                     id: 3,
                     name: "Pork Sinigang with Rice",
                     price: 99.0,
-                    img_path: ""
+                    img_path: "http://localhost:8000/images/items/99-Meals-And-Single-Orders/99-meals-pork-sinigang-with-rice.png"
                 },
                 {
                     id: 4,
                     name: "Bangus Daing with Rice",
                     price: 99.0,
-                    img_path: ""
+                    img_path: "http://localhost:8000/images/items/99-Meals-And-Single-Orders/99-meals-bangus-daing-with-rice.png"
                 },
                 {
                     id: 5,
                     name: "Butter Chicken with Rice",
                     price: 99.0,
-                    img_path: ""
+                    img_path: "http://localhost:8000/images/items/99-Meals-And-Single-Orders/99-meals-butter-chicken-with-rice.png"
                 },
                 {
                     id: 6,
                     name: "Sweet & Sour Chicken with Rice",
                     price: 99.0,
-                    img_path: ""
+                    img_path: "http://localhost:8000/images/items/99-Meals-And-Single-Orders/99-meals-sweet-and-sour-chicken-with-rice.png"
                 },
             ],
             "Single Orders": [
@@ -218,37 +218,37 @@ const tmpcategories =  [
                     id: 7, 
                     name: "Shrimp Gambas",
                     price: 200.0,
-                    img_path: ""
+                    img_path: "http://localhost:8000/images/items/99-Meals-And-Single-Orders/single-orders-shrimp-gambas.png"
                 },
                 {
                     id: 8,
                     name: "Buttered Chicken Half",
                     price: 279.0,
-                    img_path: ""
+                    img_path: "http://localhost:8000/images/items/99-Meals-And-Single-Orders/single-orders-buttered-chicken-half.png"
                 },
                 {
                     id: 9,
                     name: "Chicken Kawali",
                     price: 280.0,
-                    img_path: ""
+                    img_path: "http://localhost:8000/images/items/99-Meals-And-Single-Orders/single-orders-chicken-kawali.png"
                 },
                 {
                     id: 10,
                     name: "Crispy Pata Family",
                     price: 525.0,
-                    img_path: ""
+                    img_path: "http://localhost:8000/images/items/99-Meals-And-Single-Orders/single-orders-crispy-pata-family.png"
                 },
                 {
                     id: 11,
                     name: "Bam.E",
                     price: 180.0,
-                    img_path: ""
+                    img_path: "http://localhost:8000/images/items/99-Meals-And-Single-Orders/single-orders-bame.png"
                 },
                 {
                     id: 12,
                     name: "Chicken and Fries",
                     price: 150.0,
-                    img_path: ""
+                    img_path: "http://localhost:8000/images/items/99-Meals-And-Single-Orders/single-orders-chicken-and-fries.png"
                 },
             ],
         },

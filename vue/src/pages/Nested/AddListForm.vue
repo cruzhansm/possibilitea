@@ -33,7 +33,7 @@
     <div class="flex flex-row justify-even items-start ml-[150px] mt-8">
 
       <div class="flex flex-col space-y-2 ">
-          <img v-if="form.image" :src="form.image" :alt="form.item_name" class="w-[411px] h-[381px] bg-secondary rounded-[9px] m-2 mr-12">
+          <img v-if="form.img_path" :src="form.img_path" :alt="form.item_name" class="w-[411px] h-[381px] rounded-[9px] m-2 mr-12">
           <span v-else class="w-[411px] h-[381px] bg-secondary rounded-[9px] m-2 mr-12"></span>
          
           <button class="bg-primary w-[174px] h-[47px] text-buttonText text-textButtons rounded-[9px] ml-2 hover:bg-primaryHovered relative">
@@ -112,7 +112,7 @@
             hover="primaryHovered"
             class="font-normal"
           ></PrimaryButton>
-
+          
           <!-- CANCEL Modal -->
           <Modal v-show="isCancellingForm" @close="toggleCancel">
             <template v-slot:body>
@@ -220,6 +220,7 @@
     },
     props: {
       id:Number,
+      img_path:String,
       category: String, 
       subcategory: String,
       name: String,
@@ -230,6 +231,7 @@
         this.form.id = this.id;
         this.form.item_name = this.name;
         this.form.price = this.price;
+        this.form.img_path = this.img_path;
       }     
 
       let foodCategory = this.$store.state.categories.filter(
@@ -311,7 +313,7 @@
       if(id === undefined){
         this.$router.go(-1)
       }else{
-        this.$router.push({ name: 'info', params: {  id:this.id, category: this.category, subcategory:this.subcategory, name:this.name , price:this.price } })
+        this.$router.push({ name: 'info', params: {  id:this.id, category: this.category, subcategory:this.subcategory, name:this.name , price:this.price, img_path:this.img_path} })
       }
     },
   },

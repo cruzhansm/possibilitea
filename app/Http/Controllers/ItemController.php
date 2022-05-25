@@ -64,7 +64,20 @@ class ItemController extends Controller
      */
     public function update(UpdateItemsRequest $request, Items $items)
     {
-        $items->update($request->validated());
+        $data = $request->validated();
+        
+        if(isset($data['img_path'])) {
+            $relativePath = $this->saveImage($data['img_path']);
+            $data['img_path'] = $relativePath;
+        }
+
+        if($items->img_path){
+            $absolutePath = public_path($items->img_path);
+            File::delete($absolutePath);
+        }
+
+
+        $items->update($data);
         return new ItemResource($items);
     }
 
@@ -111,7 +124,7 @@ class ItemController extends Controller
         $relativePath = $dir . $file;
 
         if(!File::exists($abosultePath)) {
-            File::makeDirectory($abosultePath, 0777, true);
+            File::makeDirectory($abosultePath,0755, true);
         }
             file_put_contents($relativePath, $image);
 

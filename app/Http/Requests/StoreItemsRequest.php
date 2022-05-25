@@ -35,7 +35,7 @@ class StoreItemsRequest extends FormRequest
             'price' => 'required|numeric',
             'itemCat_id' => 'exists:item_categories,id',
             'subcat_id' => 'exists:subcategories,id',
-            'img_path' => 'required|string|max:1024',
+            'img_path' => 'nullable|string',
         ];
     }
 }

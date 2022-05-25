@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use Illuminate\Support\Facades\URL;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ItemResource extends JsonResource
@@ -17,9 +18,9 @@ class ItemResource extends JsonResource
         // return parent::toArray($request);
         return [
             'id' => $this->id,
-            'item_name' => $this->item_name,
+            'name' => $this->item_name,
             'price' => $this->price,
-            'img_path' => $this->img_path,
+            'img_path' => $this->img_path ? URL::to($this->img_path) : null,
             'itemCat_id' => $this->itemCat_id,
             'subcat_id' => $this->subcat_id,
         ];

@@ -28,8 +28,7 @@
     "
   >
 
-    <div class="bg-black"></div>
-    <img :src="item.img_path" alt="" class="bg-blend-overlay absolute inset-0 h-full w-full object-cover rounded-[9px]">
+    <img :src="item.img_path" alt="" class=" absolute inset-0 h-full w-full object-cover rounded-[9px]">
 
     <div class="flex flex-wrap flex-col h-full relative justify-end">
       <span class="text-[20px] font-extrabold uppercase tracking-wider text-white w-[117px] ">{{ item.name }}</span>

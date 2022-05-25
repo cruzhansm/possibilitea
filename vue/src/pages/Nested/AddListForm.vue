@@ -24,7 +24,7 @@
         class="group-hover:text-primaryHovered text-2xl text-primary font-bold"
         >BACK</span
       >
-    
+      
   </div>
 
 
@@ -201,7 +201,7 @@
           subcat_id: '',
           itemCat_id: '',
           price: '',
-          img_path: 'image.png',
+          img_path: '',
         },        
         categoryArr:null,
         categories: null,

@@ -27,12 +27,17 @@
       transition delay-75 ease-out hover:ease-in
     "
   >
-    <img :src="item.img_path" alt="" class="absolute inset-0 h-full w-full object-cover rounded-[9px]">
-    <div class="absolute inset-0 h-full w-full object-cover rounded-[9px]"></div>
-    <div class="flex h-full items-center justify-center relative">
-      <span class="text-[16px] uppercase font-bold tracking-wider ">{{ item.name }}</span>
+
+    <div class="bg-black"></div>
+    <img :src="item.img_path" alt="" class="bg-blend-overlay absolute inset-0 h-full w-full object-cover rounded-[9px]">
+
+    <div class="flex flex-wrap flex-col h-full relative justify-end">
+      <span class="text-[20px] font-extrabold uppercase tracking-wider text-white w-[117px] ">{{ item.name }}</span>
+
     </div>
+
   </div>
+
   </router-link>
 
   </div>
@@ -50,4 +55,9 @@ export default {
 </script>
 
 <style scoped>
+
+.text-stroke{
+  /* add text-stroke */
+  font-weight:900;
+}
 </style>

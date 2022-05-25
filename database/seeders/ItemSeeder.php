@@ -22,7 +22,7 @@ class ItemSeeder extends Seeder
                 'price' => 99.00,
                 'itemCat_id' => 1,
                 'subcat_id' => 1,
-                'img_path' => "/possibilitea/storage/app/public/items/99-Meeals-And-Single-Orders/99-meals-porkchop-with-rice.png"
+                'img_path' => "/possibilitea/public/images/items/99-Meeals-And-Single-Orders/99-meals-porkchop-with-rice.png"
             ),
             array(
                 'id'=> 2,
@@ -30,7 +30,7 @@ class ItemSeeder extends Seeder
                 'price' => 99.00,
                 'itemCat_id' => 1,
                 'subcat_id' => 1,
-                'img_path' => "/possibilitea/storage/app/public/items/99-Meeals-And-Single-Orders/99-meals-pork-kawali-with-rice.png"
+                'img_path' => "/possibilitea/public/images/items/99-Meeals-And-Single-Orders/99-meals-pork-kawali-with-rice.png"
             ),
             array(
                 'id'=> 3,
@@ -38,7 +38,7 @@ class ItemSeeder extends Seeder
                 'price' => 99.00,
                 'itemCat_id' => 1,
                 'subcat_id' => 1,
-                'img_path' => "/possibilitea/storage/app/public/items/99-Meeals-And-Single-Orders/99-meals-pork-sinigang-with-rice.png"
+                'img_path' => "/possibilitea/public/images/items/99-Meeals-And-Single-Orders/99-meals-pork-sinigang-with-rice.png"
             ),
             array(
                 'id'=> 4,
@@ -46,7 +46,7 @@ class ItemSeeder extends Seeder
                 'price' => 99.00,
                 'itemCat_id' => 1,
                 'subcat_id' => 1,
-                'img_path' => "/possibilitea/storage/app/public/items/99-Meeals-And-Single-Orders/99-meals-bangus-daing-with-rice.png"
+                'img_path' => "/possibilitea/public/images/items/99-Meeals-And-Single-Orders/99-meals-bangus-daing-with-rice.png"
             ),
             array(
                 'id'=> 5,
@@ -54,7 +54,7 @@ class ItemSeeder extends Seeder
                 'price' => 99.00,
                 'itemCat_id' => 1,
                 'subcat_id' => 1,
-                'img_path' => "/possibilitea/storage/app/public/items/99-Meeals-And-Single-Orders/99-meals-butter-chicken-with-rice.png"
+                'img_path' => "/possibilitea/public/images/items/99-Meeals-And-Single-Orders/99-meals-butter-chicken-with-rice.png"
             ),
             array(
                 'id'=> 6,
@@ -62,7 +62,7 @@ class ItemSeeder extends Seeder
                 'price' => 99.00,
                 'itemCat_id' => 1,
                 'subcat_id' => 1,
-                'img_path' => "/possibilitea/storage/app/public/items/99-Meeals-And-Single-Orders/99-meals-sweet-and-sour-chicken-with-rice.png"
+                'img_path' => "/possibilitea/public/images/items/99-Meeals-And-Single-Orders/99-meals-sweet-and-sour-chicken-with-rice.png"
             ),
             array(
                 'id'=> 7,
@@ -70,7 +70,7 @@ class ItemSeeder extends Seeder
                 'price' => 200.00,
                 'itemCat_id' => 2,
                 'subcat_id' => 1,
-                'img_path' => "/possibilitea/storage/app/public/items/99-Meeals-And-Single-Orders/single-orders-shrimp-gambas.png"
+                'img_path' => "/possibilitea/public/images/items/99-Meeals-And-Single-Orders/single-orders-shrimp-gambas.png"
             ),
             array(
                 'id'=> 8,
@@ -78,7 +78,7 @@ class ItemSeeder extends Seeder
                 'price' => 279.00,
                 'itemCat_id' => 2,
                 'subcat_id' => 1,
-                'img_path' => "/possibilitea/storage/app/public/items/99-Meeals-And-Single-Orders/single-orders-buttered-chicken-half.png"
+                'img_path' => "/possibilitea/public/images/items/99-Meeals-And-Single-Orders/single-orders-buttered-chicken-half.png"
             ),
             array(
                 'id'=> 9,
@@ -86,7 +86,7 @@ class ItemSeeder extends Seeder
                 'price' => 280.00,
                 'itemCat_id' => 2,
                 'subcat_id' => 1,
-                'img_path' => "/possibilitea/storage/app/public/items/99-Meeals-And-Single-Orders/single-orders-chicken-kawali.png"
+                'img_path' => "/possibilitea/public/images/items/99-Meeals-And-Single-Orders/single-orders-chicken-kawali.png"
             ),
             array(
                 'id'=> 10,
@@ -94,7 +94,7 @@ class ItemSeeder extends Seeder
                 'price' => 525.00,
                 'itemCat_id' => 2,
                 'subcat_id' => 1,
-                'img_path' => "/possibilitea/storage/app/public/items/99-Meeals-And-Single-Orders/single-orders-crispy-pata-family.png"
+                'img_path' => "/possibilitea/public/images/items/99-Meeals-And-Single-Orders/single-orders-crispy-pata-family.png"
             ),
             array(
                 'id'=> 11,
@@ -102,7 +102,7 @@ class ItemSeeder extends Seeder
                 'price' => 180.00,
                 'itemCat_id' => 2,
                 'subcat_id' => 1,
-                'img_path' => "/possibilitea/storage/app/public/items/99-Meeals-And-Single-Orders/single-orders-bame.png"
+                'img_path' => "/possibilitea/public/images/items/99-Meeals-And-Single-Orders/single-orders-bame.png"
             ),
             array(
                 'id'=> 12,
@@ -110,7 +110,7 @@ class ItemSeeder extends Seeder
                 'price' => 150.00,
                 'itemCat_id' => 2,
                 'subcat_id' => 1,
-                'img_path' => "/possibilitea/storage/app/public/items/99-Meeals-And-Single-Orders/single-orders-chicken-and-fries.png"
+                'img_path' => "/possibilitea/public/images/items/99-Meeals-And-Single-Orders/single-orders-chicken-and-fries.png"
             ),
             array(
                 'id'=> 13,
@@ -118,7 +118,7 @@ class ItemSeeder extends Seeder
                 'price' => 249.00,
                 'itemCat_id' => 3,
                 'subcat_id' => 2,
-                'img_path' => "/possibilitea/storage/app/public/items/Soup/pork-sinigang.png"
+                'img_path' => "/possibilitea/public/images/items/Soup/pork-sinigang.png"
             ),
             array(
                 'id'=> 14,
@@ -126,7 +126,7 @@ class ItemSeeder extends Seeder
                 'price' => 229.00,
                 'itemCat_id' => 3,
                 'subcat_id' => 2,
-                'img_path' => "/possibilitea/storage/app/public/items/Soup/shrimp-sinigang.png"
+                'img_path' => "/possibilitea/public/images/items/Soup/shrimp-sinigang.png"
             ),
             array(
                 'id'=> 15,
@@ -134,7 +134,7 @@ class ItemSeeder extends Seeder
                 'price' => 389.00,
                 'itemCat_id' => 3,
                 'subcat_id' => 2,
-                'img_path' => "/possibilitea/storage/app/public/items/Soup/bulalo-family.png"
+                'img_path' => "/possibilitea/public/images/items/Soup/bulalo-family.png"
             ),
             array(
                 'id'=> 16,
@@ -142,7 +142,7 @@ class ItemSeeder extends Seeder
                 'price' => 280.00,
                 'itemCat_id' => 4,
                 'subcat_id' => 3,
-                'img_path' => "/possibilitea/storage/app/public/items/Pizza-And-Pasta/pizza-pepperoni.png"
+                'img_path' => "/possibilitea/public/images/items/Pizza-And-Pasta/pizza-pepperoni.png"
             ),
             array(
                 'id'=> 17,
@@ -150,7 +150,7 @@ class ItemSeeder extends Seeder
                 'price' => 280.00,
                 'itemCat_id' => 4,
                 'subcat_id' => 3,
-                'img_path' => "/possibilitea/storage/app/public/items/Pizza-And-Pasta/pizza-hawaiian.png"
+                'img_path' => "/possibilitea/public/images/items/Pizza-And-Pasta/pizza-hawaiian.png"
             ),
             array(
                 'id'=> 18,
@@ -158,7 +158,7 @@ class ItemSeeder extends Seeder
                 'price' => 300.00,
                 'itemCat_id' => 4,
                 'subcat_id' => 3,
-                'img_path' => "/possibilitea/storage/app/public/items/Pizza-And-Pasta/pizza-3-cheese-family.png"
+                'img_path' => "/possibilitea/public/images/items/Pizza-And-Pasta/pizza-3-cheese-family.png"
             ),
             array(
                 'id'=> 19,
@@ -166,7 +166,7 @@ class ItemSeeder extends Seeder
                 'price' => 320.00,
                 'itemCat_id' => 4,
                 'subcat_id' => 3,
-                'img_path' => "/possibilitea/storage/app/public/items/Pizza-And-Pasta/pizza-beef-and-mushroom.png"
+                'img_path' => "/possibilitea/public/images/items/Pizza-And-Pasta/pizza-beef-and-mushroom.png"
             ),
             array(
                 'id'=> 20,
@@ -174,7 +174,7 @@ class ItemSeeder extends Seeder
                 'price' => 280.00,
                 'itemCat_id' => 4,
                 'subcat_id' => 3,
-                'img_path' => "/possibilitea/storage/app/public/items/Pizza-And-Pasta/pizza-margaritta.png"
+                'img_path' => "/possibilitea/public/images/items/Pizza-And-Pasta/pizza-margaritta.png"
             ),
             array(
                 'id'=> 21,
@@ -182,7 +182,7 @@ class ItemSeeder extends Seeder
                 'price' => 170.00,
                 'itemCat_id' => 5,
                 'subcat_id' => 3,
-                'img_path' => "/possibilitea/storage/app/public/items/Pizza-And-Pasta/pasta-carbonara.png"
+                'img_path' => "/possibilitea/public/images/items/Pizza-And-Pasta/pasta-carbonara.png"
             ),
             array(
                 'id'=> 22,
@@ -190,7 +190,7 @@ class ItemSeeder extends Seeder
                 'price' => 150.00,
                 'itemCat_id' => 5,
                 'subcat_id' => 3,
-                'img_path' => "/possibilitea/storage/app/public/items/Pizza-And-Pasta/pasta-spaghetti.png"
+                'img_path' => "/possibilitea/public/images/items/Pizza-And-Pasta/pasta-spaghetti.png"
             ),
             array(
                 'id'=> 23,
@@ -198,7 +198,7 @@ class ItemSeeder extends Seeder
                 'price' => 180.00,
                 'itemCat_id' => 5,
                 'subcat_id' => 3,
-                'img_path' => "/possibilitea/storage/app/public/items/Pizza-And-Pasta/pasta-lasagna.png"
+                'img_path' => "/possibilitea/public/images/items/Pizza-And-Pasta/pasta-lasagna.png"
             ),
             array(
                 'id'=> 24,
@@ -206,7 +206,7 @@ class ItemSeeder extends Seeder
                 'price' => 150.00,
                 'itemCat_id' => 6,
                 'subcat_id' => 4,
-                'img_path' => "/possibilitea/storage/app/public/items/Sandwiches/chicken-burger-with-fries.png"
+                'img_path' => "/possibilitea/public/images/items/Sandwiches/chicken-burger-with-fries.png"
             ),
             array(
                 'id'=> 25,
@@ -214,7 +214,7 @@ class ItemSeeder extends Seeder
                 'price' => 160.00,
                 'itemCat_id' => 6,
                 'subcat_id' => 4,
-                'img_path' => "/possibilitea/storage/app/public/items/Sandwiches/beef-burger-with-fries.png"
+                'img_path' => "/possibilitea/public/images/items/Sandwiches/beef-burger-with-fries.png"
             ),
             array(
                 'id'=> 26,
@@ -222,7 +222,7 @@ class ItemSeeder extends Seeder
                 'price' => 150.00,
                 'itemCat_id' => 6,
                 'subcat_id' => 4,
-                'img_path' => "/possibilitea/storage/app/public/items/Sandwiches/clubhouse.png"
+                'img_path' => "/possibilitea/public/images/items/Sandwiches/clubhouse.png"
             ),
             array(
                 'id'=> 27,
@@ -230,7 +230,7 @@ class ItemSeeder extends Seeder
                 'price' => 120.00,
                 'itemCat_id' => 7,
                 'subcat_id' => 5,
-                'img_path' => "/possibilitea/storage/app/public/items/Sides-And-Add-Ons/sides-nachos.png"
+                'img_path' => "/possibilitea/public/images/items/Sides-And-Add-Ons/sides-nachos.png"
             ),
             array(
                 'id'=> 28,
@@ -238,7 +238,7 @@ class ItemSeeder extends Seeder
                 'price' => 100.00,
                 'itemCat_id' => 7,
                 'subcat_id' => 5,
-                'img_path' => "/possibilitea/storage/app/public/items/Sides-And-Add-Ons/sides-fries.png"
+                'img_path' => "/possibilitea/public/images/items/Sides-And-Add-Ons/sides-fries.png"
             ),
             array(
                 'id'=> 29,
@@ -246,7 +246,7 @@ class ItemSeeder extends Seeder
                 'price' => 20.00,
                 'itemCat_id' => 8,
                 'subcat_id' => 5,
-                'img_path' => "/possibilitea/storage/app/public/items/Sides-And-Add-Ons/add-ons-rice.png"
+                'img_path' => "/possibilitea/public/images/items/Sides-And-Add-Ons/add-ons-rice.png"
             ),
             array(
                 'id'=> 30,
@@ -254,7 +254,7 @@ class ItemSeeder extends Seeder
                 'price' => 120.00,
                 'itemCat_id' => 8,
                 'subcat_id' => 5,
-                'img_path' => "/possibilitea/storage/app/public/items/Sides-And-Add-Ons/add-ons-rice-platter.png"
+                'img_path' => "/possibilitea/public/images/items/Sides-And-Add-Ons/add-ons-rice-platter.png"
             ),
             array(
                 'id'=> 31,
@@ -262,7 +262,7 @@ class ItemSeeder extends Seeder
                 'price' => 160.00,
                 'itemCat_id' => 8,
                 'subcat_id' => 5,
-                'img_path' => "/possibilitea/storage/app/public/items/Sides-And-Add-Ons/add-ons-garlic-fried-rice.png"
+                'img_path' => "/possibilitea/public/images/items/Sides-And-Add-Ons/add-ons-garlic-fried-rice.png"
             ),
             array(
                 'id'=> 32,
@@ -270,7 +270,7 @@ class ItemSeeder extends Seeder
                 'price' => 80.00,
                 'itemCat_id' => 9,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/milktea-classic.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/milktea-classic.png"
             ),
             array(
                 'id'=> 33,
@@ -278,7 +278,7 @@ class ItemSeeder extends Seeder
                 'price' => 90.00,
                 'itemCat_id' => 9,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/milktea-classic.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/milktea-classic.png"
             ),
             array(
                 'id'=> 34,
@@ -286,7 +286,7 @@ class ItemSeeder extends Seeder
                 'price' => 89.00,
                 'itemCat_id' => 9,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/milktea-taro.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/milktea-taro.png"
             ),
             array(
                 'id'=> 35,
@@ -294,7 +294,7 @@ class ItemSeeder extends Seeder
                 'price' => 99.00,
                 'itemCat_id' => 9,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/milktea-taro.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/milktea-taro.png"
             ),
             array(
                 'id'=> 36,
@@ -302,7 +302,7 @@ class ItemSeeder extends Seeder
                 'price' => 89.00,
                 'itemCat_id' => 9,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/milktea-thai.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/milktea-thai.png"
             ),
             array(
                 'id'=> 37,
@@ -310,7 +310,7 @@ class ItemSeeder extends Seeder
                 'price' => 99.00,
                 'itemCat_id' => 9,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/milktea-thai.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/milktea-thai.png"
             ),
             array(
                 'id'=> 38,
@@ -318,7 +318,7 @@ class ItemSeeder extends Seeder
                 'price' => 89.00,
                 'itemCat_id' => 9,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/milktea-matcha.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/milktea-matcha.png"
             ),
             array(
                 'id'=> 39,
@@ -326,7 +326,7 @@ class ItemSeeder extends Seeder
                 'price' => 99.00,
                 'itemCat_id' => 9,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/milktea-matcha.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/milktea-matcha.png"
             ),
             array(
                 'id'=> 40,
@@ -334,7 +334,7 @@ class ItemSeeder extends Seeder
                 'price' => 89.00,
                 'itemCat_id' => 9,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/milktea-wintermelon.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/milktea-wintermelon.png"
             ),
             array(
                 'id'=> 41,
@@ -342,7 +342,7 @@ class ItemSeeder extends Seeder
                 'price' => 99.00,
                 'itemCat_id' => 9,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/milktea-wintermelon.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/milktea-wintermelon.png"
             ),
             array(
                 'id'=> 42,
@@ -350,7 +350,7 @@ class ItemSeeder extends Seeder
                 'price' => 89.00,
                 'itemCat_id' => 9,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/milktea-okinawa.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/milktea-okinawa.png"
             ),
             array(
                 'id'=> 43,
@@ -358,7 +358,7 @@ class ItemSeeder extends Seeder
                 'price' => 99.00,
                 'itemCat_id' => 9,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/milktea-okinawa.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/milktea-okinawa.png"
             ),
             array(
                 'id'=> 44,
@@ -366,7 +366,7 @@ class ItemSeeder extends Seeder
                 'price' => 89.00,
                 'itemCat_id' => 9,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/milktea-dark-chocolate.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/milktea-dark-chocolate.png"
             ),
             array(
                 'id'=> 45,
@@ -374,7 +374,7 @@ class ItemSeeder extends Seeder
                 'price' => 99.00,
                 'itemCat_id' => 9,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/milktea-dark-chocolate.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/milktea-dark-chocolate.png"
             ),
             array(
                 'id'=> 46,
@@ -382,7 +382,7 @@ class ItemSeeder extends Seeder
                 'price' => 110.00,
                 'itemCat_id' => 10,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/cheesecake-pearl-milktea.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/cheesecake-pearl-milktea.png"
             ),
             array(
                 'id'=> 47,
@@ -390,7 +390,7 @@ class ItemSeeder extends Seeder
                 'price' => 120.00,
                 'itemCat_id' => 10,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/cheesecake-pearl-milktea.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/cheesecake-pearl-milktea.png"
             ),
             array(
                 'id'=> 48,
@@ -398,7 +398,7 @@ class ItemSeeder extends Seeder
                 'price' => 115.00,
                 'itemCat_id' => 10,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/cheesecake-nutella.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/cheesecake-nutella.png"
             ),
             array(
                 'id'=> 49,
@@ -406,7 +406,7 @@ class ItemSeeder extends Seeder
                 'price' => 125.00,
                 'itemCat_id' => 10,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/cheesecake-nutella.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/cheesecake-nutella.png"
             ),
             array(
                 'id'=> 50,
@@ -414,7 +414,7 @@ class ItemSeeder extends Seeder
                 'price' => 115.00,
                 'itemCat_id' => 10,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/cheesecake-oreo.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/cheesecake-oreo.png"
             ),
             array(
                 'id'=> 51,
@@ -422,7 +422,7 @@ class ItemSeeder extends Seeder
                 'price' => 130.00,
                 'itemCat_id' => 10,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/cheesecake-oreo.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/cheesecake-oreo.png"
             ),
             array(
                 'id'=> 52,
@@ -430,7 +430,7 @@ class ItemSeeder extends Seeder
                 'price' => 100.00,
                 'itemCat_id' => 11,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/cheesecake-taro.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/cheesecake-taro.png"
             ),
             array(
                 'id'=> 53,
@@ -438,7 +438,7 @@ class ItemSeeder extends Seeder
                 'price' => 115.00,
                 'itemCat_id' => 11,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/cheesecake-taro.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/cheesecake-taro.png"
             ),
             array(
                 'id'=> 54,
@@ -446,7 +446,7 @@ class ItemSeeder extends Seeder
                 'price' => 100.00,
                 'itemCat_id' => 11,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/cheesecake-dark-chocolate.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/cheesecake-dark-chocolate.png"
             ),
             array(
                 'id'=> 55,
@@ -454,7 +454,7 @@ class ItemSeeder extends Seeder
                 'price' => 115.00,
                 'itemCat_id' => 11,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/cheesecake-dark-chocolate.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/cheesecake-dark-chocolate.png"
             ),
             array(
                 'id'=> 56,
@@ -462,7 +462,7 @@ class ItemSeeder extends Seeder
                 'price' => 100.00,
                 'itemCat_id' => 11,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/cream-cheese-thai.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/cream-cheese-thai.png"
             ),
             array(
                 'id'=> 57,
@@ -470,7 +470,7 @@ class ItemSeeder extends Seeder
                 'price' => 115.00,
                 'itemCat_id' => 11,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/cream-cheese-thai.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/cream-cheese-thai.png"
             ),
             array(
                 'id'=> 58,
@@ -478,7 +478,7 @@ class ItemSeeder extends Seeder
                 'price' => 100.00,
                 'itemCat_id' => 11,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/cream-cheese-matcha.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/cream-cheese-matcha.png"
             ),
             array(
                 'id'=> 59,
@@ -486,7 +486,7 @@ class ItemSeeder extends Seeder
                 'price' => 115.00,
                 'itemCat_id' => 11,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/cream-cheese-matcha.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/cream-cheese-matcha.png"
             ),
             array(
                 'id'=> 60,
@@ -494,7 +494,7 @@ class ItemSeeder extends Seeder
                 'price' => 120.00,
                 'itemCat_id' => 12,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/frappe-red-velvet.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/frappe-red-velvet.png"
             ),
             array(
                 'id'=> 61,
@@ -502,7 +502,7 @@ class ItemSeeder extends Seeder
                 'price' => 150.00,
                 'itemCat_id' => 12,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/frappe-red-velvet.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/frappe-red-velvet.png"
             ),
             array(
                 'id'=> 62,
@@ -510,7 +510,7 @@ class ItemSeeder extends Seeder
                 'price' => 120.00,
                 'itemCat_id' => 12,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/frappe-oreo.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/frappe-oreo.png"
             ),
             array(
                 'id'=> 63,
@@ -518,7 +518,7 @@ class ItemSeeder extends Seeder
                 'price' => 150.00,
                 'itemCat_id' => 12,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/frappe-oreo.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/frappe-oreo.png"
             ),
             array(
                 'id'=> 64,
@@ -526,7 +526,7 @@ class ItemSeeder extends Seeder
                 'price' => 120.00,
                 'itemCat_id' => 12,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/frappe-dark-chocolate.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/frappe-dark-chocolate.png"
             ),
             array(
                 'id'=> 65,
@@ -534,7 +534,7 @@ class ItemSeeder extends Seeder
                 'price' => 150.00,
                 'itemCat_id' => 12,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/frappe-dark-chocolate.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/frappe-dark-chocolate.png"
             ),
             array(
                 'id'=> 66,
@@ -542,7 +542,7 @@ class ItemSeeder extends Seeder
                 'price' => 120.00,
                 'itemCat_id' => 12,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/frappe-creamy-taro.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/frappe-creamy-taro.png"
             ),
             array(
                 'id'=> 67,
@@ -550,7 +550,7 @@ class ItemSeeder extends Seeder
                 'price' => 150.00,
                 'itemCat_id' => 12,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/frappe-creamy-taro.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/frappe-creamy-taro.png"
             ),
             array(
                 'id'=> 68,
@@ -558,7 +558,7 @@ class ItemSeeder extends Seeder
                 'price' => 120.00,
                 'itemCat_id' => 12,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/frappe-mint-chocolate.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/frappe-mint-chocolate.png"
             ),
             array(
                 'id'=> 69,
@@ -566,7 +566,7 @@ class ItemSeeder extends Seeder
                 'price' => 150.00,
                 'itemCat_id' => 12,
                 'subcat_id' => 6,
-                'img_path' => "/possibilitea/storage/app/public/items/Milktea-And-Frappe/frappe-mint-chocolate.png"
+                'img_path' => "/possibilitea/public/images/items/Milktea-And-Frappe/frappe-mint-chocolate.png"
             ),
             array(
                 'id'=> 70,
@@ -574,7 +574,7 @@ class ItemSeeder extends Seeder
                 'price' => 140.00,
                 'itemCat_id' => 13,
                 'subcat_id' => 7,
-                'img_path' => "/possibilitea/storage/app/public/items/Smoothies-And-Milkshake/smoothies-mixed-berries.png"
+                'img_path' => "/possibilitea/public/images/items/Smoothies-And-Milkshake/smoothies-mixed-berries.png"
             ),
             array(
                 'id'=> 71,
@@ -582,7 +582,7 @@ class ItemSeeder extends Seeder
                 'price' => 150.00,
                 'itemCat_id' => 13,
                 'subcat_id' => 7,
-                'img_path' => "/possibilitea/storage/app/public/items/Smoothies-And-Milkshake/smoothies-avocado-mango.png"
+                'img_path' => "/possibilitea/public/images/items/Smoothies-And-Milkshake/smoothies-avocado-mango.png"
             ),
             array(
                 'id'=> 72,
@@ -590,7 +590,7 @@ class ItemSeeder extends Seeder
                 'price' => 120.00,
                 'itemCat_id' => 14,
                 'subcat_id' => 7,
-                'img_path' => "/possibilitea/storage/app/public/items/Smoothies-And-Milkshake/milkshake-strawberry.png"
+                'img_path' => "/possibilitea/public/images/items/Smoothies-And-Milkshake/milkshake-strawberry.png"
             ),
             array(
                 'id'=> 73,
@@ -598,7 +598,7 @@ class ItemSeeder extends Seeder
                 'price' => 120.00,
                 'itemCat_id' => 14,
                 'subcat_id' => 7,
-                'img_path' => "/possibilitea/storage/app/public/items/Smoothies-And-Milkshake/milkshake-blueberry.png"
+                'img_path' => "/possibilitea/public/images/items/Smoothies-And-Milkshake/milkshake-blueberry.png"
             ),
             array(
                 'id'=> 74,
@@ -606,7 +606,7 @@ class ItemSeeder extends Seeder
                 'price' => 120.00,
                 'itemCat_id' => 14,
                 'subcat_id' => 7,
-                'img_path' => "/possibilitea/storage/app/public/items/Smoothies-And-Milkshake/milkshake-chocolate.png"  
+                'img_path' => "/possibilitea/public/images/items/Smoothies-And-Milkshake/milkshake-chocolate.png"  
             ),
             array(
                 'id'=> 75,
@@ -614,7 +614,7 @@ class ItemSeeder extends Seeder
                 'price' => 100.00,
                 'itemCat_id' => 15,
                 'subcat_id' => 8,
-                'img_path' => "/possibilitea/storage/app/public/items/Yogurt-And-Coffee/yogurt-blueberry.png"  
+                'img_path' => "/possibilitea/public/images/items/Yogurt-And-Coffee/yogurt-blueberry.png"  
             ),
             array(
                 'id'=> 76,
@@ -622,7 +622,7 @@ class ItemSeeder extends Seeder
                 'price' => 100.00,
                 'itemCat_id' => 15,
                 'subcat_id' => 8,
-                'img_path' => "/possibilitea/storage/app/public/items/Yogurt-And-Coffee/yogurt-strawberry.png"  
+                'img_path' => "/possibilitea/public/images/items/Yogurt-And-Coffee/yogurt-strawberry.png"  
             ),
             array(
                 'id'=> 77,
@@ -630,7 +630,7 @@ class ItemSeeder extends Seeder
                 'price' => 100.00,
                 'itemCat_id' => 15,
                 'subcat_id' => 8,
-                'img_path' => "/possibilitea/storage/app/public/items/Yogurt-And-Coffee/yogurt-mango.png"  
+                'img_path' => "/possibilitea/public/images/items/Yogurt-And-Coffee/yogurt-mango.png"  
             ),
             array(
                 'id'=> 78,
@@ -638,7 +638,7 @@ class ItemSeeder extends Seeder
                 'price' => 100.00,
                 'itemCat_id' => 16,
                 'subcat_id' => 8,
-                'img_path' => "/possibilitea/storage/app/public/items/Yogurt-And-Coffee/coffee-cafe-latte.png"  
+                'img_path' => "/possibilitea/public/images/items/Yogurt-And-Coffee/coffee-cafe-latte.png"  
             ),
             array(
                 'id'=> 79,
@@ -646,7 +646,7 @@ class ItemSeeder extends Seeder
                 'price' => 100.00,
                 'itemCat_id' => 16,
                 'subcat_id' => 8,
-                'img_path' => "/possibilitea/storage/app/public/items/Yogurt-And-Coffee/coffee-americano.png" 
+                'img_path' => "/possibilitea/public/images/items/Yogurt-And-Coffee/coffee-americano.png" 
             ),
             array(
                 'id'=> 80,
@@ -654,7 +654,7 @@ class ItemSeeder extends Seeder
                 'price' => 100.00,
                 'itemCat_id' => 16,
                 'subcat_id' => 8,
-                'img_path' => "/possibilitea/storage/app/public/items/Yogurt-And-Coffee/coffee-cafe-mocha.png" 
+                'img_path' => "/possibilitea/public/images/items/Yogurt-And-Coffee/coffee-cafe-mocha.png" 
             ),
             array(
                 'id'=> 81,
@@ -662,7 +662,7 @@ class ItemSeeder extends Seeder
                 'price' => 100.00,
                 'itemCat_id' => 16,
                 'subcat_id' => 8,
-                'img_path' => "/possibilitea/storage/app/public/items/Yogurt-And-Coffee/coffee-caramel-machiatto.png" 
+                'img_path' => "/possibilitea/public/images/items/Yogurt-And-Coffee/coffee-caramel-machiatto.png" 
             ),
             array(
                 'id'=> 82,
@@ -670,7 +670,7 @@ class ItemSeeder extends Seeder
                 'price' => 150.00,
                 'itemCat_id' => 17,
                 'subcat_id' => 9,
-                'img_path' => "/possibilitea/storage/app/public/items/Lemonade-And-Fruitea/lemonade-melon-pop.png" 
+                'img_path' => "/possibilitea/public/images/items/Lemonade-And-Fruitea/lemonade-melon-pop.png" 
             ),
             array(
                 'id'=> 83,
@@ -678,7 +678,7 @@ class ItemSeeder extends Seeder
                 'price' => 120.00,
                 'itemCat_id' => 17,
                 'subcat_id' => 9,
-                'img_path' => "/possibilitea/storage/app/public/items/Lemonade-And-Fruitea/lemonade-ocean.png" 
+                'img_path' => "/possibilitea/public/images/items/Lemonade-And-Fruitea/lemonade-ocean.png" 
             ),
             array(
                 'id'=> 84,
@@ -686,7 +686,7 @@ class ItemSeeder extends Seeder
                 'price' => 130.00,
                 'itemCat_id' => 17,
                 'subcat_id' => 9,
-                'img_path' => "/possibilitea/storage/app/public/items/Lemonade-And-Fruitea/lemonade-cucumber.png" 
+                'img_path' => "/possibilitea/public/images/items/Lemonade-And-Fruitea/lemonade-cucumber.png" 
             ),
             array(
                 'id'=> 85,
@@ -694,7 +694,7 @@ class ItemSeeder extends Seeder
                 'price' => 120.00,
                 'itemCat_id' => 17,
                 'subcat_id' => 9,
-                'img_path' => "/possibilitea/storage/app/public/items/Lemonade-And-Fruitea/lemonade-green-grape-ade.png" 
+                'img_path' => "/possibilitea/public/images/items/Lemonade-And-Fruitea/lemonade-green-grape-ade.png" 
             ),
             array(
                 'id'=> 86,
@@ -702,7 +702,7 @@ class ItemSeeder extends Seeder
                 'price' => 120.00,
                 'itemCat_id' => 17,
                 'subcat_id' => 9,
-                'img_path' => "/possibilitea/storage/app/public/items/Lemonade-And-Fruitea/lemonade-lychee.png" 
+                'img_path' => "/possibilitea/public/images/items/Lemonade-And-Fruitea/lemonade-lychee.png" 
             ),
             array(
                 'id'=> 87,
@@ -710,7 +710,7 @@ class ItemSeeder extends Seeder
                 'price' => 120.00,
                 'itemCat_id' => 17,
                 'subcat_id' => 9,
-                'img_path' => "/possibilitea/storage/app/public/items/Lemonade-And-Fruitea/lemonade-grapefruit.png" 
+                'img_path' => "/possibilitea/public/images/items/Lemonade-And-Fruitea/lemonade-grapefruit.png" 
             ),
             array(
                 'id'=> 88,
@@ -718,7 +718,7 @@ class ItemSeeder extends Seeder
                 'price' => 120.00,
                 'itemCat_id' => 17,
                 'subcat_id' => 9,
-                'img_path' => "/possibilitea/storage/app/public/items/Lemonade-And-Fruitea/lemonade-honey-peach.png" 
+                'img_path' => "/possibilitea/public/images/items/Lemonade-And-Fruitea/lemonade-honey-peach.png" 
             ),
             array(
                 'id'=> 89,
@@ -726,7 +726,7 @@ class ItemSeeder extends Seeder
                 'price' => 100.00,
                 'itemCat_id' => 18,
                 'subcat_id' => 9,
-                'img_path' => "/possibilitea/storage/app/public/items/Lemonade-And-Fruitea/fruitea-passion-fruit.png" 
+                'img_path' => "/possibilitea/public/images/items/Lemonade-And-Fruitea/fruitea-passion-fruit.png" 
             ),
             array(
                 'id'=> 90,
@@ -734,7 +734,7 @@ class ItemSeeder extends Seeder
                 'price' => 100.00,
                 'itemCat_id' => 18,
                 'subcat_id' => 9,
-                'img_path' => "/possibilitea/storage/app/public/items/Lemonade-And-Fruitea/fruitea-peach-mango.png" 
+                'img_path' => "/possibilitea/public/images/items/Lemonade-And-Fruitea/fruitea-peach-mango.png" 
             ),
             array(
                 'id'=> 91,
@@ -742,7 +742,7 @@ class ItemSeeder extends Seeder
                 'price' => 100.00,
                 'itemCat_id' => 19,
                 'subcat_id' => 10,
-                'img_path' => "/possibilitea/storage/app/public/items/Others/lemonade.png" 
+                'img_path' => "/possibilitea/public/images/items/Others/lemonade.png" 
             ),
             array(
                 'id'=> 92,
@@ -750,7 +750,7 @@ class ItemSeeder extends Seeder
                 'price' => 60.00,
                 'itemCat_id' => 19,
                 'subcat_id' => 10,
-                'img_path' => "/possibilitea/storage/app/public/items/Others/four-seasons.png" 
+                'img_path' => "/possibilitea/public/images/items/Others/four-seasons.png" 
             ),
             array(
                 'id'=> 93,
@@ -758,7 +758,7 @@ class ItemSeeder extends Seeder
                 'price' => 60.00,
                 'itemCat_id' => 19,
                 'subcat_id' => 10,
-                'img_path' => "/possibilitea/storage/app/public/items/Others/icetea.png" 
+                'img_path' => "/possibilitea/public/images/items/Others/icetea.png" 
             ),
             array(
                 'id'=> 94,
@@ -766,7 +766,7 @@ class ItemSeeder extends Seeder
                 'price' => 20.00,
                 'itemCat_id' => 19,
                 'subcat_id' => 10,
-                'img_path' => "/possibilitea/storage/app/public/items/Others/coke.png" 
+                'img_path' => "/possibilitea/public/images/items/Others/coke.png" 
             ),
             array(
                 'id'=> 95,
@@ -774,7 +774,7 @@ class ItemSeeder extends Seeder
                 'price' => 20.00,
                 'itemCat_id' => 19,
                 'subcat_id' => 10,
-                'img_path' => "/possibilitea/storage/app/public/items/Others/sprite.png" 
+                'img_path' => "/possibilitea/public/images/items/Others/sprite.png" 
             ),
             array(
                 'id'=> 96,
@@ -782,7 +782,7 @@ class ItemSeeder extends Seeder
                 'price' => 55.00,
                 'itemCat_id' => 19,
                 'subcat_id' => 10,
-                'img_path' => "/possibilitea/storage/app/public/items/Others/san-mig-light.png" 
+                'img_path' => "/possibilitea/public/images/items/Others/san-mig-light.png" 
             ),
             array(
                 'id'=> 97,
@@ -790,7 +790,7 @@ class ItemSeeder extends Seeder
                 'price' => 55.00,
                 'itemCat_id' => 19,
                 'subcat_id' => 10,
-                'img_path' => "/possibilitea/storage/app/public/items/Others/san-mig-flavored.png" 
+                'img_path' => "/possibilitea/public/images/items/Others/san-mig-flavored.png" 
             ),
             array(
                 'id'=> 98,
@@ -798,7 +798,7 @@ class ItemSeeder extends Seeder
                 'price' => 60.00,
                 'itemCat_id' => 19,
                 'subcat_id' => 10,
-                'img_path' => "/possibilitea/storage/app/public/items/Others/san-mig-pilsen-small.png" 
+                'img_path' => "/possibilitea/public/images/items/Others/san-mig-pilsen-small.png" 
             )
         );
 

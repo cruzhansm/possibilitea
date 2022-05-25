@@ -430,7 +430,7 @@ class ItemSeeder extends Seeder
                 'price' => 100.00,
                 'itemCat_id' => 11,
                 'subcat_id' => 6,
-                'img_path' => "http://localhost:8000/images/items/Milktea-And-Frappe/cheesecake-taro.png"
+                'img_path' => "http://localhost:8000/images/items/Milktea-And-Frappe/cream-cheese-taro.png"
             ),
             array(
                 'id'=> 53,
@@ -438,7 +438,7 @@ class ItemSeeder extends Seeder
                 'price' => 115.00,
                 'itemCat_id' => 11,
                 'subcat_id' => 6,
-                'img_path' => "http://localhost:8000/images/items/Milktea-And-Frappe/cheesecake-taro.png"
+                'img_path' => "http://localhost:8000/images/items/Milktea-And-Frappe/cream-cheese-taro.png"
             ),
             array(
                 'id'=> 54,
@@ -446,7 +446,7 @@ class ItemSeeder extends Seeder
                 'price' => 100.00,
                 'itemCat_id' => 11,
                 'subcat_id' => 6,
-                'img_path' => "http://localhost:8000/images/items/Milktea-And-Frappe/cheesecake-dark-chocolate.png"
+                'img_path' => "http://localhost:8000/images/items/Milktea-And-Frappe/cream-cheese-dark-chocolate.png"
             ),
             array(
                 'id'=> 55,
@@ -454,7 +454,7 @@ class ItemSeeder extends Seeder
                 'price' => 115.00,
                 'itemCat_id' => 11,
                 'subcat_id' => 6,
-                'img_path' => "http://localhost:8000/images/items/Milktea-And-Frappe/cheesecake-dark-chocolate.png"
+                'img_path' => "http://localhost:8000/images/items/Milktea-And-Frappe/cream-cheese-dark-chocolate.png"
             ),
             array(
                 'id'=> 56,

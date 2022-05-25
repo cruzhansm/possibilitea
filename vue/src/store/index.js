@@ -434,11 +434,12 @@ const state = getDefaultState()
 
 const actions = {
   resetCartState ({ commit }) {
+
     commit('resetState')
   },
   
   saveItem: ({commit}, data) => {
-      
+      delete data.image;
       let response;
       if (data.id) {
         let items = Object.values(data);
@@ -498,19 +499,16 @@ const mutations = {
         // console.log(items[0]);
         // console.log(items[0].subcat_id);
         // console.log(itemCat_name);
-        // console.log(state.categories[ndx].items[itemCat_name].name);
-  },
-        
+        // console.log(state.categories[ndx].items[itemCat_name])
+  },        
     updateItem(state, data) {
         console.log(data);
     },
-
     setUser(state, userData) {
         state.user.data = userData.user;
         state.user.token = userData.token;
         sessionStorage.setItem("TOKEN", userData.token);
     },
-
     logout : (state) => {
         state.user.data = {};
         state.user.token = null;

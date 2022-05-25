@@ -33,11 +33,11 @@
     <div class="flex flex-row justify-even items-start ml-[150px] mt-8">
 
       <div class="flex flex-col space-y-2 ">
-          <img v-if="item.image" :src="item.image" :alt="item.name">
+          <img v-if="form.image" :src="form.image" :alt="form.item_name" class="w-[411px] h-[381px] bg-secondary rounded-[9px] m-2 mr-12">
           <span v-else class="w-[411px] h-[381px] bg-secondary rounded-[9px] m-2 mr-12"></span>
          
           <button class="bg-primary w-[174px] h-[47px] text-buttonText text-textButtons rounded-[9px] ml-2 hover:bg-primaryHovered relative">
-            <input type="file" class="absolute left-0 right-0 top-0 bottom-0 opacity-0 cursor-pointer">
+            <input type="file" @change="onImageChoose" class="absolute left-0 right-0 top-0 bottom-0 opacity-0 cursor-pointer">
             UPLOAD
           </button>
       </div>
@@ -251,6 +251,18 @@
     const router = useRouter();
     },
     methods: {
+    onImageChoose(ev){
+      const file = ev.target.files[0];
+      const reader = new FileReader();
+      reader.onload = () => {
+        //field to send data to backend
+        this.form.img_path = reader.result;
+        //field to display image
+        this.form.image = reader.result;
+      };
+      reader.readAsDataURL(file);
+    },
+    
     toggleCancel() {
       this.isCancellingForm = !this.isCancellingForm;
     },

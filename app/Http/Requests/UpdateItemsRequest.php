@@ -16,13 +16,6 @@ class UpdateItemsRequest extends FormRequest
         return true;
     }
 
-    protected function prepareForValidation()
-    {
-        $this->merge([
-            'user_id' => auth()->id(),
-        ]);
-    }
-
     /**
      * Get the validation rules that apply to the request.
      *
@@ -31,11 +24,12 @@ class UpdateItemsRequest extends FormRequest
     public function rules()
     {
         return [
+            'id' => 'required',
             'item_name' => 'required|string|max:255',
             'price' => 'required|numeric',
             'itemCat_id' => 'exists:item_categories,id',
             'subcat_id' => 'exists:subcategories,id',
-            'img_path' => 'required|string|max:1024',
+            'img_path' => 'required|string',
         ];
     }
 }

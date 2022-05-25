@@ -442,7 +442,6 @@ const actions = {
       delete data.image;
       let response;
       if (data.id) {
-        let items = Object.values(data);
         response = axiosClient.put(`/items/${data.id}`, data).then((res) => {
             commit("updateItem", res.data)
             return res;
@@ -500,9 +499,24 @@ const mutations = {
         // console.log(items[0].subcat_id);
         // console.log(itemCat_name);
         // console.log(state.categories[ndx].items[itemCat_name])
-  },        
+    },        
     updateItem(state, data) {
-        console.log(data);
+        let itemCat_name = state.itemCategoryList.filter(function(item){
+            return item.id == data[0].itemCat_id          
+            })[0].name;
+            
+            let ndx = data[0].subcat_id - 1;
+            
+            //destructure data[0]
+            let newObject = {
+                id: data[0].id,
+                name: data[0].item_name,
+                price: data[0].price,
+                itemCat_id: data[0].itemCat_id,
+                subcat_id: data[0].subcat_id,
+                img_path: data[0].img_path
+            }
+            // state.categories[ndx].items[itemCat_name].push(newObject);
     },
     setUser(state, userData) {
         state.user.data = userData.user;

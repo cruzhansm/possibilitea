@@ -6,6 +6,7 @@ use App\Models\Items;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use PhpParser\Node\Name\Relative;
+use Illuminate\Support\Facades\URL;
 use App\Http\Resources\ItemResource;
 use Illuminate\Support\Facades\File;
 use App\Http\Requests\StoreItemsRequest;
@@ -69,16 +70,27 @@ class ItemController extends Controller
         if(isset($data['img_path'])) {
             $relativePath = $this->saveImage($data['img_path']);
             $data['img_path'] = $relativePath;
+            
+            if($items->img_path){
+                $absolutePath = public_path($items->img_path);
+                File::delete($absolutePath);
+            }
         }
+            
+        // $items->update($data);
 
-        if($items->img_path){
-            $absolutePath = public_path($items->img_path);
-            File::delete($absolutePath);
-        }
+        Items::where('id', $data['id'])->update([
+            'item_name' => $data['item_name'],
+            'price' => $data['price'],
+            'itemCat_id' => $data['itemCat_id'],
+            'subcat_id' => $data['subcat_id'],
+            'img_path' => $data['img_path']
+        ]);
 
+            $newItem = Items::where('id', $data['id'])->get();
+            // $newItem->img_path = URL::to($relativePath);
 
-        $items->update($data);
-        return new ItemResource($items);
+        return $newItem;
     }
 
     /**

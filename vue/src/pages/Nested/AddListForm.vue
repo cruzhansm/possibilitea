@@ -202,6 +202,7 @@
           itemCat_id: '',
           price: '',
           img_path: '',
+          image: '',
         },        
         categoryArr:null,
         categories: null,

@@ -27,7 +27,7 @@ const routes = [
     {
         path: "/navigation",
         name: "navigation",
-        meta: { requiresAuth: true },
+        meta: { requiresAuth: false },
         component: Navigation,
     },
     {

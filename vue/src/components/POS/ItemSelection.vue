@@ -12,11 +12,13 @@ import Selects from "./Selection/Selects.vue";
 
 export default {
   name: "ItemSelection",
+  data() {
+    return {
+      item: {},
+    };
+  },
   components: {
     Selects,
   },
 };
 </script>
-
-<style scoped>
-</style>

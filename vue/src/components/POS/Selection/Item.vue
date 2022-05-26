@@ -1,35 +1,17 @@
 <template>
   <div>
-  
-  <div
-    class="
-      flex
-      justify-center
-      text-center
-      items-end
-      bg-secondary
-      rounded-[9px]
-      w-[138.3px]
-      h-[130px]
-      hover:outline hover:outline-4 hover:outline-primary hover:cursor-pointer
-    "
-  >
-    <span class="text-[16px] uppercase font-bold">{{ item.name }}</span>
-  </div>
-
+    <div>
+      <span class="pointer-events-none text-[16px] uppercase font-bold">{{
+        item.name
+      }}</span>
+    </div>
   </div>
 </template>
 
-<script>
-export default {
-  name: "Item",
-  props: {
-    category:String,
-    subcategory:String,
-    item: Object,
-  },
-};
+<script setup>
+defineProps({
+  category: String,
+  subcategory: String,
+  item: Object,
+});
 </script>
-
-<style scoped>
-</style>

@@ -7,6 +7,7 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\ItemCategoryController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::resource('/items', ItemController::class);
     Route::resource('/category', CategoryController::class);
     Route::resource('/item-category', ItemCategoryController::class);
-
+    Route::resource('/transaction', TransactionController::class);
     //use this to get all the subcategories
     Route::resource('/subcategory', SubcategoryController::class);
 });

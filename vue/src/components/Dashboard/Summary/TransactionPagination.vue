@@ -6,7 +6,13 @@
       <span class="w-1/4 font-bold text-textInput">Total</span>
       <span class="w-1/4 font-bold text-textInput">Date & Time</span>
     </div>
-    <TransactionLog :key="n" v-for="n in 8" />
+
+    <TransactionLog :key="transaction.id" v-for="transaction in transactions"
+      :id="transaction.id"
+      :name="transaction.name.username"
+      :amount="transaction.amount"
+      :date="transaction.date"
+    />
     <div class="flex justify-center w-full mt-6">
       <PaginationController :pages="3" />
     </div>
@@ -14,12 +20,27 @@
 </template>
 
 <script>
+import axiosClient from "../../../axios";
 import PaginationController from "../../Pagination/PaginationController.vue";
 import TransactionLog from "./TransactionLog.vue";
 export default {
   name: "TransactionPagination",
   components: { TransactionLog, PaginationController },
+  data() {
+    return {
+      transactions:{},
+    }
+  },
+  methods: {
+    loadTransactions(){
+        axiosClient.get("/transaction").then(({ data }) => (this.transactions = data.data));
+    }
+},
+created() {
+  this.loadTransactions();
+}
 };
+
 </script>
 
 <style lang="postcss" scoped>

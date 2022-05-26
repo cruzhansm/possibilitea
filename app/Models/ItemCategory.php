@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Items;
+use App\Models\Subcategory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class ItemCategory extends Model
 {
@@ -16,6 +18,6 @@ class ItemCategory extends Model
 
     public function item()
     {
-        return $this->hasMany(Item::class);
+        return $this->hasMany(Items::class,'itemCat_id');
     }
 }

@@ -5,12 +5,12 @@ import { data } from "autoprefixer";
 
 const getDefaultState = () => {
     return {
-        responseFromServer: {},
         user:{
             data:{},
             token: sessionStorage.getItem("TOKEN")
         },
-        categories: [...tmpcategories],
+        categories: {},
+        // categories: [...tmpcategories],
         subcategoryList: [
             { id: 1,  name: "99 Meals & Single Orders",},
             { id: 2,  name: "Soup",},
@@ -437,11 +437,11 @@ const actions = {
   resetCartState ({ commit }) {
     commit('resetState')
   },
-  getSubcategories ({ commit }){
+  getSubcategories({ commit }){
     return axiosClient.get("/subcategory")
-    .then(({res}) => {
-        commit('setCategory',res)
-        return res;
+    .then(({data}) => {
+        commit('setCategory',data)
+        return data;
     })
   },
   saveItem: ({commit}, data) => {
@@ -535,7 +535,8 @@ const mutations = {
         sessionStorage.removeItem("TOKEN");
     },
     setCategory(state, data){
-        console.log(data);
+        // console.log(data.data);
+        state.categories = {...data};
         // state.responseFromServer = data;
     }
 }

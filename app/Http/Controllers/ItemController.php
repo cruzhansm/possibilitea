@@ -22,9 +22,8 @@ class ItemController extends Controller
     public function index(Request $request)
     {
         // $user = $request->user();
-        $items = Items::with('item_categories')->get();
+        $items = Items::all();
         return ItemResource::collection($items);
-        //   $items = Items::all();
         //   return ItemResource::collection($items);
         // return ItemResource::collection(Items::all());
         

@@ -17,8 +17,7 @@ class ItemCategoryResource extends JsonResource
     {
         // return parent::toArray($request);
         return [
-            // "ITEMS" => ItemResource::collection($this->id),
-            // "SUBCATEGORY" => SubcategoryResource::collection($this->id),
+            $this->itemcat_name => ItemResource::collection(Items::where('itemcat_id','=', $this->id)->get()),
         ];
     }
 }

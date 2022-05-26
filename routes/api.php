@@ -1,9 +1,12 @@
 <?php
 
-use App\Http\Controllers\ItemController;
-use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SubcategoryController;
+use App\Http\Controllers\ItemCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +25,11 @@ Route::middleware('auth:sanctum')->group(function () {
     });
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::resource('/items', ItemController::class);
+    Route::resource('/category', CategoryController::class);
+    Route::resource('/item-category', ItemCategoryController::class);
+
+    //use this to get all the subcategories
+    Route::resource('/subcategory', SubcategoryController::class);
 });
 
 Route::post('/register', [ AuthController::class, 'register' ]);

@@ -21,9 +21,9 @@ export default {
   name: "DashboardSummary",
   data() {
     return {
-      stat_one: 100,
+      stat_one: 5122,
       stat_two: 3460.00,
-      stat_three: 500,
+      stat_three: 5421,
       stat_four: 10203.00,
       stat_w: 0,
       stat_x: 0,

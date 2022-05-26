@@ -22,8 +22,14 @@ class ItemController extends Controller
     public function index(Request $request)
     {
         // $user = $request->user();
-        // return ItemResource::collection(Items::where('user_id', $user->id)->get());
-        return ItemResource::collection(Items::all()->paginate(10));   
+        $items = Items::with('item_categories')->get();
+        return ItemResource::collection($items);
+        //   $items = Items::all();
+        //   return ItemResource::collection($items);
+        // return ItemResource::collection(Items::all());
+        
+        // return ItemResource::collection(Items::all()->paginate(10));
+        // return ItemResource::collection(Items::with('item_categories')->paginate(10));
     }
 
     /**
@@ -88,8 +94,8 @@ class ItemController extends Controller
         ]);
 
             $newItem = Items::where('id', $data['id'])->get();
-            // $newItem->img_path = URL::to($relativePath);
-
+            $newItem->img_path = URL::to($relativePath);
+            
         return $newItem;
     }
 

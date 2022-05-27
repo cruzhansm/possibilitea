@@ -1,7 +1,7 @@
 <template>
   <div>
       <span class="text-2xl text-primary font-bold">Food</span>
-     <div class="flex flex-wrap justify-between items-center mt-2 pr-8">
+     <div class="flex flex-wrap items-center mt-2 ">
      
       <router-link
       :key="index"
@@ -12,7 +12,9 @@
       }"
        @click="setItemCategory(fd)"
        >
-      <ListingCategory :product="fd.name"/>
+      <ListingCategory 
+      :img="fd.img_path"
+      :product="fd.name"/>
       </router-link>
       
       </div>
@@ -34,8 +36,8 @@ import ListingCategory from "./ListingCategory.vue";
   });
 
   onMounted(() => {
-    data.food = store.state.food;
-    
+    data.food = store.state.foods;
+    console.log(data.food);
   });
 
   function setItemCategory(fd){

@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col h-full w-full">
-    <div class="h-full w-full">
+  <div class="flex flex-col w-full">
+    <div class="h-[683px] overflow-scroll overflow-x-hidden w-full">
       <router-view></router-view>
     </div>
     <Selects />
@@ -18,5 +18,17 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
+::-webkit-scrollbar {
+  @apply w-[9px];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply hover:cursor-pointer bg-primaryHovered;
+}
+
 </style>

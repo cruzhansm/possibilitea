@@ -12,25 +12,25 @@
     >
       Logo Here
     </div>
-    <div class="text-primary text-2xl font-bold mb-[75px]">{{ userType }}</div>
-    <div class="flex flex-col gap-8">
+    <div class="text-primary text-2xl font-bold mb-[57px]">{{ userType }}</div>
+    <div class="flex flex-col gap-[32px]">
       <router-link :to="{ name: 'pos' }">
-        <PrimaryButton text="POS System" :height="97" :width="680" />
+        <PrimaryButton text="POS System" :height="84" :width="723" :fontSize="36" />
       </router-link>
       <router-link :to="{ name: 'dashboard' }"
-        ><PrimaryButton text="Dashboard" :height="97" :width="680"
+        ><PrimaryButton text="Dashboard" :height="84" :width="723" :fontSize="36" 
       /></router-link>
       <router-link :to="{ name: 'account-creation' }">
         <PrimaryButton
           text="Account Creation"
-          :height="97"
-          :width="680"
+          :height="84"
+          :width="723" :fontSize="36" 
           v-if="userType == 'ADMIN'"
           router-link
         />
       </router-link>
 
-        <SecondaryButton @click="logout" text="Log Out" :height="97" :width="680" />
+        <SecondaryButton @click="logout" text="Log Out" :height="84" :width="723" :fontSize="36"  />
         
     </div>
   </div>

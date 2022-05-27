@@ -2,7 +2,7 @@
   <div
     class="
       flex flex-col
-      h-full
+      h-[886px]
       w-fit
       pl-8
       pt-5

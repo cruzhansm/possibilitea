@@ -2,7 +2,7 @@
   <div>
       <span class="text-2xl text-primary font-bold">Drinks</span>
      <div class="flex flex-wrap justify-between items-center mt-2 pr-8">
-      <router-link
+      <!-- <router-link
       :key="index"
       v-for="(dr, index) in drinks"
       :to="{
@@ -17,7 +17,7 @@
         "
        >
       <ListingCategory :product="dr.name"/>
-      </router-link>
+      </router-link> -->
       </div>
   </div>
 </template>
@@ -28,15 +28,17 @@
     name: "DrinkCategory",
     data(){
       return {
+        categories: Object,
         drinks : Array,
         active: String
       };
     },
     components: {ListingCategory},
     mounted () {
-      this.drinks = this.$store.state.categories.filter(
-        (c) => c.category == "Drinks"
-      );
+      this.categories = this.$store.state.categories;
+      // this.drinks = this.$store.state.categories.filter(
+      //   (c) => c.category == "Drinks"
+      // );
     },
   }
 </script>

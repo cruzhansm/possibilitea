@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use App\Models\ItemCategory;
+use App\Models\Items;
 use App\Http\Resources\ItemCategoryResource;
 use App\Models\Category;
 use App\Models\Subcategory;
@@ -24,10 +25,8 @@ class SubcategoryResource extends JsonResource
             'name' => $this->sub_name,
             'category' => Category::where('id','=', $this->category_id)->get()->first()->category_name,
             'active' =>  $this->status, 
-            // 'items' => ItemCategoryResource::collection(ItemCategory::where('subcategory_id','=', $this->id)->get())  ,
             // 'items' => $this->item_categories,
-            //get all item categories and the items associated with it
-            'items' => ItemCategoryResource::collection(ItemCategory::all()),
+            'items' => ItemCategoryResource::collection(ItemCategory::where('subcategory_id','=', $this->id)->get()),
         ];
     }
 }

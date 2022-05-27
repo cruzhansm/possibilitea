@@ -17,6 +17,7 @@ class Subcategory extends Model
 
     public function item_categories()
     {
-        return $this->hasMany(ItemCategory::class);
+        return $this->hasMany(ItemCategory::class,'subcategory_id')->with('item');
     }
+
 }

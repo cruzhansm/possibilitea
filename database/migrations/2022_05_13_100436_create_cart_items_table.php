@@ -26,6 +26,7 @@ return new class extends Migration
             $table->foreign('addon_id')->references('id')->on('addons')->onDelete('cascade');
             $table->unsignedBigInteger('sugarlvl_id')->nullable();
             $table->foreign('sugarlvl_id')->references('id')->on('sugar_lvls')->onDelete('cascade');
+            $table->enum('temperature',  ['hot', 'cold'])->nullable();
         });
     }
 

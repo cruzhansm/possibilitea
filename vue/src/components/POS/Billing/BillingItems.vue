@@ -1,31 +1,16 @@
 <template>
   <div
-    class="
-      p
-      flex flex-col
-      h-[500px]
-      max-h-[500px]
-      gap-4
-      w-full
-      overflow-scroll overflow-x-hidden
-    "
+    class="p flex flex-col h-[500px] max-h-[500px] gap-4 w-full overflow-scroll overflow-x-hidden"
   >
     <BillingItem :key="index" v-for="(item, index) in items" :item="item" />
   </div>
 </template>
 
-<script>
+<script setup>
 import BillingItem from "./BillingItem.vue";
-
-export default {
-  name: "BillingItems",
-  components: {
-    BillingItem,
-  },
-  props: {
-    items: Array,
-  },
-};
+defineProps({
+  items: Array,
+});
 </script>
 
 <style lang="postcss" scoped>

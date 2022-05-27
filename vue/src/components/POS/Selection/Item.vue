@@ -29,16 +29,10 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "Item",
-  props: {
-    category:String,
-    subcategory:String,
-    item: Array,
-  },
-};
+<script setup>
+defineProps({
+  category: String,
+  subcategory: String,
+  item: Object,
+});
 </script>
-
-<style scoped>
-</style>

@@ -67,116 +67,28 @@ const getDefaultState = () => {
             "Cream Cheese",
             "Cheese Cake",
         ],
-        cart: [
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-        ]
+       cart: [
+      {
+        name: "Dark Chocolate",
+        category: "Milktea",
+        quantity: 1,
+        size: "22oz",
+        sugar: "50%",
+        price: 149.0,
+        adds: ["Tapioca", "Red Bean", "Cream Cheese"],
+      },
+      {
+        name: "Dark Chocolate",
+        category: "Milktea",
+        quantity: 1,
+        size: "22oz",
+        sugar: "50%",
+        price: 149.0,
+        adds: ["Tapioca", "Red Bean", "Cream Cheese"],
+      },
+    ],
+    selected: {},
+       
     }
   }
 const tmpcategories =  [
@@ -435,9 +347,7 @@ const tmpcategories =  [
                 { id: 78, name: "San Mig Flavored", price: 55.0, img_path: "http://localhost:8000/images/items/Others/san-mig-flavored.png" },
                 { id: 79, name: "San Mig Pilsen Small", price: 60.0, img_path: "http://localhost:8000/images/items/Others/san-mig-pilsen-small.png" },
             ],
-        },
-    },
-];
+
 
 
 // initial state
@@ -543,7 +453,14 @@ const mutations = {
         state.drinks = data.filter(
             (c) => c.category == "Drinks"
         );
+    },
+     cartMutate: (state, item) => {
+      state.cart.push(item);
+    },
+    chooseSelect: (state, item) => {
+      state.selected = { ...item };
     }
+  
 }
 
  const plugins = [createPersistedState()];

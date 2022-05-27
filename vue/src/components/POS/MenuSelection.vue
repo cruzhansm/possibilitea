@@ -1,6 +1,6 @@
 <template>
   <div
-    class="h-ful w-fit pt-[20px] pb-[30px] pr-8 border-r-[6px] border-divider"
+    class="h-[886px] w-fit pt-[25px] pb-[30px] pr-8 border-r-[6px] border-divider"
   >
     <div class="flex flex-col gap-2 mb-4">
       <span class="text-2xl text-primary font-bold">Food</span>

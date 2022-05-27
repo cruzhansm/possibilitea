@@ -3,7 +3,7 @@
 
     class="
       flex flex-row
-      justify-around
+      justify-between
       items-center
       absolute-bottom
       w-full

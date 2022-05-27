@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Items;
 use App\Models\Subcategory;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -19,7 +20,7 @@ class CartItemResource extends JsonResource
         return [
             'id' => $this->id,
             'user_id' => $this->user_id,
-            'item_id' => $this->item_id,
+            'item_name' => Items::where('id','=',$this->item_id)->first()->item_name, 
             'category' => Subcategory::where('id', '=',  $this->subcategory_id)->first()->sub_name,
             'quantity' => $this->quantity,
             'size' => $this->size,

@@ -15,7 +15,7 @@
     "
 
   >
-    <SelectAmount />
+    <SelectAmount @amount="setAmount" />
     <SelectSize v-show="categoryTest('size')" />
     <SelectSugar v-show="categoryTest('sugar')" />
     <SelectAddons v-show="categoryTest('addons')" />
@@ -37,29 +37,36 @@ import { reactive } from "@vue/reactivity";
 
 const store = useStore();
 
-// const cart = reactive({
-//     name: "Coffee",
-//     item_id: 1,
-//     category: 1,
-//     quantity: 2, //amount
-//     size: "22oz",
-//     sugar: 3,
-//     price: 150.0,
-//     adds: 1,
-// });
-
-function addtoCart () {
-  store.dispatch("addtoCart", { 
+const cart = reactive({
     name: "Coffee",
     user_id: store.state.user.data.id,
     item_id: 1,
     subcategory_id: 1,
     category: 1,
-    quantity: 2, //amount
+    quantity: 1, //amount
     size: "22oz",
     sugar: 3,
     price: 150.0,
     adds: 1,
+});
+
+//setAmount
+function setAmount(amount) {
+    cart.quantity = amount;
+}
+
+function addtoCart () {
+  store.dispatch("addtoCart", {
+    name: cart.name,
+    user_id: store.state.user.data.id,
+    item_id: cart.item_id,
+    subcategory_id: cart.category,
+    category: cart.category,
+    quantity: cart.quantity, //amount
+    size: cart.size,
+    sugar: cart.sugar,
+    price: cart.price,
+    adds: cart.adds,
   });
 }
 

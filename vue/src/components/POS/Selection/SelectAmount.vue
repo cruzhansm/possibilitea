@@ -38,10 +38,13 @@ export default {
   methods: {
     increaseAmount() {
       this.amount++;
+      //emit new amount to parent
+      this.$emit("amount", this.amount);
     },
     decreaseAmount() {
       if (this.amount > 1) {
         this.amount--;
+        this.$emit("amount", this.amount);
       }
     },
   },

@@ -39,7 +39,7 @@ class CartItemController extends Controller
         ]);
 
         $result = CartItem::create($request->all());
-        return new CartItemResource($result);
+        return CartItemResource::collection(CartItem::where('user_id', '=', $request->user_id)->get());
     }
 
     /**
@@ -73,6 +73,7 @@ class CartItemController extends Controller
      */
     public function destroy($id)
     {
-        //
+        CartItem::where('id','=', $id)->delete();
+        return CartItemResource::collection(CartItem::all());
     }
 }

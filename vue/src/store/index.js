@@ -9,6 +9,7 @@ const getDefaultState = () => {
             data:{},
             token: sessionStorage.getItem("TOKEN")
         },
+        subtotal: 0,
         categories_store: {
             data: {},
         },
@@ -389,11 +390,18 @@ const actions = {
   addtoCart({ commit }, item){
       return  axiosClient.post("/cart", item)
         .then(({data}) => {
-            commit('cartMutate', data)
+            commit('cartMutate', data.data)
             return data;
         })
   },
 
+  deleteCartItem({ commit },id){
+    return axiosClient.delete("/cart/" + id)
+    .then(({data}) => {
+        commit('cartMutate', data.data)
+        return data;
+    })
+    },
 
   saveItem: ({commit}, data) => {
       delete data.image;
@@ -469,8 +477,18 @@ const mutations = {
     },
 
     cartMutate: (state, item) => {
+      state.cart= [];
       state.cart = item;
-      console.log(state.cart);
+    //   console.log(state.cart);
+
+    //get the total price in the item
+    state.subtotal = item.reduce((total, item) => {
+        return total + item.price;
+    }, 0);
+
+    console.log(state.subtotal);
+
+
     },
     chooseSelect: (state, item) => {
       state.selected = { ...item };

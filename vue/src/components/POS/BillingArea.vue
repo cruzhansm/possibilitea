@@ -11,7 +11,7 @@
       border-l-[6px] border-divider
     "
   >
-    <span class="text-2xl text-primary font-bold">Bill</span>
+      <span class="text-2xl text-primary font-bold">Bill</span>
     <Divider />
 
     <!-- newly added items must be present here -->
@@ -173,6 +173,9 @@ export default {
     };
   },
   methods: {
+    deleteAll(){
+      this.$store.dispatch("deleteAllCartItem",this.$store.state.user.data.id);
+    },
     toggleDiscount() {
       this.isApplyingDiscount = !this.isApplyingDiscount;
     },

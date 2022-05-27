@@ -877,6 +877,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 376px;
 }
 
+.w-\[160px\] {
+  width: 160px;
+}
+
+.w-\[170px\] {
+  width: 170px;
+}
+
 .max-w-\[458px\] {
   max-width: 458px;
 }
@@ -1493,14 +1501,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .text-\[18px\] {
   font-size: 18px;
-}
-
-.text-\[100px\] {
-  font-size: 100px;
-}
-
-.text-\[px\] {
-  font-size: px;
 }
 
 .font-bold {

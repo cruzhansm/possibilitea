@@ -8,7 +8,7 @@
       items-end
       bg-secondary
       rounded-[9px]
-      w-[155px]
+      w-[170px]
       h-[130px]
       hover:outline 
       hover:outline-4 

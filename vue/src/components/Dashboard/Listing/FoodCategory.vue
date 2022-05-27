@@ -34,7 +34,7 @@ import ListingCategory from "./ListingCategory.vue";
   });
 
   onMounted(() => {
-    data.food = store.state.food;
+    data.food = store.state.foods;
     
   });
 

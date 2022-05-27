@@ -15,7 +15,7 @@
         {{ `${item.adds}` }}
       </span>
     </div>
-    <span class="text-primary text-[16px] font-bold leading-tight">149.00</span>
+    <span class="text-primary text-[16px] font-bold leading-tight">₱{{ item.price}}.00</span>
   </div>
 </template>
 

@@ -1,17 +1,14 @@
 <template>
   <div class="flex flex-col justify-center items-center h-max pt-[80px]">
-    <div
+    <img src="../assets/logo.jpg"
       class="
         h-[274px]
         w-[423px]
-        border border-black
         flex
         justify-center
         items-center
       "
     >
-      Logo Here
-    </div>
     <div class="text-primary text-2xl font-bold mb-[57px]">{{ userType }}</div>
     <div class="flex flex-col gap-[32px]">
       <router-link :to="{ name: 'pos' }">

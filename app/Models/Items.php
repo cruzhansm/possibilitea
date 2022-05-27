@@ -18,4 +18,14 @@ class Items extends Model
         'img_path',
     ];
 
+    public function item_categories()
+    {
+        return $this->belongsTo(ItemCategory::class, 'itemCat_id');
+    }
+
+    public function subcategory()
+    {
+        return $this->belongsTo(Subcategory::class, 'subcategory_id');
+    }
+
 }

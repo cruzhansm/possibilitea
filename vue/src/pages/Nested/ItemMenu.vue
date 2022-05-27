@@ -16,11 +16,11 @@ import ItemRow from "../../components/POS/Selection/ItemRow.vue";
 
 export default {
   name: "ItemMenu",
-  data(){
-    return{
+  data() {
+    return {
       width: 130,
-      height: 138
-    }
+      height: 138,
+    };
   },
   components: {
     ItemRow,
@@ -37,6 +37,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-</style>

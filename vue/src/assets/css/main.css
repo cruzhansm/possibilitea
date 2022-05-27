@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.0.24 | MIT License | https://tailwindcss.com
+! tailwindcss v3.0.23 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -468,6 +468,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia:  ;
 }
 
+.pointer-events-none {
+  pointer-events: none;
+}
+
 .absolute {
   position: absolute;
 }
@@ -617,6 +621,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 0.5rem;
 }
 
+.mr-1 {
+  margin-right: 0.25rem;
+}
+
 .ml-5 {
   margin-left: 1.25rem;
 }
@@ -711,10 +719,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-\[500px\] {
   height: 500px;
-}
-
-.h-\[130px\] {
-  height: 130px;
 }
 
 .h-\[194px\] {
@@ -833,6 +837,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 282.75px;
 }
 
+.w-\[117px\] {
+  width: 117px;
+}
+
 .w-\[324px\] {
   width: 324px;
 }
@@ -843,10 +851,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-1\/4 {
   width: 25%;
-}
-
-.w-\[138\.3px\] {
-  width: 138.3px;
 }
 
 .w-\[376px\] {
@@ -1464,6 +1468,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-weight: 400;
 }
 
+.font-extrabold {
+  font-weight: 800;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -1533,6 +1541,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 .outline-none {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.outline {
+  outline-style: solid;
+}
+
+.outline-4 {
+  outline-width: 4px;
+}
+
+.outline-primary {
+  outline-color: #2E7701;
 }
 
 .filter {

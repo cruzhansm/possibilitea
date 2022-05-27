@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
      <div
       class="
         transition ease-in-out

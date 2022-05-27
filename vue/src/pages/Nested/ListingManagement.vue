@@ -25,6 +25,7 @@ export default {
   mounted () {
     this.user = this.$store.state.user.data.role;
     this.$store.dispatch('getSubcategories');
+    // this.$store.dispatch('showSubcategory');
   },
 };
 </script>

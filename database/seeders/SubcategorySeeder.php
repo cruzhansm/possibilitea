@@ -19,52 +19,52 @@ class SubcategorySeeder extends Seeder
             array(
                 'sub_name' => '99 Meals & Single Orders',
                 'category_id' => 1,
-                'status' => 'ACTIVE',
+                'active' => false,
             ),
             array(
                 'sub_name' => 'Soup',
                 'category_id' => 1,
-                'status' => 'ACTIVE',
+                'active' => false,
             ),
             array(
                 'sub_name' => 'Pizza & Pasta',
                 'category_id' => 1,
-                'status' => 'ACTIVE',
+                'active' => false,
             ),
             array(
                 'sub_name' => 'Sandwiches',
                 'category_id' => 1,
-                'status' => 'ACTIVE',
+                'active' => false,
             ),
             array(
                 'sub_name' => 'Sides & Add Ons',
                 'category_id' => 1,
-                'status' => 'ACTIVE',
+                'active' => false,
             ),
             array(
                 'sub_name' => 'Milktea & Frappe',
                 'category_id' => 2,
-                'status' => 'ACTIVE',
+                'active' => false,
             ),
             array(
                 'sub_name' => 'Smoothies & Milkshake',
                 'category_id' => 2,
-                'status' => 'ACTIVE',
+                'active' => false,
             ),
             array(
                 'sub_name' => 'Yogurt & Coffee',
                 'category_id' => 2,
-                'status' => 'ACTIVE',
+                'active' => false,
             ),
             array(
                 'sub_name' => 'Lemonade & Fruitea',
                 'category_id' => 2,
-                'status' => 'ACTIVE',
+                'active' => false,
             ),
             array(
                 'sub_name' => 'Others',
                 'category_id' => 2,
-                'status' => 'ACTIVE',
+                'active' => false,
             ),
         );
         DB::table('subcategories')->insert($data); 

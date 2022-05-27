@@ -4,7 +4,7 @@
   <router-link 
   :to="{
     name: 'info',
-    params: {category: category, subcategory: subcategory, name:item.name, price:item.price, id:item.id, img_path:item.img_path}
+    params: {category: item.subcat_name, subcategory: subcategory, name:item.name, price:item.price, id:item.id, img_path:item.img_path}
   }"
   >
   
@@ -32,12 +32,12 @@
 
     <div class="flex flex-wrap flex-col h-full relative justify-end">
       <span class="text-[20px] font-extrabold uppercase tracking-wider text-white w-[117px] ">{{ item.name }}</span>
-
     </div>
 
   </div>
 
   </router-link>
+
 
   </div>
 </template>
@@ -46,9 +46,9 @@
 export default {
   name: "ListItem",
   props: {
-    category:String,
+    subcat_id: Number,
     subcategory:String,
-    item: Object,
+    item: Array,
   },
 };
 </script>

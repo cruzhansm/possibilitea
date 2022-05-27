@@ -38,7 +38,9 @@ class ItemCategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        //get all the itemcategories with the id of subcategory
+        $itemcategories = ItemCategory::where('subcategory_id', $id)->get();
+        return ItemCategoryResource::collection($itemcategories);
     }
 
     /**

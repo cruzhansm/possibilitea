@@ -9,8 +9,20 @@ const getDefaultState = () => {
             data:{},
             token: sessionStorage.getItem("TOKEN")
         },
-        categories: {},
-        // categories: [...tmpcategories],
+        categories: {
+            data: {},
+        },
+        itemCategoryList: {
+            data: {},
+            loading: false,
+        },
+        subcategoryList: {
+            data: {},
+            loading: false,
+        },
+        foods: {},
+        drinks:{},
+        categories_store: [...tmpcategories],
         subcategoryList: [
             { id: 1,  name: "99 Meals & Single Orders",},
             { id: 2,  name: "Soup",},
@@ -22,9 +34,9 @@ const getDefaultState = () => {
             { id: 8,  name: "Yogurt & Coffee",},
             { id: 9,  name: "Lemonade & Fruitea",},
             { id: 10, name: "Others",},
-
         ],
-        itemCategoryList: [
+        
+        itemCategoryList_store: [
             {id: 1,  name: "99 Meals" },
             {id: 2,  name: "Single Orders" },
             {id: 3,  name: "Soup" },
@@ -437,10 +449,21 @@ const actions = {
   resetCartState ({ commit }) {
     commit('resetState')
   },
+
+  loadItemcategory({ commit }, id){
+    commit('itemcategory_loading', true)
+    return axiosClient.get("/item-category/" + id)
+    .then(({data}) => {
+        commit('itemcategory_loading', false)
+        commit('setItemcategoryList',data.data)
+        return data;
+    })
+  },
+  
   getSubcategories({ commit }){
     return axiosClient.get("/subcategory")
     .then(({data}) => {
-        commit('setCategory',data)
+        commit('setCategory',data.data)
         return data;
     })
   },
@@ -489,17 +512,26 @@ const mutations = {
   resetState (state) {
     Object.assign(state, getDefaultState())
   },
+
+  itemcategory_loading (state, loading) {
+    state.itemCategoryList.loading = loading
+},
+
+  setItemcategoryList (state, data) {
+    state.itemCategoryList.data = data
+  },
+
   addItem(state, data) {
         // convert object to array
-        let items = Object.values(data);
+        // let items = Object.values(data);
 
-        let itemCat_name = state.itemCategoryList.filter(function(item){
-            return item.id == items[0].itemCat_id          
-            })[0].name;
+        // let itemCat_name = state.itemCategoryList.filter(function(item){
+        //     return item.id == items[0].itemCat_id          
+        //     })[0].name;
 
-        let ndx = items[0].subcat_id - 1;
+        // let ndx = items[0].subcat_id - 1;
         
-        state.categories[ndx].items[itemCat_name].push(items[0]);
+        // state.categories[ndx].items[itemCat_name].push(items[0]);
         
         // console.log(items[0]);
         // console.log(items[0].subcat_id);
@@ -535,9 +567,13 @@ const mutations = {
         sessionStorage.removeItem("TOKEN");
     },
     setCategory(state, data){
-        // console.log(data.data);
-        state.categories = {...data};
-        // state.responseFromServer = data;
+        state.categories.data = data;
+        state.foods = data.filter(
+            (c) => c.category == "Food"
+        );
+        state.drinks = data.filter(
+            (c) => c.category == "Drinks"
+        );
     }
 }
 

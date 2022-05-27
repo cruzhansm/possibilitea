@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Subcategory;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -23,6 +24,7 @@ class ItemResource extends JsonResource
             'img_path' => $this->img_path ? URL::to($this->img_path) : null,
             'itemCat_id' => $this->itemCat_id,
             'subcat_id' => $this->subcat_id,
+            'subcat_name' => Subcategory::where('id', '=', $this->subcat_id)->first()->sub_name,
         ];
     }
 }

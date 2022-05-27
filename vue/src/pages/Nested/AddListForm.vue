@@ -235,17 +235,17 @@
         this.form.img_path = this.img_path;
       }     
 
-      let foodCategory = this.$store.state.categories.filter(
+      let foodCategory = this.$store.state.categories_store.filter(
         (f) => f.category == "Food"
       );
 
-      let drinkCategory = this.$store.state.categories.filter(
+      let drinkCategory = this.$store.state.categories_store.filter(
         (f) => f.category == "Drinks"
       );
 
       let categoryArr = foodCategory.concat(drinkCategory);
 
-      this.categories = categoryArr.map( function getCat(item){
+      this.categories = categoryArr.map(function getCat(item){
         return item.name;
       });
 
@@ -286,17 +286,16 @@
         return item.name == value          
         })[0].id;
       
-        this.$store.state.categories.map((item) => {
+        this.$store.state.categories_store.map((item) => {
           if (item.name == value) {
             this.subcategories = Object.getOwnPropertyNames(item.items);
             }
         });
-
     },
 
     getSubcategory(value){
       // this.form.selectedSubcategory = value;
-      this.form.itemCat_id = this.$store.state.itemCategoryList.filter(function(item){
+      this.form.itemCat_id = this.$store.state.itemCategoryList_store.filter(function(item){
         return item.name == value          
         })[0].id;
 

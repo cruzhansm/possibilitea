@@ -24,7 +24,7 @@ class SubcategoryResource extends JsonResource
             'id' => $this->id,
             'name' => $this->sub_name,
             'category' => Category::where('id','=', $this->category_id)->get()->first()->category_name,
-            'active' =>  $this->status, 
+            'active' =>  $this->active, 
             // 'items' => $this->item_categories,
             'items' => ItemCategoryResource::collection(ItemCategory::where('subcategory_id','=', $this->id)->get()),
         ];

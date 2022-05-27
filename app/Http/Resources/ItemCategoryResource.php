@@ -2,7 +2,9 @@
 
 namespace App\Http\Resources;
 
+use App\Models\ItemCategory;
 use App\Models\Items;
+use App\Models\Subcategory;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ItemCategoryResource extends JsonResource
@@ -17,7 +19,11 @@ class ItemCategoryResource extends JsonResource
     {
         // return parent::toArray($request);
         return [
-            $this->itemcat_name => ItemResource::collection(Items::where('itemcat_id','=', $this->id)->get()),
+            'id' => $this->id,
+            'itemcat_name' => $this->itemcat_name,
+            'subcategory_id' => $this->subcategory_id,
+            'subcategory_name' =>  Subcategory::where('id', '=', $this->subcategory_id)->first()->sub_name,
+            'items' => ItemResource::collection(Items::where('itemcat_id','=', $this->id)->get()),
         ];
     }
 }

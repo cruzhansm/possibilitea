@@ -13,7 +13,7 @@ First, fetch dependencies in the root folder (Possibilitea Folder):
 ```
 npm install
 
-compoer update
+composer update
 
 cp .env.example .env
 

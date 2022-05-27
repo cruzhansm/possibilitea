@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col justify-center items-center h-screen w-screen px-8">
+  <div class="flex flex-col justify-center items-center w-screen px-8">
     <Navbar />
     <div
       class="flex h-full w-screen pl-8 bg-red border-t-[6px] border-[#f5f5f5]"

@@ -66,7 +66,7 @@
               align="left"
               :disabled="isManualDiscount == true ? false : true"
             />
-            <span class="absolute top-1/4 right-2 font-bold">%</span>
+            <span class="absolute top-1/4 right-2 py-[22px] font-bold">%</span>
           </div>
         </div>
         <TextInput

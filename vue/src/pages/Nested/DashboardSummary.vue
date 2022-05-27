@@ -23,8 +23,8 @@ export default {
     return {
       stat_one: 0,
       stat_two: 0.00,
-      stat_three: 1,
-      stat_four: 1200.00,
+      stat_three: 2,
+      stat_four: 600.00,
       stat_w: 0,
       stat_x: 0,
       stat_y: 0,

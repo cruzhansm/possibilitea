@@ -15,7 +15,7 @@
     >
     
     <span class="text-5xl text-primary font-bold">
-       <span class="flex flex-row"><span v-if="type == 'currency'" class="text-[40px] mr-1">₱ </span> <number :number="stat"></number></span>
+       <span class="flex flex-row"><span v-if="type == 'currency'" class="text-[40px] mr-1">₱ </span> <number :number="stat"></number><span v-if="type == 'currency'" class="text-[40px]">.00 </span></span>
        
     </span>
     

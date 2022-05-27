@@ -877,6 +877,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 376px;
 }
 
+.w-\[265px\] {
+  width: 265px;
+}
+
 .max-w-\[458px\] {
   max-width: 458px;
 }
@@ -1150,6 +1154,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-secondary {
   --tw-border-opacity: 1;
   border-color: rgb(196 196 196 / var(--tw-border-opacity));
+}
+
+.border-\[\#fff\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
 .bg-\[\#ffffff\] {

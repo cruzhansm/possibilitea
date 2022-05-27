@@ -21,8 +21,8 @@
       "
       ><img :src=img alt="" class=" absolute inset-0 h-full w-full object-cover rounded-[9px]">
 
-    <div class="flex flex-wrap flex-col h-full relative justify-end">
-      <span class="bg-black bg-opacity-50 text-[24px] font-extrabold text-white">{{ product.toUpperCase() }}</span></div>
+    <div class="flex flex-wrap flex-col h-full relative justify-end w-full">
+      <span class="text-center bg-black bg-opacity-50 text-[24px] font-extrabold text-white">{{ product.toUpperCase() }}</span></div>
     </div>
   </div>
 </template>

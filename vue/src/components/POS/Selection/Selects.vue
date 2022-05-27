@@ -16,10 +16,10 @@
 
   >
     <SelectAmount />
-    <SelectSize v-if="categoryTest('size')" />
-    <SelectSugar v-if="categoryTest('sugar')" />
-    <SelectAddons v-if="categoryTest('addons')" />
-    <SelectTemperature v-if="categoryTest('temperature')" />
+    <SelectSize v-show="categoryTest('size')" />
+    <SelectSugar v-show="categoryTest('sugar')" />
+    <SelectAddons v-show="categoryTest('addons')" />
+    <SelectTemperature v-show="categoryTest('temperature')" />
     <PrimaryButton text="Add" :height="163" :width="76" />
   </div>
 </template>

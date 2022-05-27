@@ -27,14 +27,22 @@
 
   </div>
 
+  
   <div class="flex flex-col gap-5 pl-[30px] pr-5 pt-5 ">
     <ListRow
+      :key="cat.id"
+      v-for="cat in category"
+      :subcategory="cat.itemcat_name"
+      :subcat_id="cat.id"
+      :items="cat.items"
+    />
+    <!-- <ListRow
       :key="name"
       v-for="(row, name) in category"
       :items="row"
       :category="cat"
       :subcategory="name"
-    />
+    /> -->
   </div>
 
 </div>
@@ -49,32 +57,30 @@ export default {
   name: "ItemList",
   data(){
     return{
-      cat:"",
       user:""
     }
   },
   components: {
     ListRow, AddListButton
   },
- methods: {
-    redirectBack() {
-      this.$router.push({ name: "listing-management" });
-    },
-  },
-  mounted () {
-    this.cat = this.$route.params.category;
-    this.user = this.$store.state.user.data.role;
-  },
   computed: {
     category() {
-      /* get all items that are in this category */
-      const menu = this.$store.state.categories.filter(
-        (c) => c.name.toUpperCase() == this.$route.params.category.toUpperCase()
-      )[0].items;
-      return menu;
-    },
-
+      return this.$store.state.itemCategoryList.data;
+    }
   },
+ methods: {
+   redirectBack() {
+     this.$router.push({ name: "listing-management" });
+    },
+  },
+  // mounted () {
+    // this.$store.dispatch("loadItemcategory", this.$route.params.id);
+    
+  // },
+
+    mounted: function () {
+      this.user = this.$store.state.user.data.role;
+    }
 };
 </script>
 

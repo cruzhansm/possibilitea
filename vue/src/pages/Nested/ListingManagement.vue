@@ -5,8 +5,6 @@
     <div  v-if="user === 'ADMIN'" class="flex flex-row justify-end pr-[40px]">
       <AddListButton></AddListButton>
     </div>
-
-
     <FoodCategory/>
     <DrinkCategory/>
   </div>
@@ -26,6 +24,8 @@ export default {
   components: {FoodCategory,DrinkCategory,AddListButton},
   mounted () {
     this.user = this.$store.state.user.data.role;
+    this.$store.dispatch('getSubcategories');
+    // this.$store.dispatch('showSubcategory');
   },
 };
 </script>

@@ -4,7 +4,7 @@
   <router-link 
   :to="{
     name: 'info',
-    params: {category: category, subcategory: subcategory, name:item.name, price:item.price, id:item.id}
+    params: {category: item.subcat_name, subcategory: subcategory, name:item.name, price:item.price, id:item.id, img_path:item.img_path}
   }"
   >
   
@@ -27,13 +27,17 @@
       transition delay-75 ease-out hover:ease-in
     "
   >
-    <!-- <img :src="item.img_path" alt="" class="absolute inset-0 h-full w-full object-cover rounded-[9px]"> -->
-    <div class="absolute inset-0 h-full w-full object-cover rounded-[9px]"></div>
-    <div class="flex h-full items-center justify-center relative">
-      <span class="text-[16px] uppercase font-bold tracking-wider ">{{ item.name }}</span>
+
+    <img :src="item.img_path" alt="" class=" absolute inset-0 h-full w-full object-cover rounded-[9px]">
+
+    <div class="flex flex-wrap flex-col h-full relative justify-end">
+      <span class="text-[20px] font-extrabold uppercase tracking-wider text-white w-[117px] ">{{ item.name }}</span>
     </div>
+
   </div>
+
   </router-link>
+
 
   </div>
 </template>
@@ -42,12 +46,17 @@
 export default {
   name: "ListItem",
   props: {
-    category:String,
+    subcat_id: Number,
     subcategory:String,
-    item: Object,
+    item: Array,
   },
 };
 </script>
 
 <style scoped>
+
+.text-stroke{
+  /* add text-stroke */
+  font-weight:900;
+}
 </style>

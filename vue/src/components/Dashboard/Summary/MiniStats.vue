@@ -12,17 +12,25 @@
     "
   >
     <span class="text-xl font-bold">{{ title }}</span
-    ><span class="text-5xl text-primary font-bold">{{
-      type == "currency" ? "P" + stat : stat
-    }}</span>
+    >
+    
+    <span class="text-5xl text-primary font-bold">
+       <span class="flex flex-row"><span v-if="type == 'currency'" class="text-[40px] mr-1">₱ </span> <number :number="stat"></number></span>
+       
+    </span>
+    
   </div>
 </template>
 
 <script>
+import number from "./AnimatedNumber.vue"
 export default {
   name: "MiniStats",
+  components: {
+    number
+  },
   props: {
-    stat: String,
+    stat: Number,
     title: String,
     type: String,
   },

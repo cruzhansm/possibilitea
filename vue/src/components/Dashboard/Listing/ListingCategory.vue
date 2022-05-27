@@ -7,19 +7,19 @@
         flex flex-col
         justify-center
         items-center
-        w-[282.75px]
+        w-[265px]
         h-[290px]
         m-2
         bg-secondary
         rounded-[9px]
         text-white
         border-[5px]
-        border-secondary
+        border-[#fff]
         cursor-pointer 
         hover:border-primary
       "
       >
-      <span class="text-[24px] font-bold text-center">{{ product.toUpperCase() }}</span>
+      <span class="text-[24px] bg-black bg-opacity-50 w-full font-bold text-center">{{ product.toUpperCase() }}</span>
     </div>
   </div>
 </template>

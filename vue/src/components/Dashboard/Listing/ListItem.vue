@@ -17,8 +17,8 @@
       items-end
       bg-secondary
       rounded-[9px]
-      w-[212px]
-      h-[148px]
+      w-[170px]
+      h-[130px]
       hover:outline 
       hover:outline-4 
       hover:outline-primary 
@@ -30,8 +30,8 @@
 
     <img :src="item.img_path" alt="" class=" absolute inset-0 h-full w-full object-cover rounded-[9px]">
 
-    <div class="flex flex-wrap flex-col h-full relative justify-end">
-      <span class="text-[20px] font-extrabold uppercase tracking-wider text-white w-[117px] ">{{ item.name }}</span>
+    <div class="flex flex-wrap flex-col h-full w-full relative justify-end">
+      <span class="text-[18px] font-extrabold leading-[22px] uppercase tracking-wider p-[5px] text-white bg-black rounded-b-lg bg-opacity-50">{{ item.name }}</span>
     </div>
 
   </div>

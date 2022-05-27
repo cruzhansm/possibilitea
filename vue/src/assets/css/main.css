@@ -865,8 +865,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 25%;
 }
 
-.w-\[155px\] {
-  width: 155px;
+.w-\[170px\] {
+  width: 170px;
 }
 
 .w-\[138\.3px\] {
@@ -875,14 +875,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-\[376px\] {
   width: 376px;
-}
-
-.w-\[160px\] {
-  width: 160px;
-}
-
-.w-\[170px\] {
-  width: 170px;
 }
 
 .max-w-\[458px\] {

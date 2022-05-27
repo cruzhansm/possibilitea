@@ -865,8 +865,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 25%;
 }
 
-.w-\[155px\] {
-  width: 155px;
+.w-\[170px\] {
+  width: 170px;
 }
 
 .w-\[138\.3px\] {
@@ -875,6 +875,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-\[376px\] {
   width: 376px;
+}
+
+.w-\[265px\] {
+  width: 265px;
 }
 
 .max-w-\[458px\] {
@@ -1150,6 +1154,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-secondary {
   --tw-border-opacity: 1;
   border-color: rgb(196 196 196 / var(--tw-border-opacity));
+}
+
+.border-\[\#fff\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
 .bg-\[\#ffffff\] {
@@ -1493,14 +1502,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .text-\[18px\] {
   font-size: 18px;
-}
-
-.text-\[100px\] {
-  font-size: 100px;
-}
-
-.text-\[px\] {
-  font-size: px;
 }
 
 .font-bold {

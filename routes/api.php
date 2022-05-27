@@ -4,10 +4,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\CartItemController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubcategoryController;
-use App\Http\Controllers\ItemCategoryController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\ItemCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::resource('/transaction', TransactionController::class);
     //use this to get all the subcategories
     Route::resource('/subcategory', SubcategoryController::class);
+    Route::resource('/cart', CartItemController::class);
 });
 
 Route::post('/register', [ AuthController::class, 'register' ]);

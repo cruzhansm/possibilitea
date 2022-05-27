@@ -13,9 +13,16 @@
   >
     <span class="text-2xl text-primary font-bold">Bill</span>
     <Divider />
+
+    <!-- newly added items must be present here -->
     <BillingItems :items="items" />
+
+
     <Divider />
+
     <BillingTotal />
+
+    
     <PrimaryButton
       text="Apply Discount"
       :height="60"

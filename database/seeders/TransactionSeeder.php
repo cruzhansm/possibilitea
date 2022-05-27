@@ -19,22 +19,22 @@ class TransactionSeeder extends Seeder
             array(
                 'user_id' => 2,
                 'amount'  => 1000.00,
-                'dateTime' => '2020-05-13 06:11:09'
+                'dateTime' => '2020-05-10 06:11:09'
             ),
             array(
                 'user_id' => 3,
                 'amount'  => 500.00,
-                'dateTime' => '2020-05-13 06:11:09'
+                'dateTime' => '2021-05-11 06:11:09'
             ),
             array(
                 'user_id' => 3,
                 'amount'  => 400.00,
-                'dateTime' => '2020-05-13 06:11:09'
+                'dateTime' => '2022-05-12 09:11:09'
             ),
             array(
                 'user_id' => 2,
                 'amount'  => 1200.00,
-                'dateTime' => '2021-05-13 06:11:09'
+                'dateTime' => '2022-05-13 08:11:09'
             )
         );
         

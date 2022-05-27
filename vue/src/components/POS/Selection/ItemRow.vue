@@ -35,7 +35,6 @@ const selectItem = (tag) => {
   if (itemContainers.some((e) => e.classList.contains("selected"))) {
     itemContainers.forEach((e) => {
       e.classList.remove("selected");
-
       e.classList.remove("outline");
       e.classList.remove("outline-4");
       e.classList.remove("outline-primary");

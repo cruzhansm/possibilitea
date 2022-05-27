@@ -17,6 +17,8 @@ class Subcategory extends Model
         'img_path',
     ];
 
+    
+
     public function category()
     {
         return $this->belongsTo(Category::class, 'category_id');

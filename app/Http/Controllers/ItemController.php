@@ -106,8 +106,8 @@ class ItemController extends Controller
      */
     public function destroy(Items $items, Request $request)
     {
-    
-            $items->delete();
+            
+            Items::where('id','=', $request->id)->delete();
     
             // If there is an old image, delete it
             if ($items->image) {
@@ -115,7 +115,7 @@ class ItemController extends Controller
                 File::delete($absolutePath);
             }
     
-            return response('', 204);
+            return response('Successfully deleted', 200);
     }
 
     private function saveImage($image) {

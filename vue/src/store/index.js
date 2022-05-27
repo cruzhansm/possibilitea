@@ -67,27 +67,28 @@ const getDefaultState = () => {
             "Cream Cheese",
             "Cheese Cake",
         ],
-       cart: [
-      {
-        name: "Dark Chocolate",
-        category: "Milktea",
-        quantity: 1,
-        size: "22oz",
-        sugar: "50%",
-        price: 149.0,
-        adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-      },
-      {
-        name: "Dark Chocolate",
-        category: "Milktea",
-        quantity: 1,
-        size: "22oz",
-        sugar: "50%",
-        price: 149.0,
-        adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-      },
-    ],
-    selected: {},
+        cart: [],
+    //     cart: [
+    //   {
+    //     name: "Dark Chocolate",
+    //     category: "Milktea",
+    //     quantity: 1,
+    //     size: "22oz",
+    //     sugar: "50%",
+    //     price: 149.0,
+    //     adds: ["Tapioca", "Red Bean", "Cream Cheese"],
+    //   },
+    //   {
+    //     name: "Dark Chocolate",
+    //     category: "Milktea",
+    //     quantity: 1,
+    //     size: "22oz",
+    //     sugar: "50%",
+    //     price: 149.0,
+    //     adds: ["Tapioca", "Red Bean", "Cream Cheese"],
+    //   },
+    //     ],
+        selected: {},
        
     }
   }
@@ -385,6 +386,15 @@ const actions = {
     })
  },
 
+  addtoCart({ commit }, item){
+      return  axiosClient.post("/cart", item)
+        .then(({data}) => {
+            commit('cartMutate', data)
+            return data;
+        })
+  },
+
+
   saveItem: ({commit}, data) => {
       delete data.image;
       let response;
@@ -404,13 +414,14 @@ const actions = {
     register({commit}, user) {
         return axiosClient.post("/register", user)
             .then(({data}) => {
-                commit("setUser", data)
+                // commit("setUser", data)
                 return data;
             })
         },
     login({commit}, user) {
         return axiosClient.post("/login", user)
             .then(({data}) => {
+                console.log(data);
                 commit("setUser", data)
                 return data;
             })
@@ -456,11 +467,14 @@ const mutations = {
             (c) => c.category == "Drinks"
         );
     },
-     cartMutate: (state, item) => {
-      state.cart.push(item);
+
+    cartMutate: (state, item) => {
+      state.cart = item;
+      console.log(state.cart);
     },
     chooseSelect: (state, item) => {
       state.selected = { ...item };
+    //   console.log(state.selected);
     }
   
 }

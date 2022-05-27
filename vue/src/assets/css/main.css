@@ -865,8 +865,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 25%;
 }
 
-.w-\[155px\] {
-  width: 155px;
+.w-\[170px\] {
+  width: 170px;
 }
 
 .w-\[138\.3px\] {
@@ -877,12 +877,28 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 376px;
 }
 
-.w-\[160px\] {
-  width: 160px;
+.w-\[250px\] {
+  width: 250px;
 }
 
-.w-\[170px\] {
-  width: 170px;
+.w-\[255px\] {
+  width: 255px;
+}
+
+.w-\[265px\] {
+  width: 265px;
+}
+
+.w-\[270px\] {
+  width: 270px;
+}
+
+.w-\[26px\] {
+  width: 26px;
+}
+
+.w-\[260px\] {
+  width: 260px;
 }
 
 .max-w-\[458px\] {
@@ -1098,6 +1114,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-width: 5px;
 }
 
+.border-\[0\] {
+  border-width: 0;
+}
+
 .border-t-\[6px\] {
   border-top-width: 6px;
 }
@@ -1158,6 +1178,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-secondary {
   --tw-border-opacity: 1;
   border-color: rgb(196 196 196 / var(--tw-border-opacity));
+}
+
+.border-\[\#fff\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
 .bg-\[\#ffffff\] {
@@ -1503,6 +1528,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 18px;
 }
 
+.text-\[100px\] {
+  font-size: 100px;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -1638,6 +1667,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .delay-75 {
   transition-delay: 75ms;
+}
+
+.delay-\[25\] {
+  transition-delay: 25;
 }
 
 .ease-in-out {

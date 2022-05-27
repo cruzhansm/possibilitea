@@ -21,10 +21,10 @@ export default {
   name: "DashboardSummary",
   data() {
     return {
-      stat_one: 5122,
-      stat_two: 3460.00,
-      stat_three: 5421,
-      stat_four: 10203.00,
+      stat_one: 0,
+      stat_two: 0.00,
+      stat_three: 1,
+      stat_four: 1200.00,
       stat_w: 0,
       stat_x: 0,
       stat_y: 0,
@@ -46,7 +46,7 @@ export default {
       this.stat_z += 1;
     }
       while (this.stat_w < this.stat_four) {
-        this.stat_w += 1;
+        this.stat_w += 1.00;
       }
   },
 };

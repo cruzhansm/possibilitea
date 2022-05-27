@@ -73,10 +73,14 @@ export default {
      this.$router.push({ name: "listing-management" });
     },
   },
-  mounted () {
+  // mounted () {
     // this.$store.dispatch("loadItemcategory", this.$route.params.id);
-    this.user = this.$store.state.user.data.role;
-  },
+    
+  // },
+
+    mounted: function () {
+      this.user = this.$store.state.user.data.role;
+    }
 };
 </script>
 

@@ -98,7 +98,11 @@
     deleteItem(item){
       //delete item from the database
       if(confirm("Are you sure you want to delete this item?")){
-        
+         this.$store.dispatch("deleteItem", this.id).then(() => {
+          this.$router.push({
+            name: "listing-management",
+          });
+        });
       }
     }
   },

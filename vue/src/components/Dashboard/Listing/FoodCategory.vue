@@ -35,7 +35,7 @@ import ListingCategory from "./ListingCategory.vue";
 
   onMounted(() => {
     data.food = store.state.food;
-    console.log(data.food);
+    
   });
 
   function setItemCategory(fd){

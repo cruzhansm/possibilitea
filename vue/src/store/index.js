@@ -179,8 +179,6 @@ const getDefaultState = () => {
         ]
     }
   }
-
-
 const tmpcategories =  [
     {   
         id: 1,
@@ -467,17 +465,23 @@ const actions = {
         return data;
     })
   },
+
+  deleteItem({ commit }, id){
+    return axiosClient.delete("/items/" + id)
+    .then(({data}) => {
+        return data;
+    })
+ },
+
   saveItem: ({commit}, data) => {
       delete data.image;
       let response;
       if (data.id) {
         response = axiosClient.put(`/items/${data.id}`, data).then((res) => {
-            commit("updateItem", res.data)
             return res;
         });
     }else{
         response = axiosClient.post("/items", data).then((res) => {
-                    commit("addItem", res.data)
                     return res;
         });
     }
@@ -521,41 +525,6 @@ const mutations = {
     state.itemCategoryList.data = data
   },
 
-  addItem(state, data) {
-        // convert object to array
-        // let items = Object.values(data);
-
-        // let itemCat_name = state.itemCategoryList.filter(function(item){
-        //     return item.id == items[0].itemCat_id          
-        //     })[0].name;
-
-        // let ndx = items[0].subcat_id - 1;
-        
-        // state.categories[ndx].items[itemCat_name].push(items[0]);
-        
-        // console.log(items[0]);
-        // console.log(items[0].subcat_id);
-        // console.log(itemCat_name);
-        // console.log(state.categories[ndx].items[itemCat_name])
-    },        
-    updateItem(state, data) {
-        let itemCat_name = state.itemCategoryList.filter(function(item){
-            return item.id == data[0].itemCat_id          
-            })[0].name;
-            
-            let ndx = data[0].subcat_id - 1;
-            
-            //destructure data[0]
-            let newObject = {
-                id: data[0].id,
-                name: data[0].item_name,
-                price: data[0].price,
-                itemCat_id: data[0].itemCat_id,
-                subcat_id: data[0].subcat_id,
-                img_path: data[0].img_path
-            }
-            // state.categories[ndx].items[itemCat_name].push(newObject);
-    },
     setUser(state, userData) {
         state.user.data = userData.user;
         state.user.token = userData.token;

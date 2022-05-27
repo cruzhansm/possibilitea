@@ -43,6 +43,9 @@ import ListingCategory from "./ListingCategory.vue";
     dr.active = !dr.active;
   }
 
+
+  
+
   
 </script>
 

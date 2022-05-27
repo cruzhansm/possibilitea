@@ -104,10 +104,18 @@ class ItemController extends Controller
      * @param  \App\Models\Items  $items
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Items $items)
+    public function destroy(Items $items, Request $request)
     {
-        $items->delete();
-        return response()->json(null, 204); // 204 = no content 
+    
+            $items->delete();
+    
+            // If there is an old image, delete it
+            if ($items->image) {
+                $absolutePath = public_path($items->image);
+                File::delete($absolutePath);
+            }
+    
+            return response('', 204);
     }
 
     private function saveImage($image) {

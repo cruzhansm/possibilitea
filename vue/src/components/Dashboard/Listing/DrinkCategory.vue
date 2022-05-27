@@ -1,7 +1,7 @@
 <template>
   <div>
       <span class="text-2xl text-primary font-bold">Drinks</span>
-     <div class="flex flex-wrap justify-between items-center mt-2 pr-8">
+     <div class="flex flex-wrap items-center mt-2">
       <router-link
       :key="index"
       v-for="(dr, index) in data.drinks"
@@ -11,7 +11,9 @@
       }"
        @click="setItemCategory(dr)"
        >
-      <ListingCategory :product="dr.name"/>
+      <ListingCategory 
+      :img="dr.img_path"
+      :product="dr.name"/>
       </router-link>
       </div>
   </div>

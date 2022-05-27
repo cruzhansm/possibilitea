@@ -5,8 +5,8 @@
       h-full
       w-fit
       pl-8
-      pt-5
-      pb-[30px]
+      pt-2
+      pb-[40px]
       gap-y-[10px]
       border-l-[6px] border-divider
     "

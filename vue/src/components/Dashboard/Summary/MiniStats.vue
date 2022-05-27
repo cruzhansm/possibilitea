@@ -6,7 +6,7 @@
       items-center
       gap-4
       w-[324px]
-      h-[165px]
+      h-[155px]
       bg-verylightgray
       rounded-[9px]
     "

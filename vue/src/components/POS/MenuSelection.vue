@@ -20,7 +20,7 @@
       >
         <SecondaryButton
           :text="fd.name"
-          :height="78"
+          :height="68"
           :width="286"
           :hover="'primary'"
           :active="fd.active"
@@ -46,7 +46,7 @@
       >
         <SecondaryButton
           :text="drink.name"
-          :height="78"
+          :height="68"
           :width="286"
           :hover="'primary'"
           :active="drink.active"

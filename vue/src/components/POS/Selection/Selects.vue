@@ -1,6 +1,19 @@
 <template>
   <div
-    class="flex flex-row justify-around items-center w-full h-[194px] min-h-[194px] pl-[30px] pr-[20px] border-t-[6px] border-divider"
+
+    class="
+      flex flex-row
+      justify-around
+      items-center
+      absolute-bottom
+      w-full
+      h-[194px]
+      min-h-[194px]
+      pl-[30px]
+      pr-[20px]
+      border-t-[6px] border-divider
+    "
+
   >
     <SelectAmount />
     <SelectSize v-if="categoryTest('size')" />

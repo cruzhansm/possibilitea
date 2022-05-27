@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between items-center h-[77px] min-h-[77px] w-full">
+  <div class="absolute-top flex justify-between items-center h-[77px] min-h-[77px] w-full">
     <Navback />
     <DateTime />
     <span class="text-2xl text-primary font-bold">{{user.username}}</span>

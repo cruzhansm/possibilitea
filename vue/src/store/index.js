@@ -9,7 +9,7 @@ const getDefaultState = () => {
             data:{},
             token: sessionStorage.getItem("TOKEN")
         },
-        categories: {
+        categories_store: {
             data: {},
         },
         itemCategoryList: {
@@ -22,7 +22,7 @@ const getDefaultState = () => {
         },
         foods: {},
         drinks:{},
-        categories_store: [...tmpcategories],
+        categories: [...tmpcategories],
         subcategoryList: [
             { id: 1,  name: "99 Meals & Single Orders",},
             { id: 2,  name: "Soup",},
@@ -347,7 +347,9 @@ const tmpcategories =  [
                 { id: 78, name: "San Mig Flavored", price: 55.0, img_path: "http://localhost:8000/images/items/Others/san-mig-flavored.png" },
                 { id: 79, name: "San Mig Pilsen Small", price: 60.0, img_path: "http://localhost:8000/images/items/Others/san-mig-pilsen-small.png" },
             ],
-
+        },
+    },
+];
 
 
 // initial state
@@ -392,7 +394,7 @@ const actions = {
         });
     }else{
         response = axiosClient.post("/items", data).then((res) => {
-                    return res;
+            return res;
         });
     }
 
@@ -446,7 +448,7 @@ const mutations = {
         sessionStorage.removeItem("TOKEN");
     },
     setCategory(state, data){
-        state.categories.data = data;
+        state.categories_store.data = data;
         state.foods = data.filter(
             (c) => c.category == "Food"
         );

@@ -468,10 +468,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia:  ;
 }
 
-.pointer-events-none {
-  pointer-events: none;
-}
-
 .absolute {
   position: absolute;
 }
@@ -721,6 +717,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 500px;
 }
 
+.h-\[130px\] {
+  height: 130px;
+}
+
 .h-\[194px\] {
   height: 194px;
 }
@@ -851,6 +851,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-1\/4 {
   width: 25%;
+}
+
+.w-\[138\.3px\] {
+  width: 138.3px;
 }
 
 .w-\[376px\] {

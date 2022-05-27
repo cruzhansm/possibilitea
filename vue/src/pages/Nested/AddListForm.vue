@@ -32,79 +32,9 @@
           </button>
         </div>
 
-        <div>
+        <div></div>
           <!-- Input Product Detail -->
-          <form
-            action=""
-            @submit.prevent="saveItem"
-            class="flex flex-col space-y-4"
-          >
-            <TextInput
-              @update="getName"
-              title="Item Name"
-              :default="name"
-              :focus="true"
-              errorAlign="left"
-              :errorText="'Empty field'"
-            ></TextInput>
 
-            <CustomDropdown
-              @changeSelect="getCategory"
-              title="Category"
-              :default="category"
-              :options="categories"
-              background="inputField"
-              :width="374"
-              :disabled="false"
-            ></CustomDropdown>
-
-            <CustomDropdown
-              @changeSelect="getSubcategory"
-              title="Subcategory"
-              :default="subcategory"
-              :options="subcategories"
-              background="inputField"
-              :width="374"
-              :disabled="true"
-            ></CustomDropdown>
-
-            <NumberInput
-              @changeNumber="getPrice"
-              :default="price"
-              title="Price"
-              color="'inputText'"
-              :height="47"
-              :width="199"
-              align="'left"
-              :disabled="false"
-            ></NumberInput>
-
-            <div class="flex flex-row space-x-8 pt-2">
-              <SecondaryButton
-                text="CANCEL"
-                :height="47"
-                :width="173.93"
-                :fontSize="24"
-                color="text-buttonText"
-                hover="secondaryHovered"
-                :active="'true'"
-                class="font-normal"
-              ></SecondaryButton>
-
-              <PrimaryButton
-                @click="saveItem"
-                text="SAVE"
-                :height="47"
-                :width="173.93"
-                :fontSize="24"
-                color="text-buttonText"
-                hover="primaryHovered"
-                class="font-normal"
-              ></PrimaryButton>
-            </div>
-          </form>
-        </div>
-      </div>
 
       <div>
         <!-- Input Product Detail -->
@@ -236,6 +166,7 @@
 
     </div>
   </div>
+  </div>
 </template>
 
 <script>
@@ -293,11 +224,11 @@
         this.form.img_path = this.img_path;
       }     
 
-      let foodCategory = this.$store.state.categories_store.filter(
+      let foodCategory = this.$store.state.categories.filter(
         (f) => f.category == "Food"
       );
 
-      let drinkCategory = this.$store.state.categories_store.filter(
+      let drinkCategory = this.$store.state.categories.filter(
         (f) => f.category == "Drinks"
       );
 
@@ -344,7 +275,7 @@
         return item.name == value          
         })[0].id;
       
-        this.$store.state.categories_store.map((item) => {
+        this.$store.state.categories.map((item) => {
           if (item.name == value) {
             this.subcategories = Object.getOwnPropertyNames(item.items);
             }

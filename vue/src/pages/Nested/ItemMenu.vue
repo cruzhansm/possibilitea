@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-5 pl-[30px] pr-5 pt-5">
+  <div class="h-[400px] flex flex-col gap-5 pl-[30px] pr-5 pt-5">
     <ItemRow
       :key="name"
       v-for="(row, name) in category"
@@ -16,11 +16,11 @@ import ItemRow from "../../components/POS/Selection/ItemRow.vue";
 
 export default {
   name: "ItemMenu",
-  data(){
-    return{
+  data() {
+    return {
       width: 130,
-      height: 138
-    }
+      height: 138,
+    };
   },
   components: {
     ItemRow,
@@ -37,6 +37,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-</style>

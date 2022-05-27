@@ -9,7 +9,7 @@ const getDefaultState = () => {
             data:{},
             token: sessionStorage.getItem("TOKEN")
         },
-        categories: {
+        categories_store: {
             data: {},
         },
         itemCategoryList: {
@@ -22,7 +22,7 @@ const getDefaultState = () => {
         },
         foods: {},
         drinks:{},
-        categories_store: [...tmpcategories],
+        categories: [...tmpcategories],
         subcategoryList: [
             { id: 1,  name: "99 Meals & Single Orders",},
             { id: 2,  name: "Soup",},
@@ -67,116 +67,28 @@ const getDefaultState = () => {
             "Cream Cheese",
             "Cheese Cake",
         ],
-        cart: [
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-            {
-                name: "Dark Chocolate",
-                category: "Milktea",
-                quantity: 1,
-                size: "22oz",
-                sugar: "50%",
-                price: 149.0,
-                adds: ["Tapioca", "Red Bean", "Cream Cheese"],
-            },
-        ]
+       cart: [
+      {
+        name: "Dark Chocolate",
+        category: "Milktea",
+        quantity: 1,
+        size: "22oz",
+        sugar: "50%",
+        price: 149.0,
+        adds: ["Tapioca", "Red Bean", "Cream Cheese"],
+      },
+      {
+        name: "Dark Chocolate",
+        category: "Milktea",
+        quantity: 1,
+        size: "22oz",
+        sugar: "50%",
+        price: 149.0,
+        adds: ["Tapioca", "Red Bean", "Cream Cheese"],
+      },
+    ],
+    selected: {},
+       
     }
   }
 const tmpcategories =  [
@@ -482,7 +394,7 @@ const actions = {
         });
     }else{
         response = axiosClient.post("/items", data).then((res) => {
-                    return res;
+            return res;
         });
     }
 
@@ -536,14 +448,21 @@ const mutations = {
         sessionStorage.removeItem("TOKEN");
     },
     setCategory(state, data){
-        state.categories.data = data;
+        state.categories_store.data = data;
         state.foods = data.filter(
             (c) => c.category == "Food"
         );
         state.drinks = data.filter(
             (c) => c.category == "Drinks"
         );
+    },
+     cartMutate: (state, item) => {
+      state.cart.push(item);
+    },
+    chooseSelect: (state, item) => {
+      state.selected = { ...item };
     }
+  
 }
 
  const plugins = [createPersistedState()];

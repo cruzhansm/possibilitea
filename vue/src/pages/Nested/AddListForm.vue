@@ -1,24 +1,13 @@
 <template>
   <div>
-    
-    <div 
-    class="
-      group
-      flex
-      gap-6
-      px-2
-      py-1
-      w-[20px]
-      rounded-[9px]
-      hover:cursor-pointer hover:text-primaryHovered
-    "
-    @click="redirectBack(id)"
-  >
-
+    <div
+      class="group flex gap-6 px-2 py-1 w-[20px] rounded-[9px] hover:cursor-pointer hover:text-primaryHovered"
+      @click="redirectBack(id)"
+    >
       <font-awesome-icon
         icon="angle-left"
         size="2x"
-        class="group-hover:text-primaryHovered text-primary pl-[25px] "
+        class="group-hover:text-primaryHovered text-primary pl-[25px]"
       />
       <span
         class="group-hover:text-primaryHovered text-2xl text-primary font-bold"
@@ -38,12 +27,15 @@
          
           <button class="bg-primary w-[174px] h-[47px] text-buttonText text-textButtons rounded-[9px] ml-2 hover:bg-primaryHovered relative">
             <input type="file" @change="onImageChoose" class="absolute left-0 right-0 top-0 bottom-0 opacity-0 cursor-pointer">
+
             UPLOAD
           </button>
-      </div>
+        </div>
 
-      
-      
+        <div></div>
+          <!-- Input Product Detail -->
+
+
       <div>
         <!-- Input Product Detail -->
         <form action="" @submit.prevent="saveItem" class="flex flex-col space-y-4">
@@ -173,15 +165,12 @@
       </div>
 
     </div>
-      
   </div>
-
-
   </div>
-
 </template>
 
 <script>
+
   import TextInput from "../../components/Input/TextInput.vue";
   import CustomDropdown from "../../components/Input/CustomDropdown.vue";
   import NumberInput from "../../components/Input/NumberInput.vue";
@@ -235,20 +224,20 @@
         this.form.img_path = this.img_path;
       }     
 
-      let foodCategory = this.$store.state.categories_store.filter(
+      let foodCategory = this.$store.state.categories.filter(
         (f) => f.category == "Food"
       );
 
-      let drinkCategory = this.$store.state.categories_store.filter(
+      let drinkCategory = this.$store.state.categories.filter(
         (f) => f.category == "Drinks"
       );
 
-      let categoryArr = foodCategory.concat(drinkCategory);
+    let categoryArr = foodCategory.concat(drinkCategory);
+
 
       this.categories = categoryArr.map(function getCat(item){
         return item.name;
       });
-
     },  
     setup(){
     const router = useRouter();
@@ -286,7 +275,7 @@
         return item.name == value          
         })[0].id;
       
-        this.$store.state.categories_store.map((item) => {
+        this.$store.state.categories.map((item) => {
           if (item.name == value) {
             this.subcategories = Object.getOwnPropertyNames(item.items);
             }
@@ -305,21 +294,21 @@
       this.form.item_name = value;
     },
 
-    getPrice(value){
+    getPrice(value) {
       this.form.price = value;
     },
-    
+
     redirectBack(id) {
+
       if(id === undefined){
         this.$router.go(-1)
       }else{
         this.$router.push({ name: 'info', params: {  id:this.id, category: this.category, subcategory:this.subcategory, name:this.name , price:this.price, img_path:this.img_path} })
+
       }
     },
   },
-  }
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

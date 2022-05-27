@@ -12,7 +12,7 @@
                 hover:cursor-pointer
                 hover:bg-primary
                 h-[78px]
-                w-[270px]
+                w-[286px]
                 text-center" 
         v-for="item in dashnav"
         :key="item.name"

@@ -1,9 +1,9 @@
 <template>
-  <div class="flex flex-col justify-center items-center h-max pt-[80px]">
+  <div class="flex flex-col justify-center items-center h-max pt-[30px]">
     <img src="../assets/logo.jpg"
       class="
-        h-[274px]
-        w-[423px]
+        h-[300px]
+        w-[370px]
         flex
         justify-center
         items-center

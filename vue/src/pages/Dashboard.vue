@@ -1,12 +1,12 @@
 <template>
-  <div class="flex flex-col justify-center items-center w-screen px-8">
+  <div class="flex flex-col justify-center items-center px-8">
     <Navbar />
     <div
-      class="flex h-full w-screen pl-8 bg-red border-t-[6px] border-[#f5f5f5]"
+      class="flex h-[886px] w-screen pl-8 bg-red border-t-[6px] border-[#f5f5f5]"
     >
       <Sidenav />
 
-      <div class="w-full h-full bg-[#ffffff] pt-[50px] pb-[40px] pl-[76px]">
+      <div class="w-screen h-[886px]  bg-[#ffffff] pt-[50px] pb-[40px] pl-[76px]">
         <router-view></router-view>
       </div>
       

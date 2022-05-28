@@ -19,7 +19,7 @@
     <SelectSize v-show="categoryTest('size')" />
     <SelectSugar v-show="categoryTest('sugar')" />
     <SelectAddons v-show="categoryTest('addons')" />
-    <SelectTemperature v-show="categoryTest('temperature')" />
+    <SelectTemperature @temp='setTemp' v-show="categoryTest('temperature')" />
     <PrimaryButton @click="addtoCart" text="Add" :height="163" :width="76" />
   </div>
 </template>
@@ -46,11 +46,16 @@ const cart = reactive({
     size: null,
     sugar: null,
     adds: null,
+    temp: null,
 });
 
 //setAmount
 function setAmount(amount) {
     cart.quantity = amount;
+}
+
+function setTemp(temp) {
+    cart.temp = temp;
 }
 
 function addtoCart () {
@@ -63,6 +68,7 @@ function addtoCart () {
     sugar: cart.sugar,
     price: store.state.selected.price,
     adds: cart.adds,
+    temp: cart.temp,
   });
 }
 

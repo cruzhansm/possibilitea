@@ -16,12 +16,8 @@
 
     <!-- newly added items must be present here -->
     <BillingItems :items="items" />
-
-
     <Divider />
-
     <BillingTotal />
-
     
     <PrimaryButton
       text="Apply Discount"
@@ -29,7 +25,7 @@
       :width="332"
       @click="toggleDiscount"
     />
-    <BillingAmount />
+    <BillingAmount @changeAmount="recordAmount" />
     <PrimaryButton
       text="Confirm"
       :height="60"
@@ -101,8 +97,8 @@
       <template v-slot:body>
         <div class="h-[520px]">
           <div class="font-bold text-[16px]">Date: {{ timestamp }}</div>
-          <div class="font-bold text-[16px]">Transaction #: 04162022000001</div>
-          <div class="font-bold text-[16px]">Cashier: staffFullName</div>
+          <div class="font-bold text-[16px]">Transaction #: 0416202200000{{ transNum }}</div>
+          <div class="font-bold text-[16px]">Cashier: {{  getUserInfo }}</div>
           <div class="flex flex-row w-100 mt-4">
             <span class="w-[15%] text-[16px] text-center font-bold">Qty</span>
             <span class="w-[50%] text-[16px] font-bold">Item</span>
@@ -113,14 +109,20 @@
               Total
             </span>
           </div>
+
+
           <TransactionItem
-            :key="'z' + index"
-            v-for="(z, index) in test"
-            :first="z == test[0] ? true : false"
+            :key="item.id"
+            v-for="item in items"
+            :item="item"
+            :first="false"
           />
-          <TransactionSummary />
+          <TransactionSummary :amount="amount"/>
+
+
         </div>
       </template>
+
       <template v-slot:button-area>
         <SecondaryButton
           text="Cancel"
@@ -164,15 +166,20 @@ export default {
   },
   data() {
     return {
+      amount: 0,
       isApplyingDiscount: false,
       isManualDiscount: false,
       isConfirmingTransaction: false,
       timestamp: String,
       /* for demo only */
-      test: [0, 1, 2],
+      test: [0, 1, 2, 4],
     };
   },
   methods: {
+  
+    recordAmount(amount) {
+      this.amount = amount;
+    },
     deleteAll(){
       this.$store.dispatch("deleteAllCartItem",this.$store.state.user.data.id);
     },
@@ -191,9 +198,30 @@ export default {
     items() {
       return this.$store.state.cart;
     },
-  },
-};
+    getUserInfo(){
+        return this.$store.state.user.data.username;
+    },
+    transNum() {
+      return Math.floor(Math.random() * 1000000);
+    }
+
+    },
+    subtotal() {
+      let subtotal = 0;
+      this.$store.state.cart.forEach((item) => {
+        subtotal += item.price*item.quantity;
+      });
+      return subtotal;
+    },
+    vat() {
+      return (this.subtotal * 0.12);
+    },
+    total() {
+      return this.subtotal + this.vat;
+    },
+  }
 </script>
+
 
 <style scoped>
 </style>

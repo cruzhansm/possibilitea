@@ -22,12 +22,12 @@ export default {
     subtotal() {
       let subtotal = 0;
       this.$store.state.cart.forEach((item) => {
-        subtotal += item.price;
+        subtotal += item.price*item.quantity;
       });
       return subtotal;
     },
     vat() {
-      return this.subtotal * 0.12;
+      return (this.subtotal * 0.12);
     },
     total() {
       return this.subtotal + this.vat;

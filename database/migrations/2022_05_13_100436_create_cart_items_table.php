@@ -17,13 +17,8 @@ return new class extends Migration
             $table->id()->autoIncrement();
             $table->unsignedBigInteger('item_id');
             $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
-
-            $table->unsignedBigInteger('subcategory_id');
-            $table->foreign('subcategory_id')->references('id')->on('subcategories')->onDelete('cascade');
-            
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            
             $table->integer('quantity');
             $table->enum('size', ['16oz', '22oz'])->nullable();
             $table->float('price');

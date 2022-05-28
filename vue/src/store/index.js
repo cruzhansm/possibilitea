@@ -483,16 +483,14 @@ const mutations = {
 
     //get the total price in the item
     state.subtotal = item.reduce((total, item) => {
-        return total + item.price;
+        return total +( item.price * item.quantity);
     }, 0);
-
-    console.log(state.subtotal);
 
 
     },
     chooseSelect: (state, item) => {
       state.selected = { ...item };
-    //   console.log(state.selected);
+      console.log(state.selected);
     }
   
 }

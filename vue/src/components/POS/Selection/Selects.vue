@@ -38,16 +38,14 @@ import { reactive } from "@vue/reactivity";
 const store = useStore();
 
 const cart = reactive({
-    name: "Coffee",
-    user_id: store.state.user.data.id,
-    item_id: 1,
-    subcategory_id: 1,
-    category: 1,
+    // name: "Coffee",
+    user_id: "",
+    item_id: null,
     quantity: 1, //amount
-    size: "22oz",
-    sugar: 3,
-    price: 150.0,
-    adds: 1,
+    price: null,
+    size: null,
+    sugar: null,
+    adds: null,
 });
 
 //setAmount
@@ -57,18 +55,18 @@ function setAmount(amount) {
 
 function addtoCart () {
   store.dispatch("addtoCart", {
-    name: cart.name,
+    // name: cart.name,
     user_id: store.state.user.data.id,
-    item_id: cart.item_id,
-    subcategory_id: cart.category,
-    category: cart.category,
+    item_id: store.state.selected.id,
     quantity: cart.quantity, //amount
     size: cart.size,
     sugar: cart.sugar,
-    price: cart.price,
+    price: store.state.selected.price,
     adds: cart.adds,
   });
 }
+
+
 
 const categoryTest = (menu) => {
   const item = store.state.selected; //item selected

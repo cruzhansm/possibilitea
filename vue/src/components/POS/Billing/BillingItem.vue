@@ -8,7 +8,7 @@
 
     <div class="flex flex-col h-fit w-full ml-5 mr-3">
       <span class="text-[16px] leading-tight mb-1 text-inputText font-bold">
-        {{ `${item.quantity}x ${item.category} ${item.item_name}` }}
+        {{ `${item.quantity}x ${item.category} - ${item.item_name}` }}
       </span>
       <span v-if="item.size && item.sugar" class="text-[14px] leading-tight text-[#696969] font-bold">{{
         `${item.size}, ${item.sugar}`

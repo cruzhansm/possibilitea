@@ -30,7 +30,6 @@ class CartItemController extends Controller
         $data = $request->validate([
             'user_id' => 'required',
             'item_id' => 'required',
-            'subcategory_id' => 'required',
             'quantity' => 'required|numeric|min:1',
             'size' => 'nullable',
             'price' => 'required|numeric',

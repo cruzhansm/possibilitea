@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full w-fit pt-[36px] pb-[30px] pr-8 border-r-[14px] border-[#F5F5F5]">
+  <div class="h-full w-fit pt-[36px] pb-[30px] pr-8 border-r-[7px] border-[#F5F5F5]">
     <div class="flex flex-col gap-4">
       <router-link
         class="flex
@@ -12,7 +12,7 @@
                 hover:cursor-pointer
                 hover:bg-primary
                 h-[78px]
-                w-[270px]
+                w-[286px]
                 text-center" 
         v-for="item in dashnav"
         :key="item.name"

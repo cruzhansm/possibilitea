@@ -1,19 +1,17 @@
 <template>
   <div
-    class="flex flex-col gap-[38px] justify-center items-center h-max pt-[80px]"
+    class="flex flex-col gap-[38px] justify-center items-center h-max pt-[30px]"
   >
-    <div
+    <img src="../assets/logo.jpg"
       class="
-        h-[274px]
-        w-[423px]
-        border border-black
+        h-[300px]
+        w-[370px]
         flex
         justify-center
         items-center
       "
     >
-      Logo Here
-    </div>
+      
     <AuthForm formTitle="Log In"></AuthForm>
   </div>
 </template>

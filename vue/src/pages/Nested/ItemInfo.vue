@@ -30,7 +30,7 @@
     <!-- Product Info -->
   <div class="flex flex-col space-y-4">
     <div class="flex flex-row justify-even items-start ml-[150px] mt-8">
-      <div src="" alt="" class="w-[411px] h-[381px] bg-secondary rounded-[9px] m-2 mr-8"></div>
+      <img :src="img_path" :alt="img_path" class="w-[411px] h-[381px] rounded-[9px] m-2 mr-8"/>
 
       <div>
         <h1 class="text-primary text-[40px] font-bold">{{ name }}</h1>
@@ -41,7 +41,7 @@
         <!-- display edit/delete button if user is admin otherwise hidden -->
         <div v-if="user === 'ADMIN'" class="flex flex-row space-x-4 mt-6 ">
             <button 
-            @click="$router.push({name: 'edit', params: { id:id, category:category, name:name, price:price, subcategory:subcategory },})"
+            @click="$router.push({name: 'edit', params: { id:id, category:category, name:name, price:price, subcategory:subcategory, img_path:img_path },})"
             class="w-[172px] h-[47px] text-[24px] bg-primary text-buttonText rounded-[9px] hover:bg-primaryHovered transition ease-in-out delay-[65]">EDIT</button>
             <button 
             @click="deleteItem"
@@ -85,6 +85,7 @@
     },
     props: {
       id:Number,
+      img_path:String,
       category: String, 
       subcategory: String,
       name: String,
@@ -97,7 +98,12 @@
     deleteItem(item){
       //delete item from the database
       if(confirm("Are you sure you want to delete this item?")){
-        
+         this.$store.dispatch("deleteItem", this.id).then(() => {
+          //  this.$store.dispatch("getSubcategories");
+          this.$router.push({
+            name: "listing-management",
+          }); 
+        });
       }
     }
   },

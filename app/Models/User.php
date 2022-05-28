@@ -24,6 +24,7 @@ class User extends Authenticatable
         'role',
         'password',
     ];
+    
 
     /**
      * The attributes that should be hidden for serialization.
@@ -43,4 +44,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function cart () {
+        return $this->hasMany(CartItem::class, 'transaction_id');
+    }
+    
 }

@@ -8,11 +8,11 @@
       <span class="font-bold text-[16px]">Change</span>
     </div>
     <div class="flex flex-col">
-      <span class="font-bold text-[16px] text-right">133.04</span>
-      <span class="font-bold text-[16px] text-right">15.96</span>
-      <span class="font-bold text-[16px] text-right">149.00</span>
-      <span class="font-bold text-[16px] text-right">200.00</span>
-      <span class="font-bold text-[16px] text-right">51.00</span>
+      <span class="font-bold text-[16px] text-right">₱{{ subtotal }}</span>
+      <span class="font-bold text-[16px] text-right">{{ vat }}</span>
+      <span class="font-bold text-[16px] text-right">₱{{ total }}</span>
+      <span class="font-bold text-[16px] text-right">₱{{ amount }}</span>
+      <span class="font-bold text-[16px] text-right">₱{{amount - total}}</span>
     </div>
   </div>
 </template>
@@ -20,7 +20,39 @@
 <script>
 export default {
   name: "TransactionSummary",
-};
+  props: {
+    amount: Number,
+  },
+  computed: {
+    subtotal() {
+      let subtotal = 0;
+      this.$store.state.cart.forEach((item) => {
+        subtotal += item.price*item.quantity;
+      });
+      return subtotal;
+    },
+    vat() {
+      return (this.subtotal * 0.12);
+    },
+    total() {
+      return this.subtotal + this.vat;
+    }
+  },
+
+subtotal() {
+      let subtotal = 0;
+      this.$store.state.cart.forEach((item) => {
+        subtotal += item.price*item.quantity;
+      });
+      return subtotal;
+    },
+    vat() {
+      return (this.subtotal * 0.12);
+    },
+    total() {
+      return this.subtotal + this.vat;
+    }
+}
 </script>
 
 <style scoped>

@@ -1,9 +1,11 @@
 <template>
   <div
+
     class="
       flex flex-row
-      justify-around
+      justify-between
       items-center
+      absolute-bottom
       w-full
       h-[194px]
       min-h-[194px]
@@ -11,33 +13,94 @@
       pr-[20px]
       border-t-[6px] border-divider
     "
+
   >
-    <SelectAmount />
-    <SelectSize />
-    <SelectSugar />
-    <SelectAddons />
-    <PrimaryButton text="Add" :height="163" :width="76" />
+    <SelectAmount @amount="setAmount" />
+    <SelectSize v-show="categoryTest('size')" />
+    <SelectSugar v-show="categoryTest('sugar')" />
+    <SelectAddons v-show="categoryTest('addons')" />
+    <SelectTemperature @temp='setTemp' v-show="categoryTest('temperature')" />
+    <PrimaryButton @click="addtoCart" text="Add" :height="163" :width="76" />
   </div>
 </template>
 
-<script>
+<script setup>
 import PrimaryButton from "../../Buttons/PrimaryButton.vue";
 import SelectAmount from "./SelectAmount.vue";
 import SelectSize from "./SelectSize.vue";
 import SelectSugar from "./SelectSugar.vue";
 import SelectAddons from "./SelectAddons.vue";
+import SelectTemperature from "./SelectTemperature.vue";
+import { useStore } from "vuex";
+import { computed } from "vue";
+import { reactive } from "@vue/reactivity";
 
-export default {
-  name: "Addons.vue",
-  components: {
-    PrimaryButton,
-    SelectAmount,
-    SelectSize,
-    SelectSugar,
-    SelectAddons,
-  },
+const store = useStore();
+
+const cart = reactive({
+    // name: "Coffee",
+    user_id: "",
+    item_id: null,
+    quantity: 1, //amount
+    price: null,
+    size: null,
+    sugar: null,
+    adds: null,
+    temp: null,
+});
+
+//setAmount
+function setAmount(amount) {
+    cart.quantity = amount;
+}
+
+function setTemp(temp) {
+    cart.temp = temp;
+}
+
+function addtoCart () {
+  store.dispatch("addtoCart", {
+    // name: cart.name,
+    user_id: store.state.user.data.id,
+    item_id: store.state.selected.id,
+    quantity: cart.quantity, //amount
+    size: cart.size,
+    sugar: cart.sugar,
+    price: store.state.selected.price,
+    adds: cart.adds,
+    temp: cart.temp,
+  });
+}
+
+
+
+const categoryTest = (menu) => {
+  const item = store.state.selected; //item selected
+  const categories = store.state.categories;
+
+  const test = categories.reduce((accu, curr) => {
+    const allVals = Object.values(curr.items).flat();
+    const itemExist = allVals.some((el) => el.id === item.id);
+    if (itemExist) return curr.name;
+    return accu;
+  }, "");
+
+  switch (menu) {
+    case "size":
+      if (test === "Milktea & Frappe") return true;
+      return false;
+    case "sugar":
+      if (test === "Milktea & Frappe") return true;
+      return false;
+    case "addons":
+      return ["Lemonade & Fruitea", "Milktea & Frappe"].some(
+        (el) => el === test
+      );
+    case "temperature":
+      if (test === "Yogurt & Coffee") return true;
+      return false;
+  }
 };
-</script>
 
-<style scoped>
-</style>
+// console.log(categoryTest);
+</script>

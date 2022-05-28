@@ -17,8 +17,8 @@ class CartItemSeeder extends Seeder
     {
         $data = array(
             array(
-                'transaction_id' => 1,
-                'item_id' => 37,
+                'item_id' => 1,
+                'user_id' => 1,
                 'quantity' => 2,
                 'size' => '22oz',
                 'price' => '99.00',
@@ -26,32 +26,33 @@ class CartItemSeeder extends Seeder
                 'sugarlvl_id' => 3,
             ),
             array(
-                'transaction_id' => 1,
-                'item_id' => 32,
-                'quantity' => 1,
+                'item_id' => 4,
+                'user_id' => 1,
+                'quantity' => 2,
                 'size' => '22oz',
-                'price' => '90.00',
-                'addon_id' => 2,
-                'sugarlvl_id' => 2,
-            ),
-            array(
-                'transaction_id' => 1,
-                'item_id' => 34,
-                'quantity' => 1,
-                'size' => '16oz',
-                'price' => '89.00',
-                'addon_id' => null,
+                'price' => '100.00',
+                'addon_id' => 1,
                 'sugarlvl_id' => null,
             ),
             array(
-                'transaction_id' => 2,
-                'item_id' => 32,
-                'quantity' => 1,
+                'item_id' => 1,
+                'user_id' => 1,
+                'quantity' => 2,
                 'size' => '22oz',
-                'price' => '90.00',
-                'addon_id' => 2,
-                'sugarlvl_id' => 2,
-            )
+                'price' => '100.00',
+                'addon_id' => 1,
+                'sugarlvl_id' => 3,
+            ),
+            array(
+                'item_id' => 1,
+                'user_id' => 1,
+                'quantity' => 2,
+                'size' => '22oz',
+                'price' => '99.00',
+                'addon_id' => 1,
+                'sugarlvl_id' => 3,
+            ),
+           
         );
             DB::table('cart_items')->insert($data);
     }

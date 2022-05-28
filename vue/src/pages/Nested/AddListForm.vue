@@ -1,30 +1,19 @@
 <template>
   <div>
-    
-    <div 
-    class="
-      group
-      flex
-      gap-6
-      px-2
-      py-1
-      w-[20px]
-      rounded-[9px]
-      hover:cursor-pointer hover:text-primaryHovered
-    "
-    @click="redirectBack(id)"
-  >
-
+    <div
+      class="group flex gap-6 px-2 py-1 w-[20px] rounded-[9px] hover:cursor-pointer hover:text-primaryHovered"
+      @click="redirectBack(id)"
+    >
       <font-awesome-icon
         icon="angle-left"
         size="2x"
-        class="group-hover:text-primaryHovered text-primary pl-[25px] "
+        class="group-hover:text-primaryHovered text-primary pl-[25px]"
       />
       <span
         class="group-hover:text-primaryHovered text-2xl text-primary font-bold"
         >BACK</span
       >
-    
+      
   </div>
 
 
@@ -33,17 +22,20 @@
     <div class="flex flex-row justify-even items-start ml-[150px] mt-8">
 
       <div class="flex flex-col space-y-2 ">
-          <img v-if="item.image" :src="item.image" :alt="item.name">
+          <img v-if="form.img_path" :src="form.img_path" :alt="form.item_name" class="w-[411px] h-[381px] rounded-[9px] m-2 mr-12">
           <span v-else class="w-[411px] h-[381px] bg-secondary rounded-[9px] m-2 mr-12"></span>
          
           <button class="bg-primary w-[174px] h-[47px] text-buttonText text-textButtons rounded-[9px] ml-2 hover:bg-primaryHovered relative">
-            <input type="file" class="absolute left-0 right-0 top-0 bottom-0 opacity-0 cursor-pointer">
+            <input type="file" @change="onImageChoose" class="absolute left-0 right-0 top-0 bottom-0 opacity-0 cursor-pointer">
+
             UPLOAD
           </button>
-      </div>
+        </div>
 
-      
-      
+        <div></div>
+          <!-- Input Product Detail -->
+
+
       <div>
         <!-- Input Product Detail -->
         <form action="" @submit.prevent="saveItem" class="flex flex-col space-y-4">
@@ -91,6 +83,7 @@
           <div class="flex flex-row space-x-8 pt-2">
 
           <SecondaryButton
+            @click="toggleCancel"
             text="CANCEL"
             :height= 47
             :width= 173.93
@@ -111,7 +104,60 @@
             hover="primaryHovered"
             class="font-normal"
           ></PrimaryButton>
-
+          
+          <!-- CANCEL Modal -->
+          <Modal v-show="isCancellingForm" @close="toggleCancel">
+            <template v-slot:body>
+              <div class="flex flex-col items-center w-full gap-2">
+                <span
+                  class="text-xl text-primary font-bold w-full text-center uppercase"
+                  >Do you want to leave this page? Changes will not be saved.</span
+                >
+              </div>
+            </template>
+            
+            <template v-slot:button-area>
+              <div class="flex flex-col items-center w-full gap-2">
+                <div>
+                  <PrimaryButton
+                    text="Stay"
+                    :height="63"
+                    :width="368"
+                    @click="toggleCancel"
+                    />
+                </div>
+                <div>
+                  <SecondaryButton
+                    text="Leave"
+                    :height="63"
+                    :width="368"
+                    @click="returnToListing"
+                  />
+                </div>
+              </div>
+            </template>
+          </Modal>
+          
+          <!-- SAVE Modal -->
+          <Modal v-show="isSuccessfulListing" @close="toggleSuccess">
+            <template v-slot:body>
+              <div class="flex flex-col items-center w-full gap-2">
+                <span
+                  class="text-xl text-primary font-bold w-full text-center uppercase"
+                  >Listing Added</span
+                >
+              </div>
+            </template>
+            <template v-slot:button-area>
+                <PrimaryButton
+                  text="Done"
+                  :height="63"
+                  :width="368"
+                  @click="returnToListing"
+                />
+            </template>
+          </Modal>
+              
           </div>
 
         </form>
@@ -119,20 +165,19 @@
       </div>
 
     </div>
-      
   </div>
-
-
   </div>
-
 </template>
 
 <script>
+
   import TextInput from "../../components/Input/TextInput.vue";
   import CustomDropdown from "../../components/Input/CustomDropdown.vue";
   import NumberInput from "../../components/Input/NumberInput.vue";
   import PrimaryButton from "../../components/Buttons/PrimaryButton.vue";
   import SecondaryButton from "../../components/Buttons/SecondaryButton.vue";
+  import Modal from "../../components/Modal/Modal.vue";
+  import { useRouter } from "vue-router";
 
   export default {
     name:"ItemInfo",
@@ -145,11 +190,14 @@
           subcat_id: '',
           itemCat_id: '',
           price: '',
-          img_path: 'image.png',
+          img_path: '',
+          image: '',
         },        
         categoryArr:null,
         categories: null,
         subcategories: null,
+        isCancellingForm: false,
+        isSuccessfulListing: false,
       }
     },
     components: {
@@ -157,16 +205,25 @@
       CustomDropdown,
       NumberInput,
       PrimaryButton,
-      SecondaryButton
+      SecondaryButton,
+      Modal
     },
     props: {
       id:Number,
+      img_path:String,
       category: String, 
       subcategory: String,
       name: String,
       price: Number
     },
     mounted () {
+      if(this.id){
+        this.form.id = this.id;
+        this.form.item_name = this.name;
+        this.form.price = this.price;
+        this.form.img_path = this.img_path;
+      }     
+
       let foodCategory = this.$store.state.categories.filter(
         (f) => f.category == "Food"
       );
@@ -175,16 +232,42 @@
         (f) => f.category == "Drinks"
       );
 
-      let categoryArr = foodCategory.concat(drinkCategory);
+    let categoryArr = foodCategory.concat(drinkCategory);
 
-      this.categories = categoryArr.map( function getCat(item){
+
+      this.categories = categoryArr.map(function getCat(item){
         return item.name;
       });
-
     },  
+    setup(){
+    const router = useRouter();
+    },
     methods: {
+    onImageChoose(ev){
+      const file = ev.target.files[0];
+      const reader = new FileReader();
+      reader.onload = () => {
+        //field to send data to backend
+        this.form.img_path = reader.result;
+        //field to display image
+        this.form.image = reader.result;
+      };
+      reader.readAsDataURL(file);
+    },
+    
+    toggleCancel() {
+      this.isCancellingForm = !this.isCancellingForm;
+    },
+    toggleSuccess() {
+      this.isSuccessfulListing = !this.isSuccessfulListing;
+    },
+    returnToListing() {
+      this.$router.push({ name: 'listing-management' })
+    },
     saveItem(){
-      this.$store.dispatch('saveItem', this.form);
+      this.$store.dispatch('saveItem', this.form)
+      this.isSuccessfulListing = !this.isSuccessfulListing;
+
     },
 
     getCategory(value){
@@ -197,12 +280,11 @@
             this.subcategories = Object.getOwnPropertyNames(item.items);
             }
         });
-
     },
 
     getSubcategory(value){
       // this.form.selectedSubcategory = value;
-      this.form.itemCat_id = this.$store.state.itemCategoryList.filter(function(item){
+      this.form.itemCat_id = this.$store.state.itemCategoryList_store.filter(function(item){
         return item.name == value          
         })[0].id;
 
@@ -212,21 +294,21 @@
       this.form.item_name = value;
     },
 
-    getPrice(value){
+    getPrice(value) {
       this.form.price = value;
     },
-    
+
     redirectBack(id) {
+
       if(id === undefined){
         this.$router.go(-1)
       }else{
-        this.$router.push({ name: 'info', params: {  id:this.id, category: this.category, subcategory:this.subcategory, name:this.name , price:this.price } })
+        this.$router.push({ name: 'info', params: {  id:this.id, category: this.category, subcategory:this.subcategory, name:this.name , price:this.price, img_path:this.img_path} })
+
       }
     },
   },
-  }
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

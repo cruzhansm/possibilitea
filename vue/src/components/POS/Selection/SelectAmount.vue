@@ -15,9 +15,9 @@
         rounded-xl
       "
     >
-      <RoundButton icon="minus" />
-      <span class="text-2xl font-bold text-textInput">1</span>
-      <RoundButton icon="plus" />
+      <RoundButton icon="minus" @click='decreaseAmount()'/>
+      <span class="text-2xl font-bold text-textInput">{{ amount }}</span>
+      <RoundButton icon="plus" @click='increaseAmount()' />
     </div>
   </div>
 </template>
@@ -27,8 +27,26 @@ import RoundButton from "../../Buttons/RoundButton.vue";
 
 export default {
   name: "SelectAmount",
+  data() {
+    return {
+      amount: 1,
+    };
+  },
   components: {
     RoundButton,
+  },
+  methods: {
+    increaseAmount() {
+      this.amount++;
+      //emit new amount to parent
+      this.$emit("amount", this.amount);
+    },
+    decreaseAmount() {
+      if (this.amount > 1) {
+        this.amount--;
+        this.$emit("amount", this.amount);
+      }
+    },
   },
 };
 </script>

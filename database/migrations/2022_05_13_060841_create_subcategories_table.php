@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('sub_name');
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->enum('status', ['ACTIVE', 'INACTIVE'])->default('ACTIVE');
+            $table->boolean('active')->default(false);
+            $table->string('img_path',255)->nullable();
         });
     }
 
